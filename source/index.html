@@ -6,7 +6,6 @@ layout: default
   {% for post in paginator.posts %}
   {% assign content = post.content %}
     <article class="post">
-      {% include post/sharing.html %}
       {% include article.html %}
     </article>
   {% endfor %}
