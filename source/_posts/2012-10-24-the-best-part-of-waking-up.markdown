@@ -3,7 +3,6 @@ layout: post
 title: "The Best Part of Waking Up"
 date: 2012-10-24 19:08
 comments: true
-published: false
 ---
 
 It seems like such a small detail: what's the first thing you do when you wake
@@ -15,14 +14,14 @@ I recently switched to writing code.
 ## Setting the tone
 
 You wake up each day completely fresh.  It takes a while before all the worries
-you had yesterday make themselves known again, so for a while you have an
-empty, clear mind.  And the first thing you put in is going to stick.
+from yesterday make themselves known again, so for a while you have an empty,
+clear mind.  And the first thing you put in is going to stick.
 
 I used to read email, Twitter, and Facebook first thing in the morning.  That
 got me current with what happened while I was asleep, but it put me in the
-mindset of keeping up.  *Following*.  From that point forward, I had
-a compulsion to *know what was going on*, and since people are constantly doing
-things, I was always behind.  I hate being behind.
+mindset of keeping up.  *Following*.  From that point on, I had to know what
+was going on, and since people are constantly doing things, I was always
+behind.  I hate being behind.
 
 ## Mindset
 
@@ -33,19 +32,19 @@ A read-first morning puts you in the mindset of a consumer.  You're looking to
 *be* entertained, always out for that next endorphin hit.  Not only does this
 reduce your output, it [kills your creativity][1].
 
-Even before showering.  I've found that some of my best ideas come to me in the
-shower, but there needs to be something I'm working on in that part of my mind
-that lurks just behind the conscious.  If that something is "I wonder what
-[Gruber][2] is up to today," it's a wasted opportunity.  I'd much rather be solving
-problems.  Plus, the answer is always "thinking about Apple, or maybe baseball."
+I've found that some of my best ideas come to me in the shower, but there needs
+to be something I'm working on in that part of my mind that lurks just behind
+the conscious.  If that something is "I wonder what [Gruber][2] is thinking
+about," I'm missing a great opportunity.  I'd much rather be solving problems.
+Besides, the answer is always "Apple, or maybe baseball."
 
 ## The Power of Habit
 
-We like to think of ourselves as totally sentient beings with free will.  This
-is a pleasant fiction, with many practical benefits, but it's not exactly true.
-On any given day, it's likely that a person will do the same thing she did
-yesterday, rather than a completely new thing.  We're mammals, and habit is
-powerful.
+We like to think of ourselves as sentient beings with free will.  This is
+a pleasant fiction, with many practical benefits, but as any psychologiest will
+tell you, it's not exactly true.  On any given day, it's likely that a person
+will do the same thing she did yesterday, as opposed to a completely new thing.
+We're mammals, and habit is powerful.
 
 What if your habits weren't harmful, like heroin, or merely benign, like
 drinking coffee?  What if they were constructive, what if they actually made
