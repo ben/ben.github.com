@@ -1,16 +1,16 @@
 {% unless page.no_header %}
   <header>
     {% if index %}
-      <h2 class="entry-title">
+      <h1 class="entry-title">
         {% if post.external-url %}
         <a href="{{ post.external-url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
         <a href="{{ root_url }}{{ post.url }}" class="anchor">&#9875;</a>
         {% else %}
         <a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
         {% endif %}
-      </h2>
+      </h1>
     {% else %}
-      <h2 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h2>
+      <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
     {% endif %}
     {% unless page.meta == false %}
       <p class="meta">

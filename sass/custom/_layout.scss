@@ -1,9 +1,19 @@
 @media only screen and (min-width: 630px) {
 	#sidebar {
-		margin-top: 3em;
+		margin-top: 50px;
 	}
 }
 
 section.comments {
 	max-width: 500px;
+}
+
+article.post header {
+	margin-top: 25px;
+}
+
+p.meta {
+	margin-top: -1.5em;
+	font-style: italic;
+	color: #777;
 }
