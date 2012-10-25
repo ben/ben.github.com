@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Native Win32 for fun and profit"
+comments: true
 ---
 
 *\[Note: this is ported from my [old
