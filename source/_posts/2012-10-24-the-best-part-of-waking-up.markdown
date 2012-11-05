@@ -41,7 +41,7 @@ Besides, the answer is always "Apple, or maybe baseball."
 ## The Power of Habit
 
 We like to think of ourselves as sentient beings with free will.  This is
-a pleasant fiction, with many practical benefits, but as any psychologiest will
+a pleasant fiction, with many practical benefits, but as any psychologist will
 tell you, it's not exactly true.  On any given day, it's likely that a person
 will do the same thing she did yesterday, as opposed to a completely new thing.
 We're mammals, and habit is powerful.
