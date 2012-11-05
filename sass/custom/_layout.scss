@@ -17,3 +17,21 @@ p.meta {
 	font-style: italic;
 	color: #777;
 }
+
+article p img {
+   width: 100%;
+}
+
+div.color {
+   margin-bottom: 20px;
+}
+
+div.color div {
+   @extend .mono;
+   font-size: 10pt;
+   display: inline;
+   width: 20em;
+   margin-right: 10px;
+   padding: 5px 15px;
+   border: 1px solid black;
+}
