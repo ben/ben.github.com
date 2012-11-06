@@ -16,12 +16,12 @@ body {
 
 h1 {
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 h2 {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   margin-top: 20px;
 }
 
@@ -77,10 +77,9 @@ article a:link, article a:visited, article a:hover, article a:active {
 article h2 {
   color: black;
   text-decoration: none;
-  font-family: "Rokkitt", serif;
   font-size: 22px;
   line-height: 32px;
-  font-weight: 700;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -88,9 +87,8 @@ article h2 a:link, article h2 a:hover, article h2 a:visited, article h2 a:active
   color: black;
   text-decoration: none;
   border-bottom: 1px solid #CCC;
-  font-family: "Rokkitt", serif;
   font-size: 22px;
   line-height: 32px;
-  font-weight: 700;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
 }

@@ -97,14 +97,14 @@ header#sidebar h1#title {
 }
 
 #octopress_linkback {
+  @extend .heading;
   position: fixed;
   left: 30px;
   bottom: 30px;
   font-size: 15px;
   letter-spacing: 0;
   text-transform: uppercase;
-  font-family: "Rokkitt",serif;
-  font-weight: 900;
+  font-weight: 500;
   line-height: 15px;
   padding: 10px;
   height: 30px;
@@ -122,7 +122,7 @@ header#sidebar h1#title {
 }
 
 header#sidebar h1#title a {
-  font-weight: 900;
+  font-weight: 500;
   font-size: 30px;
   line-height: 30px;
   border: none;
