@@ -142,18 +142,19 @@ module Jekyll
     #
     def category_links(categories)
       dir = @context.registers[:site].config['category_dir']
+      categories = categories.keys if categories.class == Hash
       categories = categories.sort!.map do |item|
-        "<a class='category' href='/#{dir}/#{item.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase}/'>#{item}</a>"
+        "<li class='link'><a class='category' href='/#{dir}/#{item.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase}/'>#{item}</a></li>"
       end
 
-      case categories.length
-      when 0
-        ""
-      when 1
-        categories[0].to_s
-      else
-        "#{categories[0...-1].join(', ')}, #{categories[-1]}"
-      end
+#       case categories.length
+#       when 0
+#         ""
+#       when 1
+#         categories[0].to_s
+#       else
+#         "#{categories[0...-1].join(', ')}, #{categories[-1]}"
+#       end
     end
 
     # Outputs the post.date as formatted html, with hooks for CSS styling.
