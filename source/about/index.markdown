@@ -1,9 +1,9 @@
 ---
 layout: page
-title: "about"
-date: 2012-07-24 03:16
+title: "Who are you again?"
 comments: false
 sharing: false
 footer: false
 ---
-Sample!
+
+I feel like I've always been a programmer.  These days I work at GitHub.
