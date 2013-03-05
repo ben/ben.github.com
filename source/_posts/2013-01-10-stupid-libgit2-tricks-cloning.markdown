@@ -134,3 +134,4 @@ to see what `git_clone` can do.  If you want to, you could even use the [code
 from this post](https://gist.github.com/4693571) as a starting point for your
 own experiments.
 
+{% include libgit2_tricks.md %}
