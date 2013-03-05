@@ -69,9 +69,8 @@ ul#menu a {
 /* Article rules */
 article a:link, article a:visited, article a:hover, article a:active {
   text-decoration: none;
-  border-bottom: 1px solid #CCC;
-  border-bottom: 1px solid #CCC;
-  color: #002e03;
+  border-bottom: 1px solid #268bd2;
+  color: #268bd2;
 }
 
 article h2 {
@@ -83,12 +82,19 @@ article h2 {
   -webkit-font-smoothing: antialiased;
 }
 
-article h2 a:link, article h2 a:hover, article h2 a:visited, article h2 a:active {
-  color: black;
-  text-decoration: none;
-  border-bottom: 1px solid #CCC;
-  font-size: 22px;
-  line-height: 32px;
-  font-weight: 500;
-  -webkit-font-smoothing: antialiased;
+article h1, article h2, article h3, article h4 {
+  a:link, a:hover, a:visited, a:active {
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid #CCC;
+  }
+}
+
+article h2 {
+  a:link, a:hover, a:visited, a:active {
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+  }
 }
