@@ -11,7 +11,7 @@ There are several ways to get your hands on one.
 
 ## Clone
 
-If your repository exists on a remote but not on the local machine, you can get it using [`git_clone`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_clone).
+If your repository exists on a remote but not on the local machine, you can get it using [`git_clone`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_clone), and once it's done with all the network stuff, it spits out a repository object.
 Check out [my post on cloning](/2013/02/01/stupid-libgit2-tricks-cloning/) for more on that.
 
 ## Discover
@@ -27,24 +27,23 @@ int error = git_repository_open(
 ```
 
 In classic C fashion, libgit2 APIs generally return 0 on success, and a negative error code on failure.
-Occasionally the API documentation will mention the specific error codes that will come back, but you can always check the [error header](https://github.com/libgit2/libgit2/blob/HEAD/include/git2/errors.h#files) for the error values.
+Occasionally the API documentation will mention the specific error codes that will come back, but you can always check the [error header](https://github.com/libgit2/libgit2/blob/HEAD/include/git2/errors.h#files) for the values.
 
-If all you have is a path that you *think* is controlled by git, you can let libgit2 walk the directory structure to find it's owning repository, if there is one:
+If all you have is a path that you *think* is controlled by git, you can let libgit2 walk the directory structure to find it's owning repository (if there is one).
+This approach works well if your application is dealing primarily with documents, like a text editor.
 
 ```c
 char path[1024];
 if (0 == git_repository_discover(
-  path, 1024,                 // buffer & size
-  "/path/to/a/repo/file.md",  // where to start
-  true,                       // across filesystems?
-  "/path"))                   // where to stop
+  path, 1024,                       // buffer & size
+  "/path/to/a/controlled/file.md",  // where to start
+  true,                             // across filesystems?
+  "/path"))                         // where to stop
 {
   git_repository *repo;
   error = git_repository_open(&repo, path);
 }
 ```
-
-This approach works well if you're dealing primarily with documents, like a text editor
 
 ## Initialize
 
@@ -67,12 +66,12 @@ git_repository_init_options options =
   GIT_REPOSITORY_INIT_OPTIONS_INIT;
 // ... (configure options)
 int error = git_repository_init_ext(
-  &repo,
-  "/path/to/new/repo",
-  &options);
+  &repo,                // output
+  "/path/to/new/repo",  // path
+  &options);            // options
 ```
 
-The signature itself looks similar, but `git_repository_init_options` exposes **lots** of behavior.
+The signature itself looks similar to the simpler version, but that options structure exposes **lots** of behavior.
 Things like:
 
 * separating your `.git` directory from the workdir
