@@ -1,4 +1,4 @@
----
+---
 layout: post
 title: "libgit2: Cloning"
 date: 2013-02-01 10:00
