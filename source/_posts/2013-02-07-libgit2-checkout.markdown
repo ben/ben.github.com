@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "libgit2: Checkout"
-date: 2013-02-07 10:43
+date: 2013-04-02 10:43
 comments: true
 published: false
 categories: libgit2
@@ -34,7 +34,7 @@ git_checkout_opts opts = GIT_CHECKOUT_OPTS_INIT;
 int error = git_checkout_head(repo, &opts);
 ```
 
-That `opts` structure is where all the good stuff happens. The default mode of operation is to
+That `opts` structure is where all the good stuff happens. The default mode of operation is to (a) work on every file in the tree that's being read, and (b) actually do nothing to the working directory.
 
 ## Progress and notification callbacks
 
