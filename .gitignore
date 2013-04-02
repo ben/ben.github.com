@@ -17,3 +17,4 @@ source/_posts/Makefile
 source/_posts/*.c
 source/_posts/*.dSYM
 source/_posts/clone
+source/_posts/checkout
