@@ -57,7 +57,9 @@ int main(void)
   }
 
   git_checkout_opts opts = GIT_CHECKOUT_OPTS_INIT;
-  opts.checkout_strategy = GIT_CHECKOUT_SAFE;
+  opts.checkout_strategy =
+    GIT_CHECKOUT_FORCE |
+    GIT_CHECKOUT_REMOVE_UNTRACKED;
   //opts.progress_cb = checkout_progress;
   opts.notify_flags =
     GIT_CHECKOUT_NOTIFY_CONFLICT |

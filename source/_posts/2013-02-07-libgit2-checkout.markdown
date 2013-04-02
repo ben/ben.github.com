@@ -90,7 +90,7 @@ int error = git_checkout_head(repo, &opts);
 
 The output looks something like this:
 
-```
+```text
 checkout:   0% - (null)
 checkout:  12% - a/a1
 checkout:  25% - a/a1.txt
@@ -154,7 +154,41 @@ opts.notify_cb = checkout_notify_cb;
 git_checkout_head(repo, &opts);
 ```
 
+Here's some example output.
+I've created the ".gitignore" file so that "foo" will be ignored, and changed the contents of "master.txt".
 
+```text
+path '.gitignore' - untracked
+path 'a/a1.txt' - dirty
+path 'foo' - ignored
+```
+
+That's when `opts.checkout_strategy` is set to `GIT_CHECKOUT_SAFE_CREATE`.
+Watch what happens when I change it to this:
+
+```c
+opts.checkout_strategy =
+  GIT_CHECKOUT_FORCE |
+  GIT_CHECKOUT_REMOVE_UNTRACKED;
+```
+
+```text
+path '.gitignore' - untracked
+path 'a/a1.txt' - dirty
+path 'a/a1.txt' - updated
+path 'foo' - ignored
+```
+
+You can see that "a/a1.txt" was updated in the index, and if we had specified a progress callback, you'd see it being written in the working directory.
+
+We also asked checkout to remove untracked files (but not ignored ones), so it deleted the ".gitignore" file, leaving "foo" as untracked instead of ignored.
+If we run it again:
+
+```text
+path 'foo' - untracked
+```
+
+... it removes the "foo" file as well.
 
 ## One file at a time
 
