@@ -230,7 +230,39 @@ Note there's no mention of `.gitignore` or `foo`; they're filtered out by path m
 
 ## Not `HEAD`
 
-finding the right tree
+All of the examples we've seen so far use `git_checkout_head`.
+What if you want to pull out content that isn't from `HEAD`?
+We saw in the beginning that you can easily pull content out of the index by doing this:
+
+```c
+git_checkout_index(repo, NULL, &opts);
+```
+
+This gets content from the index and writes it to the working directory.
+It's similar to doing `git checkout [file]` without specifying a branch or revision.
+
+You can also pull content from elsewhere in the history.
+For instance, to replicate something like `git checkout HEAD~~ master.txt`, you could do this:
+
+```c
+char *paths[] = {"master.txt"};
+opts.paths.strings = paths;
+opts.paths.count = 1;
+
+// Get "HEAD~~"
+git_commit *commit;
+git_revparse_single((git_object*)&commit, repo, "HEAD~~");
+
+// Do the checkout
+git_checkout_tree(repo, commit, &opts);
+
+// Clean up
+git_commit_free(commit);
+```
+
+## That's about it
+**NOTE: You should do error checking.**
+You should also check out the documentations comments in the [`git2/checkout.h`](https://github.com/libgit2/libgit2/blob/HEAD/include/git2/checkout.h#files) header -- they're really well-written, and they cover more than what I've got here.
 
 
 {% include libgit2_footer.md %}

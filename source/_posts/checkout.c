@@ -60,10 +60,22 @@ int main(void)
   opts.checkout_strategy =
     GIT_CHECKOUT_FORCE |
     GIT_CHECKOUT_REMOVE_UNTRACKED;
-  //opts.checkout_strategy = GIT_CHECKOUT_SAFE;
-  char *paths[] = {"a/*"};
+  opts.checkout_strategy = GIT_CHECKOUT_SAFE;
+
+  char *paths[] = {"master.txt"};
   opts.paths.strings = paths;
   opts.paths.count = 1;
+
+  // Get "HEAD~~"
+  git_commit *commit;
+  git_revparse_single((git_object*)&commit, repo, "58be465~");
+
+  // Do the checkout
+  git_checkout_tree(repo, commit, &opts);
+
+  // Clean up
+  git_commit_free(commit);
+
   opts.progress_cb = checkout_progress;
   opts.notify_flags =
     GIT_CHECKOUT_NOTIFY_CONFLICT |
