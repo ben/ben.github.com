@@ -3,7 +3,6 @@ layout: post
 title: "libgit2: Checkout"
 date: 2013-04-02 10:43
 comments: true
-published: false
 categories: libgit2
 ---
 
@@ -40,7 +39,7 @@ int error = git_checkout_head(repo, &opts);
 That `opts` structure is where all the good stuff happens.
 The default mode of operation is to
 
-1. work on every file in the tree that's being read, and
+1. Check every file in the tree that's being read for differences with the index and/or working directory, and
 1. do absolutely nothing to the working directory.
 
 By design, you have to be very explicit when you're writing stuff to the working directory.
@@ -166,7 +165,7 @@ checkout:   0% - (null)
 
 I've left the progress callback as-is, so you can see how these two features interact -- notifications happen as checkout is *determining what to do*, and progress callbacks happen as checkout is *doing the things*.
 
-That's when `opts.checkout_strategy` is set to `GIT_CHECKOUT_SAFE_CREATE`.
+That's when the checkout strategy is set to `GIT_CHECKOUT_SAFE_CREATE`.
 Watch what happens when I change it to this:
 
 ```c
@@ -240,6 +239,7 @@ git_checkout_index(repo, NULL, &opts);
 
 This gets content from the index and writes it to the working directory.
 It's similar to doing `git checkout [file]` without specifying a branch or revision.
+That `NULL` parameter could also refer to a separate index, which is a bit beyond the scope of this post.
 
 You can also pull content from elsewhere in the history.
 For instance, to replicate something like `git checkout HEAD~~ master.txt`, you could do this:
