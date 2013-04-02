@@ -7,7 +7,7 @@ published: false
 categories: libgit2
 ---
 
-So you've got this [git repository](/2013/03/05/libgit2-the-repository), and it's got a bunch of stuff in it – refs, trees, blobs, commits – and you want to work with that stuff.
+So you've got this [git repository](/2013/03/05/libgit2-the-repository), and it's got a bunch of stuff in it -- refs, trees, blobs, commits -- and you want to work with that stuff.
 One way to think about that stuff is by thinking about how it's organized into [three trees](http://git-scm.com/2011/07/11/reset.html), and moving stuff between those trees.
 In libgit2, the way you get stuff from a commit into the index and the working tree is by using the checkout API.
 
@@ -155,13 +155,16 @@ git_checkout_head(repo, &opts);
 ```
 
 Here's some example output.
-I've created the ".gitignore" file so that "foo" will be ignored, and changed the contents of "master.txt".
+I've created the `.gitignore` file so that `foo` will be ignored, and changed the contents of `master.txt`.
 
 ```text
 path '.gitignore' - untracked
 path 'a/a1.txt' - dirty
 path 'foo' - ignored
+checkout:   0% - (null)
 ```
+
+I've left the progress callback as-is, so you can see how these two features interact -- notifications happen as checkout is *determining what to do*, and progress callbacks happen as checkout is *doing the things*.
 
 That's when `opts.checkout_strategy` is set to `GIT_CHECKOUT_SAFE_CREATE`.
 Watch what happens when I change it to this:
@@ -177,24 +180,55 @@ path '.gitignore' - untracked
 path 'a/a1.txt' - dirty
 path 'a/a1.txt' - updated
 path 'foo' - ignored
+checkout:   0% - (null)
+checkout:  50% - .gitignore
+checkout: 100% - a/a1.txt
 ```
 
-You can see that "a/a1.txt" was updated in the index, and if we had specified a progress callback, you'd see it being written in the working directory.
+You can see that `a/a1.txt` was updated in the index, and if we had specified a progress callback, you'd see it being written in the working directory.
 
-We also asked checkout to remove untracked files (but not ignored ones), so it deleted the ".gitignore" file, leaving "foo" as untracked instead of ignored.
+We also asked checkout to remove untracked files (but not ignored ones), so it deleted the `.gitignore` file, leaving `foo` as untracked instead of ignored.
 If we run it again:
 
 ```text
 path 'foo' - untracked
+checkout:   0% - (null)
+checkout: 100% - foo
+
 ```
 
-... it removes the "foo" file as well.
+... it removes the `foo` file as well.
+
+One other capability that the notification callback gives you is *the ability to cancel the checkout* before any changes have been written to disk.
+Just return something other than `0`, and the process will simply be aborted.
 
 ## One file at a time
 
-strarray and you
+What if you don't want to check out the entire working directory?
+What if you just want to discard the changes made to one file?
+The options structure has a field for you -- it's named `paths`, and it's of type `git_strarray`.
 
-## Checkout from not-`HEAD`
+Despite the name, it's actually an array of fnmatch-patterns, like `"foo/*"` -- the same format as you'd use in a `.gitignore` file.
+Continuing our earlier example, if I wanted to limit the files checkout is looking at to just the files in the `a` directory, I could do this:
+
+```c
+char *paths[] = { "a/*" };
+opts.paths.strings = paths;
+opts.paths.count = 1;
+```
+
+And the output would look something like this:
+
+```text
+path 'a/a1.txt' - dirty
+path 'a/a1.txt' - updated
+checkout:   0% - (null)
+checkout: 100% - a/a1.txt
+```
+
+Note there's no mention of `.gitignore` or `foo`; they're filtered out by path matching before any of the diff logic is even applied.
+
+## Not `HEAD`
 
 finding the right tree
 

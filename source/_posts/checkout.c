@@ -60,7 +60,11 @@ int main(void)
   opts.checkout_strategy =
     GIT_CHECKOUT_FORCE |
     GIT_CHECKOUT_REMOVE_UNTRACKED;
-  //opts.progress_cb = checkout_progress;
+  //opts.checkout_strategy = GIT_CHECKOUT_SAFE;
+  char *paths[] = {"a/*"};
+  opts.paths.strings = paths;
+  opts.paths.count = 1;
+  opts.progress_cb = checkout_progress;
   opts.notify_flags =
     GIT_CHECKOUT_NOTIFY_CONFLICT |
     GIT_CHECKOUT_NOTIFY_DIRTY |
