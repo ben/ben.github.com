@@ -7,22 +7,19 @@ published: false
 categories: libgit2
 ---
 
-**TODO: this isn't actually relevant.**
-What's the first thing you do once you've cloned a repository?
-That's right, you switch branches.
-Or find a point in the history that has *awful* source code, and make a blog post about how terrible it is.
-
-Well, the way git pronounces "move around in history" is `checkout`.
+So you've got this [git repository](/2013/03/05/libgit2-the-repository), and it's got a bunch of stuff in it – refs, trees, blobs, commits – and you want to work with that stuff.
+One way to think about that stuff is by thinking about how it's organized into [three trees](http://git-scm.com/2011/07/11/reset.html), and moving stuff between those trees.
+In libgit2, the way you get stuff from a commit into the index and the working tree is by using the checkout API.
 
 ## This isn't "`git checkout`"
 
 The first thing to realize is that libgit2 isn't just a reimplementation of the git command line tool.
 That means that some terminology is reused, but doesn't necessarily work the same way.
-In libgit2, checkout is all about modifying the index and/or working directory, based on content from the index or a tree in the .
+In libgit2, checkout is all about modifying the index and/or working directory, based on content from the index or a tree in the object database.
 
 Libgit2's checkout API has (as of this writing) three modes:
 
-* `git_checkout_head` updates the index and working tree to match the content of the commit-tree pointed to by `HEAD`.
+* `git_checkout_head` updates the index and working tree to match the content of the tree pointed to by `HEAD`.
 * `git_checkout_index` updates the working directory to match the content of the index.
 * `git_checkout_tree` updates the working directory to the content of a specified tree.
 
@@ -41,11 +38,123 @@ int error = git_checkout_head(repo, &opts);
 ```
 
 That `opts` structure is where all the good stuff happens.
-The default mode of operation is to (a) work on every file in the tree that's being read, and (b) actually do nothing to the working directory.
+The default mode of operation is to
+
+1. work on every file in the tree that's being read, and
+1. do absolutely nothing to the working directory.
+
+By design, you have to be very explicit when you're writing stuff to the working directory.
+To specify what strategy you want the checkout to use, you modify `opts.checkout_strategy`, usually to one of these values:
+
+* `GIT_CHECKOUT_SAFE` will update files that match what's in the index (files that haven't been changed), but won't create missing files.
+* `GIT_CHECKOUT_SAFE_CREATE` does the above plus creating missing files. This is what [`git_clone`](/2013/02/01/stupid-libgit2-tricks-cloning) uses by default.
+* `GIT_CHECKOUT_FORCE` does the above, plus overwriting uncommitted changes.
+  This is the most like `git checkout -f`.
+
+There are some other behavior flags you can include in this field as well:
+
+* `GIT_CHECKOUT_ALLOW_CONFLICTS` allows the checkout to proceed even if there are unresolved merge conflicts (the default is to return an error if any are present).
+* `GIT_CHECKOUT_REMOVE_UNTRACKED` removes files that aren't being tracked by git (but doesn't touch ignored files).
+* `GIT_CHECKOUT_REMOVE_IGNORED` removes ignored files that aren't in the index (but doesn't touch non-ignored files that are untracked).
+
+That's just a sampling; the [header comments](https://github.com/libgit2/libgit2/blob/HEAD/include/git2/checkout.h#files), are pretty helpful for using the rest.
 
 ## Progress and notification callbacks
 
-How do you know what checkout is up to?
+The `git_checkout_*` calls are blocking.
+If you want to know how things are going, or display progress to the user, you have to register callbacks.
+There are two types.
+
+### Progress
+
+The progress callback notifies you as checkout actually writes files to the working directory.
+Here's how one might look:
+
+```c
+static void checkout_progress(
+  const char *path,
+  size_t current,
+  size_t total,
+  void *payload)
+{
+  printf("checkout: %3d%% - %s\n",
+    100*current/total,
+    path);
+}
+
+// ...
+git_checkout_opts opts = GIT_CHECKOUT_OPTS_INIT;
+opts.progress_cb = checkout_progress;
+int error = git_checkout_head(repo, &opts);
+```
+
+The output looks something like this:
+
+```
+checkout:   0% - (null)
+checkout:  12% - a/a1
+checkout:  25% - a/a1.txt
+checkout:  37% - a/a2.txt
+checkout:  50% - b/b1.txt
+checkout:  62% - b/b2.txt
+checkout:  75% - c/c1.txt
+checkout:  87% - c/c2.txt
+checkout: 100% - master.txt
+```
+
+### "Notifications"
+The other callback you can specify is more specific about what's going on with the files in the working directory.
+Checkout actually uses diff to do its work, so it doesn't always overwrite every file in the working directory.
+If the contents match, no work is done at all.
+That little bit of understanding might make it easier to see this callback in action:
+
+```c
+static int checkout_notify_cb(
+  git_checkout_notify_t why,
+  const char *path,
+  const git_diff_file *baseline,
+  const git_diff_file *target,
+  const git_diff_file *workdir,
+  void *payload)
+{
+  printf("path '%s' - ", path);
+  switch (why) {
+  case GIT_CHECKOUT_NOTIFY_CONFLICT:
+    printf("conflict\n");
+    break;
+  case GIT_CHECKOUT_NOTIFY_DIRTY:
+    printf("dirty\n");
+    break;
+  case GIT_CHECKOUT_NOTIFY_UPDATED:
+    printf("updated\n");
+    break;
+  case GIT_CHECKOUT_NOTIFY_UNTRACKED:
+    printf("untracked\n");
+    break;
+  case GIT_CHECKOUT_NOTIFY_IGNORED:
+    printf("ignored\n");
+    break;
+  default:
+  break;
+  }
+
+  return 0;
+}
+
+// ...
+git_checkout_opts opts = GIT_CHECKOUT_OPTS_INIT;
+opts.checkout_strategy = GIT_CHECKOUT_SAFE;
+opts.notify_flags =
+  GIT_CHECKOUT_NOTIFY_CONFLICT |
+  GIT_CHECKOUT_NOTIFY_DIRTY |
+  GIT_CHECKOUT_NOTIFY_UPDATED |
+  GIT_CHECKOUT_NOTIFY_UNTRACKED |
+  GIT_CHECKOUT_NOTIFY_IGNORED;
+opts.notify_cb = checkout_notify_cb;
+git_checkout_head(repo, &opts);
+```
+
+
 
 ## One file at a time
 
