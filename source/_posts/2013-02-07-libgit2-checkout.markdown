@@ -3,6 +3,7 @@ layout: post
 title: "libgit2: Checkout"
 date: 2013-04-02 10:43
 comments: true
+published: true
 categories: libgit2
 ---
 

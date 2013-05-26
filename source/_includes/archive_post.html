@@ -1,5 +1,5 @@
 {% capture category %}{{ post.categories | size }}{% endcapture %}
 <h3><a href="{{ root_url }}{{ post.url }}">
 	{{post.title}}
-	{%if post.categories contains "draft"%}<span style="color: #aaa">(draft)</span>{%endif%}
+	{%unless post.published%}<span style="color: #aaa">(unpublished)</span>{%endunless%}
 </a></h3>

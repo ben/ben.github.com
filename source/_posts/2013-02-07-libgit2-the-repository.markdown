@@ -3,6 +3,7 @@ layout: post
 title: "libgit2: The Repository"
 date: 2013-03-05 12:00
 comments: true
+published: true
 categories: libgit2
 ---
 
