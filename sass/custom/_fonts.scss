@@ -1,4 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:600);
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Code Pro Semibold'), local('SourceCodePro-Semibold'), url('/assets/source-code-pro.woff') format('woff');
+}
 
 @font-face {
   font-family: 'Museo Slab';
