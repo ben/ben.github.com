@@ -1,34 +1,34 @@
 ---
 layout: post
-title: "libgit2: Branching and Refs"
+title: "libgit2: Refs, Tags, and Branching"
 date: 2013-06-03 16:00
 comments: true
-published: false
-categories: draft libgit2
+published: true
+categories: libgit2
 ---
 
-Git's refs are a powerful way of annotating a repository's history.
-Libgit2, of course, provides ways of working with refs that are
+Refs are a powerful way of annotating a git repository's history.
+Libgit2, of course, provides several ways of working with them.
 
 
 ## Refs
 
-There are several ways of getting to the refs.
-If you just want a single one:
+There are several ways to get a handle on a ref in libgit2.
+If you just want one:
 
 ```c
 git_reference *ref;
-git_reference_lookup(&ref, repo, "HEAD");
+git_reference_lookup(&ref, repo, "refs/heads/master");
 ```
 
-The string argument is the full name of the ref; for a named branch, this would look like `refs/heads/master`.
+The string argument has to be the full name of the ref; just `master` won't do.
 There's also a shortcut to use a more humane ref name:
 
 ```c
 git_reference_dwim(&ref, repo, "master");
 ```
 
-That one applies the [standard git precedence rules](https://github.com/libgit2/libgit2/blob/development/src/refs.c#L193-L198) to figure out which ref you mean.
+That one applies the [standard git precedence rules](http://git-scm.com/docs/git-rev-parse.html#_specifying_revisions) to figure out which ref you mean.
 
 There's also a way of getting to *all* of the refs in a repository:
 
@@ -62,7 +62,7 @@ switch(git_reference_type(ref)) {
 }
 ```
 
-You can change its target, which in combination with [`git_checkout_head`](/2013/04/02/libgit2-checkout/) would get close to the branch-switching behavior of `git checkout`:
+You can change its target, which [in combination with `git_checkout_head`](/2013/04/02/libgit2-checkout/) would get close to the branch-switching behavior of `git checkout`:
 
 ```c
 git_reference *new_ref;
@@ -94,7 +94,8 @@ You can do a direct lookup if you know the hash of the annotation:
 
 ```c
 git_oid oid;
-git_oid_fromstr(&oid, "bbea158ddb36042aa47ce1e4d0188684b20157d3");
+git_oid_fromstr(&oid,
+  "bbea158ddb36042aa47ce1e4d0188684b20157d3");
 git_tag *tag;
 git_tag_lookup(&tag, repo, &oid);
 ```
@@ -114,12 +115,12 @@ Mostly they're for inspecting properties:
 ```c
 // Get the full name of the tag
 const char *name = git_tag_name(tag);
+// Get the tag's message
+const char *msg = git_tag_message(tag);
 // Get the targeted object's ID
 git_oid *target = git_tag_target_id(tag);
 // Get information about the tagger
 git_signature *sig = git_tag_signature(tag);
-// Get the tag's message
-const char *msg = git_tag_message(tag);
 ```
 
 How do you create tags?
@@ -140,6 +141,9 @@ Annotated tags have their own creation call:
     1);                  // force if name collides
 ```
 
+It turns out an annotated tag is just a lightweight tag (regular ref) that points to a tag annotation object, which in turn points to something else.
+So you can create an annotation with `git_tag_annotation_create`, then create the tag ref separately.
+
 Don't forget this is C; always free your newly-created heap objects with `git_*_free` calls.
 In this case:
 
@@ -151,7 +155,5 @@ git_reference_free(ref);
 ```
 
 The rule of thumb here is if you declared it as a pointer, it probably needs freeing.
-
-Or you can create the annotation with `git_tag_annotation_create`, and you can create the tag ref separately.
 
 {% include libgit2_footer.md %}
