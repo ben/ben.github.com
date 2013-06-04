@@ -74,6 +74,18 @@ int main(int argc, char **argv)
   printf("%s\n", git_tag_message(tag));
   git_tag_free(tag);
 
+  git_signature *sig;
+  git_signature_now(&sig, "Mr. Tagger", "mr@tagger.com");
+  git_oid annotation_id;
+  git_tag_create(
+    &annotation_id,      // newly-created object's id
+    repo,                // repository
+    "new_annotated_tag", // tag name
+    obj,                 // tag target
+    sig,                 // signature
+    "A message",         // message
+    1);                  // force if name collides
+
   git_repository_free(repo);
   return 0;
 }

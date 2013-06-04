@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "libgit2: Branching and Refs"
-date: 2013-05-02 12:21
+date: 2013-06-03 16:00
 comments: true
 published: false
 categories: draft libgit2
 ---
 
-Blah blah blah.
+Git's refs are a powerful way of annotating a repository's history.
+Libgit2, of course, provides ways of working with refs that are
 
 
 ## Refs
@@ -115,7 +116,10 @@ Mostly they're for inspecting properties:
 const char *name = git_tag_name(tag);
 // Get the targeted object's ID
 git_oid *target = git_tag_target_id(tag);
-// TODO: more
+// Get information about the tagger
+git_signature *sig = git_tag_signature(tag);
+// Get the tag's message
+const char *msg = git_tag_message(tag);
 ```
 
 How do you create tags?
@@ -123,7 +127,31 @@ As I mentioned above, lightweight tags are just references, so you'd use `git_re
 Annotated tags have their own creation call:
 
 ```c
-// TODO
+  git_signature *sig;
+  git_signature_now(&sig, "Mr. Tagger", "mr@tagger.com");
+  git_oid annotation_id;
+  git_tag_create(
+    &annotation_id,      // newly-created object's id
+    repo,                // repository
+    "new_annotated_tag", // tag name
+    obj,                 // tag target
+    sig,                 // signature
+    "A message",         // message
+    1);                  // force if name collides
 ```
+
+Don't forget this is C; always free your newly-created heap objects with `git_*_free` calls.
+In this case:
+
+```c
+git_signature_free(sig);
+git_object_free(obj);
+git_tag_free(tag);
+git_reference_free(ref);
+```
+
+The rule of thumb here is if you declared it as a pointer, it probably needs freeing.
+
+Or you can create the annotation with `git_tag_annotation_create`, and you can create the tag ref separately.
 
 {% include libgit2_footer.md %}
