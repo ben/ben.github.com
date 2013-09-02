@@ -3,8 +3,7 @@ layout: post
 title: "Breaking Up the Day"
 date: 2013-09-03 08:17
 comments: true
-published: false
-categories: draft
+published: true
 ---
 
 I've always had a pretty loose attitude towards how I work.
