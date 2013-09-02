@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Breaking Up the Day"
-date: 2013-09-02 08:17
+date: 2013-09-03 08:17
 comments: true
 published: false
 categories: draft
@@ -11,11 +11,11 @@ I've always had a pretty loose attitude towards how I work.
 I'd wake up, feed and take the kids to school, and just *go*.
 When you work at GitHub and you really only have one project, it's pretty easy to sink your teeth in and forget all the other stuff.
 
-The thing is – that other stuff is important.
+The thing is, that "other stuff" is important.
 Bills that need paid on time, car maintenance, grocery shopping, banking.
 That stuff was getting dropped way too often, things that deserved attention got none, and we paid late fees.
-
-But my life just got a bit more complex, and I'm sick of paying late fees and always feeling like I'm behind.
+Part of the deal with my wife and I both working from home is that we divide up the household work, and my bits weren't getting taken care of.
+I'm sick of always feeling behind, and like I'm failing.
 
 So starting today I'm changing it.
 
@@ -46,14 +46,14 @@ Things that are seriously urgent can override the other stuff I'm working on, bu
 Anything that can wait until the next morning, should.
 
 This is bigger than it sounds.
-It takes a good 15 minutes to get into a flow state, and any interruption can cost you all that spin-up time.
+It takes a good 15 minutes to get into a [flow state](http://psygrammer.com/2011/02/10/the-flow-programming-in-ecstasy/), and any interruption can cost you all that spin-up time.
 Even something so small as the mail delivery.
 By corralling all these little snippy tasks into one part of the day, and keeping them out of all the others, I preserve my precious flow states without letting things slip through the cracks.
 
 ### After lunch - heavy focus
 Now that the inboxes are cleared and my attention isn't divided, I can devote serious focus to solving code problems.
 My wife also works from home, and it might be possible that we distract each other with stupid cat GIFs from time to time, but we've agreed that from lunch until school lets out is *uninterruptible time*.
-This gives both of us a multi-hour block of focus time to get into a [flow state](http://psygrammer.com/2011/02/10/the-flow-programming-in-ecstasy/).
+This gives both of us a multi-hour block of focus time to get into a flow state.
 
 ### Evening - writing
 We pick up the kids from school at 4, and from then until 7 is time for being present.
