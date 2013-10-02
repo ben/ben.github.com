@@ -7,12 +7,14 @@ published: false
 categories: draft libgit2
 ---
 
-Most of the data in a git repository is about the history of the project; stuff that happened in the past.
+Making new commits and dealing with the working directory is only half of what git is for.
+Most of the data in a git repository is historical; old commits, old versions of files.
 Let's take a look at how you can use libgit2 to handle that information.
 
 ## Commits
 
-Your first instinct is probably to start looking up commits, and use the libgit2 APIs to walk their parents, right?
+It's pretty easy to just load up a commit and start poking around with the data inside it.
+It seems pretty logical to do this when you want to walk the commit history of the project, right?
 Let's take a look at how that turns out:
 
 ```c
@@ -35,16 +37,18 @@ Let's take a look at how that turns out:
     }
   }
 
-  // …
+  git_commit *commit;
+  /* elided: dereference HEAD to a commit */
   visit(commit);
 ```
 
 But what if you want something other than a depth-first traversal?
-You'll have to write that yourself.
+Maybe you want to sort the results by commit time?
+That's a pretty tricky bit of code to write.
 What if your repo has a non-trivial amount of history?
-You'll run right out of stack frames.
+You'll run out of stack frames pretty quickly.
 
-Luckily, libgit2 has your back.
+There's an API for that.
 
 ## Revwalk
 
@@ -82,10 +86,10 @@ Next, let's configure the walk:
 
 We're doing several things here:
 
-1. We set the sort order to "topological + time + reverse".
-  This sounds a bit arcane, but it's just what you'd want for a log viewer; children before parents, and sorted by time.
+1. We set the sort order to "topological + time".
+  This sounds a bit arcane, but it's just what you'd want for a log viewer: parents after children, sorted by commit time.
 1. We "push" the HEAD commit onto the walk.
-  This tells the walk that the HEAD and its ancestors should be walked when we start iterating.
+  This tells the walk that the HEAD and its ancestors should be visited when we start iterating.
   You can even do more than one "push" (i.e. all of the known refs, for behavior like `git log --all`).
 1. We "hide" from the walk all commits that are included in a tag.
   The pattern will match all the refs under "refs/tags", dereference them to commits, and exclude those commits and their ancestors from the walk.
