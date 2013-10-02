@@ -19,3 +19,4 @@ source/_posts/*.dSYM
 source/_posts/clone
 source/_posts/checkout
 source/_posts/refs
+source/_posts/revwalk
