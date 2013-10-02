@@ -20,7 +20,7 @@ Let's take a look at how that turns out:
 ```c
   void visit(git_commit *c)
   {
-    ize_t i, num_parents = git_commit_parentcount(c);
+    size_t i, num_parents = git_commit_parentcount(c);
 
     /* Print some stuff about this commit */
     char oidstr[10] = {0};
