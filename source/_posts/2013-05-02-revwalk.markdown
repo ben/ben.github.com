@@ -3,6 +3,7 @@ layout: post
 title: "libgit2: Walking History"
 date: 2013-10-02 12:21
 comments: true
+published: true
 categories: libgit2
 ---
 
