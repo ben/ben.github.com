@@ -94,7 +94,7 @@ We're doing several things here:
 1. We "hide" from the walk all commits that are included in a tag.
   The pattern will match all the refs under "refs/tags", dereference them to commits, and exclude those commits and their ancestors from the walk.
 1. We also hide all commits that precede the 10th ancestor of HEAD.
-  This has much the same effect as passing `-10` to `git log`.
+  This has the same effect as passing `^HEAD~10` to `git log`.
 
 Obviously, these particular choices won't be right for every application, but there are more than enough options to (hopefully) fit your use case.
 And if not, you can always fall back to writing your own walk using the commit API.
