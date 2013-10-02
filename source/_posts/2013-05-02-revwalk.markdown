@@ -3,8 +3,7 @@ layout: post
 title: "libgit2: Walking History"
 date: 2013-10-02 12:21
 comments: true
-published: false
-categories: draft libgit2
+categories: libgit2
 ---
 
 Making new commits and dealing with the working directory is only half of what git is for.
