@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-no-feature
 title: "libgit2: Checkout"
 date: 2013-04-02 10:43
 comments: true

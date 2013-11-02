@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-no-feature
 title: "libgit2: Refs, Tags, and Branching"
 date: 2013-06-03 16:00
 comments: true

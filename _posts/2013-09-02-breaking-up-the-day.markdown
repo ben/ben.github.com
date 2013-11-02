@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-no-feature
 title: "Breaking Up the Day"
 date: 2013-09-03 08:17
 comments: true

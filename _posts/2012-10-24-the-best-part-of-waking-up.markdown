@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-no-feature
 title: "The Best Part of Waking Up"
 date: 2012-10-24 19:08
 comments: true

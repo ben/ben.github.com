@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-no-feature
 title: "libgit2: Revparse"
 date: 2013-10-01 15:34
 comments: true

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-no-feature
 title: "libgit2: Diffstat"
 date: 2013-05-02 12:56
 comments: true

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-no-feature
 title: "Native Win32 for fun and profit"
 comments: true
 ---
@@ -27,7 +27,7 @@ I'm going to share my secrets with you, dear reader.
 
 Windowing frameworks are thick on the ground, and I've been mostly dissatisfied
 with the abilities of the Win32-wrapping category. However, they make something
-like this reusable, so what the heck. 
+like this reusable, so what the heck.
 
 You can grab WTL at [the project home on
 SourceForge](http://wtl.sourceforge.net/). For this project, I'm just taking
@@ -255,4 +255,3 @@ about how to store a PNG as a resource, and load it in for use with this. For
 now, you get an ugly screenshot:
 
 ![ugly test image](/images/nativewin32/2.png)
-
