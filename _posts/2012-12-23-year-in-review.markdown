@@ -3,7 +3,6 @@ layout: post-no-feature
 title: "2012: Year in Review"
 date: 2013-01-11 06:28:00
 comments: true
-description: "Looking back."
 ---
 
 My 2012, through the GitHub lens.  Inspired by [Tim Clem](https://github.com/blog/1360-introducing-contributions).

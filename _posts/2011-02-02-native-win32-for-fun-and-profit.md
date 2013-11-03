@@ -2,7 +2,6 @@
 layout: post-no-feature
 title: "Native Win32 for fun and profit"
 comments: true
-description: "WTL + GDI+ + Boost + WS_EX_LAYERED"
 ---
 
 *\[Note: this is ported from my [old

@@ -1,7 +1,6 @@
 ---
 layout: post-no-feature
 title: "libgit2: Revparse"
-description: "A DSL for the ODB."
 comments: true
 category: libgit2
 ---

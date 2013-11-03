@@ -4,7 +4,6 @@ title: "libgit2: Refs, Tags, and Branching"
 date: 2013-06-03 16:00
 comments: true
 categories: libgit2
-description: "Annotating history."
 ---
 
 Refs are a powerful way of annotating a git repository's history.

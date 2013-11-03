@@ -1,7 +1,6 @@
 ---
 layout: post-no-feature
 title: "libgit2: Diffstat"
-description: "What changed?"
 comments: true
 categories: libgit2
 ---

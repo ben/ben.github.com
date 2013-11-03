@@ -4,7 +4,6 @@ title: "libgit2: Cloning"
 date: 2013-02-01 10:00
 comments: true
 categories: libgit2
-description: "How do I get a repo in the first place?"
 ---
 
 [Libgit2](http://libgit2.github.com) aims to make it easy to do interesting things
