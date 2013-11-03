@@ -3,8 +3,8 @@ layout: post-no-feature
 title: "libgit2: Checkout"
 date: 2013-04-02 10:43
 comments: true
-published: true
 categories: libgit2
+description: "Modifying the index and working directory."
 ---
 
 So you've got this [git repository](/2013/03/05/libgit2-the-repository), and it's got a bunch of stuff in it -- refs, trees, blobs, commits -- and you want to work with that stuff.

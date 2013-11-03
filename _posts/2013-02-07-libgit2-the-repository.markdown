@@ -3,8 +3,8 @@ layout: post-no-feature
 title: "libgit2: The Repository"
 date: 2013-03-05 12:00
 comments: true
-published: true
 categories: libgit2
+description: "The starting point for most everything."
 ---
 
 In [libgit2](http://libgit2.github.com/), the `git_repository` object is the gateway to getting interesting stuff out of git.

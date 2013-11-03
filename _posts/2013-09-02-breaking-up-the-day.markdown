@@ -3,7 +3,7 @@ layout: post-no-feature
 title: "Breaking Up the Day"
 date: 2013-09-03 08:17
 comments: true
-published: true
+description: "In which I try to add some structure to the way I work."
 ---
 
 I've always had a pretty loose attitude towards how I work.

@@ -5,6 +5,7 @@ date: 2013-10-02 12:21
 comments: true
 published: true
 category: libgit2
+description: "Travelling back in time."
 ---
 
 Making new commits and dealing with the working directory is only half of what git is for.

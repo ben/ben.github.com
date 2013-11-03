@@ -8,13 +8,12 @@ url: http://ben.straub.cc/
 owner:
   name:           Ben Straub
   avatar:         avatar.png
-  bio:            "Aesthete & Athlete"
-  email:          cole@coletownsend.com
-  twitter:        twnsndco
-  github:         coletownsend
-  instagram:      ctrunsthis
-  dribbble:       coletownsend
-  disqus:         balzac
+  bio:            "Librarian Extraordinaire"
+  email:          ben@straub.cc
+  twitter:        benstraub
+  github:         ben
+  instagram:      benstraub
+  disqus:         benstraubnet
   # Plug in your disqus shortname!
 
 
