@@ -1,10 +1,9 @@
 ---
 layout: post-no-feature
 title: "libgit2: Diffstat"
-date: 2013-05-02 12:56
+description: "What changed?"
 comments: true
-published: false
-categories: draft libgit2
+categories: libgit2
 ---
 
 Inspired by [this issue](https://github.com/libgit2/libgit2/issues/1241).

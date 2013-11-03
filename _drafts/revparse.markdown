@@ -1,10 +1,9 @@
 ---
 layout: post-no-feature
 title: "libgit2: Revparse"
-date: 2013-10-01 15:34
+description: "A DSL for the ODB."
 comments: true
-published: false
-categories: draft
+category: libgit2
 ---
 
 There are lots of places where the Git command line makes your life easier by letting you abbreviate some of the inputs.
@@ -70,3 +69,4 @@ All of these methods will drop into the `ERROR` block if the object that comes b
 The rev-parse API has another mode that works on ranges as well.
 Check out [the header](https://github.com/libgit2/libgit2/blob/development/include/git2/revparse.h) or [the documentation](http://libgit2.github.com/libgit2/#HEAD/group/revparse) for more.
 
+{% include libgit2_footer.md %}
