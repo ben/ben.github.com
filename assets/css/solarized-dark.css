@@ -47,7 +47,6 @@
 
 .highlight .cm {
   color: #586e75 !important;
-  font-style: italic !important;
 }
 
 .highlight .vg {
@@ -99,7 +98,6 @@
 
 .highlight .cp {
   color: #586e75 !important;
-  font-style: italic !important;
 }
 
 .highlight .si {
@@ -120,7 +118,6 @@
 
 .highlight .ge {
   color: #93a1a1 !important;
-  font-style: italic !important;
 }
 
 .highlight .mf {
@@ -175,7 +172,6 @@
 
 .highlight .c1 {
   color: #586e75 !important;
-  font-style: italic !important;
 }
 
 .highlight .sb {
@@ -239,7 +235,6 @@
 .highlight .cs {
   color: #586e75 !important;
   font-weight: bold !important;
-  font-style: italic !important;
 }
 
 .highlight .nb {
@@ -264,7 +259,6 @@
 
 .highlight .c {
   color: #586e75 !important;
-  font-style: italic !important;
 }
 
 .highlight .o {
