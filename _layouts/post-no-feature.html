@@ -18,7 +18,7 @@
 <meta name="twitter:card"   content="summary">
 <meta name="twitter:author" content="@benstraub">
 <meta name="twitter:title"  content="{{page.title}}">
-<meta name="twitter:description" content="{% if post.description %}{{ page.description  | strip_html | truncate: 120 }}{% else %}{{ page.content | strip_html | truncate: 120 }}{% endif %}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description  | strip_html | truncate: 120 }}{% else %}{{ page.content | strip_html | truncate: 120 }}{% endif %}">
 
 
       <article class="wrap post">
