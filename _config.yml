@@ -37,6 +37,9 @@ future:      true
 # pygments:    true
 markdown:    redcarpet
 
+redcarpet:
+   extensions: [smart]
+
 kramdown:
   auto_ids: true
   footnote_nr: 1
