@@ -58,14 +58,24 @@ The only time they're truly alone is when they're asleep.
 So we've started sending them to their rooms, alone, for an hour or two every weekend.
 This isn't a punishment; it's *time with your best friend.*
 They liken it to the retreats their parents take, and joyfully build with LEGO, read books, or put on fancy shoes and dance.
-
-***teaching them now the importance of being comfortable with yourself***
+Our hope is that they will learn how to be comfortable with themselves, something many adults have trouble with (ourselves included).
 
 ### Not Just Alone
 
 After this program had been in effect for a while, we realized something was missing.
-We get plenty of time as a family, the four of us doing something together, but all of those one-on-one interactions need attention too.
+We spend plenty of time as a family, and we all get alone time, but each person-to-person connection needs attention and upkeep, too.
 
-For parents, this idea has been around forever under a different name, and any parents who have taken a "couples weekend" can tell you how much it adds to their relationship.
+For parents, this idea has been around forever under a different name, and anyone who's gone on a "couples weekend" can tell you how much it adds to their relationship.
+We're fortunate enough to be able to make this happen pretty regularly, between my company's support for my speaking at conferences, and the willingness of all the kids' grandparents to spend time with them.
+The kids play together without us around, too; we make time for this just about every weekend.
+But until recently, the most time we spent on our individual relationships with the kids was maybe an hour at a time.
 
-***TODO***
+Then we started doing one-parent-one-child retreats for two days at a time.
+There's really no substitute for a big chunk of quality time with just one other person.
+I feel like my kids and I know each other better, and we all respect each other more.
+
+All of this retreating adds up, though.
+Every six months I have a solo retreat, a dad-kid retreat, and likely an adults-only weekend.
+It feels like we're constantly headed somewhere, and I'm not sure it would scale to more than two kids.
+But it's worth the time, the expense, and the effort.
+These are the most important relationships in my life, and I aim to keep them healthy.
