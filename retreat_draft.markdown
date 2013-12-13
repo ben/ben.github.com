@@ -16,7 +16,7 @@ Then Will came along.
 This is a story as old as parenthood; suddenly the alone-time part of each day disappeared, as did most of our one-on-one time with each other.
 I have no regret for having him, or his sister; helping them become themselves is one of the most rewarding and emotionally intense things I've ever done.
 But their urgent needs changed the balance.
-We both still went to work, but evenings and weekends were swallowed up with bathing, changing, feeding, and paying attention to a baby.
+His mother and I both still went to work, but evenings and weekends were swallowed up with bathing, changing, feeding, and paying attention to a baby.
 The first and second places were still there, but the third one was put on hold.
 
 Fast forward to a year ago.
@@ -62,20 +62,19 @@ Our hope is that they will learn how to be comfortable with themselves, somethin
 
 ### Not Just Alone
 
-After this program had been in effect for a while, we realized something was missing.
+After this program had been in effect for a while, we realized something was still missing.
 We spend plenty of time as a family, and we all get alone time, but each person-to-person connection needs attention and upkeep, too.
 
 For parents, this idea has been around forever under a different name, and anyone who's gone on a "couples weekend" can tell you how much it adds to their relationship.
 We're fortunate enough to be able to make this happen pretty regularly, between my company's support for my speaking at conferences, and the willingness of all the kids' grandparents to spend time with them.
-The kids play together without us around, too; we make time for this just about every weekend.
+The kids play together without our involvement, too; we make time for this just about every weekend.
 But until recently, the most time we spent on our individual relationships with the kids was maybe an hour at a time.
 
-Then we started doing one-parent-one-child retreats for two days at a time.
+Then we started doing two-day-long one-parent-one-child retreats.
 There's really no substitute for a big chunk of quality time with just one other person.
 I feel like my kids and I know each other better, and we all respect each other more.
 
 All of this retreating adds up, though.
 Every six months I have a solo retreat, a dad-kid retreat, and likely an adults-only weekend.
-It feels like we're constantly headed somewhere, and I'm not sure it would scale to more than two kids.
-But it's worth the time, the expense, and the effort.
-These are the most important relationships in my life, and I aim to keep them healthy.
+It feels like we're constantly headed somewhere, and I'm not sure it would scale to more than four or five people.
+But we've found it's worth the time, the expense, and the effort; these are our most important relationships, and we should keep them healthy.
