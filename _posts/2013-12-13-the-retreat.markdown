@@ -21,7 +21,7 @@ The first and second places were still there, but the third one was put on hold.
 
 Fast forward to a year ago.
 I work from home, in an office I share with my wife.
-The kids are 4 and 6, have their own after-school activity schedules, and need help with their homework.
+The kids are 5 and 7, have their own after-school activity schedules, and need help with their homework.
 The first and second places have become the same thing, all of the third-place time has been swallowed up, and there's no solitude in sight.
 
 The balance is way off, and we're all feeling it.
