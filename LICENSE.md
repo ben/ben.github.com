@@ -1,9 +1,8 @@
-The content part of this blog (all files under _posts and all the images in this repository
-referred to by those files) are governed by the [Creative Commons CC-BY license][ccby].
+The human-language portions of this repository are governed by the [Creative Commons CC-BY license][ccby].
 
 [ccby]: http://creativecommons.org/licenses/by/4.0/deed.en_US
 
-All other content is released under the following license:
+All other content (the source code, embedded code snippets, and images) is released under the following license:
 
 ### The MIT License (MIT)
 
