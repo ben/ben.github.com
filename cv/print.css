@@ -1,0 +1,315 @@
+/* @group basics */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+}
+
+body {
+  font: 14px/20px Georgia, "Times New Roman", Times, serif;
+  color: #848484;
+}
+
+body.grid {
+  background-image: url(grid.png);
+}
+
+h1 {
+  font-size: 41px;
+  line-height: 50px;
+  font-weight: normal;
+  font-style: normal;
+  color: #3c3c3c;
+}
+
+h2 {
+  font-size: 27px;
+  line-height: 30px;
+  font-weight: normal;
+  font-style: normal;
+  color: #848484;
+}
+
+h3 {
+  font-size: 27px;
+  line-height: 30px;
+  font-weight: normal;
+  font-style: normal;
+  color: #3c3c3c;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+a:link, a:visited {
+  color: #3c3c3c;
+  text-decoration: none;
+}
+
+a:link:hover, a:visited:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+
+
+/* @end */
+
+/* @group header */
+
+#header {
+  height: 50px;
+  background-image: url(header.png);
+  line-height: 38px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#header ul {
+  width: 950px;
+  margin: 0 auto;
+  padding: 7px 0 0;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+#header ul li {
+  display: inline;
+  margin-right: 10px;
+  float: left;
+}
+
+#header ul li a {
+  line-height: 24px;
+  font-size: 12px;
+  font-style: italic;
+  background: url(header-right.png) right 0;
+  float: left;
+  color: #848484;
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+}
+
+#header ul li a:hover {
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+#header ul li a span {
+  display: block;
+  height: 26px;
+  float: left;
+  background: url(header-left.png) no-repeat;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+
+/* @end */
+
+/* @group about */
+
+#about {
+  width: 950px;
+  padding: 80px 0 59px;
+  margin: 0 auto;
+  background: url(line.png) repeat-x 0 bottom;
+  overflow: hidden;
+}
+
+#about h1 {
+  margin-bottom: 4px;
+  margin-top: 2px;
+}
+
+#about h2 {
+  font-size: 14px;
+  line-height: 20px;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+
+/* --- */
+
+#story {
+  font-size: 18px;
+  line-height: 30px;
+  width: 390px;
+  float: left;
+  padding-right: 90px;
+}
+
+#picture {
+  width: 190px;
+  float: left;
+}
+
+/* @group contact */
+
+#contact {
+  width: 230px;
+  float: left;
+  padding-right: 50px;
+  padding-top: 96px;
+  list-style-type: none;
+  line-height: 20px;
+}
+
+#contact li {
+  width: 230px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+#contact li span {
+  float: left;
+}
+
+#contact li strong {
+  float: right;
+  text-align: right;
+  color: #3c3c3c;
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+/* @end */
+
+
+
+/* @end */
+
+/* @group section */
+
+.section {
+  width: 950px;
+  margin: 0 auto;
+  padding: 20px 0;
+  background: url(line.png) repeat-x 0 bottom;
+  overflow: hidden;
+}
+
+.section h2 {
+  width: 160px;
+  padding-right: 30px;
+  float: left;
+  padding-top: 0;
+  line-height: 22px;
+}
+
+.section h3 {
+  line-height: 22px;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.section h4 {
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.section .date {
+  position: absolute;
+  top: 6px;
+  right: 0;
+}
+
+.section .item {
+  width: 710px;
+  padding-left: 50px;
+  float: right;
+  padding-top: 0;
+  margin-bottom: 9px;
+  position: relative;
+  padding-bottom: 5px;
+  background: url(separator.png) no-repeat 0 bottom;
+}
+
+.section .description {
+  width: 510px;
+}
+
+
+
+/* @end */
+
+/* @group small */
+
+body.small {
+}
+
+body.small #header ul  {
+  width: 750px;
+}
+
+body.small #about {
+  width: 750px;
+  position: relative;
+  padding-bottom: 65px;
+  min-height: 260px;
+}
+
+body.small #about #story {
+  float: none;
+}
+
+body.small #about #contact {
+  float: none;
+  padding-top: 0;
+  padding-right: 0;
+  clear: left;
+}
+
+body.small #about #picture {
+  clear: none;
+  float: none;
+  position: absolute;
+  top: 80px;
+  right: 0;
+}
+
+/* --- */
+
+body.small .section {
+  width: 750px;
+}
+
+body.small .section .item {
+  width: 510px;
+}
+
+.section {
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+}
+
+.newpage {
+    page-break-before: always;
+}
+
+
+
+/* @end */
+
+/* @group footer */
+
+#footer {
+    display: none;
+}
+
+
+
+/* @end */
