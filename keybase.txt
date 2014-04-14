@@ -1,0 +1,65 @@
+==================================================================
+https://keybase.io/benstraub
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://ben.straub.cc
+  * I am benstraub (https://keybase.io/benstraub) on keybase.
+  * I have a public key with fingerprint 2F50 F2DC FAF4 8271 F5FA  F461 B815 AD70 262A E9FE
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "2f50f2dcfaf48271f5faf461b815ad70262ae9fe",
+            "host": "keybase.io",
+            "key_id": "b815ad70262ae9fe",
+            "uid": "1e5a495e6f272ffd6ba1df79bda9f800",
+            "username": "benstraub"
+        },
+        "service": {
+            "hostname": "ben.straub.cc",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1397500370,
+    "expire_in": 157680000,
+    "prev": "0c596b7694e783cfe40350baf463a6b96f7bdb3a9dcd7cab08d7535826ee614b",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v0.1.8
+Comment: https://keybase.io/crypto
+
+yMHtAnicbZFrSFRpGMdndLyNlxJMcJGEkxTqKOcy5zaUYkT6QSgsoiQYzuU9zsH2
+nOlcRm00lnLWimpHk8rLakUQskEIFhrFTrIFZiWZowXWIl5WEhMU9kspvseKvvTp
+Pe//+f3/z/Oe55/UWJvT3tcy2vPgQjTFPhJZNW2HKvLGggivivWIJ4jUgM1DkpVq
+oPk1WTEQD4JLJCrhoiBxkpvBaUwirS8K4xmM5EQaxSmcA6wEEBfiU3XLAWN4TgdF
+sgo1ePHKIlR/wpubBQyQnJslASXhNC5JIsVzmCjRLC9yrMSgqAXqQFO4X4EVAxTd
+0DiTRxpdCJQDsgDl4GbvH0jRV6ZIEKDbr6mGKqgnYMlnGH6P5TTq/RZaC3jvtxAv
+LysifDk0BICmy6qCeDBICoZspWIES5MoStCoCwF1flkDXtkiSJqCM6JQ9WsgACNR
+gWQpnqZYN6AZQpCAGyVIlLf+GcFRPEtJNC/yBMeKgkgLHI8yIk0SJINTAFCYm4f9
+dXBSUREPAcfkqmGkLlcrnGFqAGkcihx32OxOW3xcjLU7mzNp6/eN/vdXwnpJqCLu
+j4TWR+cL23xhxAz9uSM95wZz7k3D4uUDTOnufr3l1a1YZq/vEz6RKYv/t86Gz/T3
+bJtPZvNdexzXDs51dV5PC2bda/67rHDsN7PyyJY7+YOp5Kmxi1e69n9Zzi5YeT+w
+fWflE3VXX1o0nJk7PNHQfb828Lk9C1lmEsv3OYcLRu7WkUtq8YJ9dGY6aUhNqXr8
+sTfy74vcASJjQWmaOts9H4rpSMh7mTxd2lXa9vphYvmzX2oj4ZlO81322tObZUeP
+rc6uEGud5un6kKNj8Xlz1WA6Dbipq02Vt5cueSdXmj/ULM1NTkR/x3MOjzvGS1qW
+o+1KfHFGn3f9be8GvFYZ5Q==
+=gIs9
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/benstraub
+
+==================================================================
