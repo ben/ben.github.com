@@ -48,36 +48,52 @@ Sure, we've gained visibility, but more importantly, now that it's easier to dep
 So we're taking some of those social cues and automating them.
 That's great for ops stuff, but what else is it good for?
 What other kinds of social activities can we automate?
-What if we automated something like saying "thanks"?
+What about things that *aren't* engineering?
 
-And so the the `highfive` plugin came to pass:
+First of all, what would that even mean?
+Well, we know that when you automate something, it becomes a tad less personal.
+A great example of this is Facebook's birthday reminders.
+Not only does it tell you that your friend is having a birthday, it gives you a handy tool to wish them a "HBD" with so little effort it's almost insulting **not** to do it.
+The downside of this is that getting a "HBD" is pretty meaningless.
+It takes less effort than a card, an email, a phone call, or even a text message, so it ranks lower than all of those on the scale of personal-ness.
+
+But the upside of this is you gain power.
+Facebook helps you remember more of your friends' birthdays, without even trying to.
+It also lets you do a showy public "HBD," in a way that wasn't really possible before.
+
+So we need something that doesn't become meaningless by being slightly less personal, and allows us to do something that wasn't possible (or practical) before.
+Something like a high-five.
+
+## High Five
+
+And so the the `highfive` plugin came to pass.
 
 ![](/images/chatops/!highfive.gif)
 
-Several things are happening here that may not be totally clear if you've never used Slack before:
+Several things are happening here that may not be totally clear if you've never used Slack or Hubot before:
 
-1. David executed a command. We have our robot configured to listen for things starting with a "!".
-1. Gort pasted in the URL of a GIF, which Slack loads and plays for everyone.
-1. Gort included `@channel` in the text of the post, which sends a notification to everyone in the room. Their computers and phones make a noise, drawing everyone's attention to this moment.
-1. **A $25 Amazon gift card has been sent to Kimberly at the company's expense.**
+1. David executes a command. We have our robot configured to listen for things starting with a "!".
+1. Gort pastes in the URL of a GIF, which Slack loads and plays for everyone.
+1. Gort includes `@channel` in the text of the post, which sends a notification to everyone in the room. Their computers and phones make a noise, drawing everyone's attention to this moment.
+1. **A $25 Amazon gift card is sent to Kimberly at the company's expense.**
 
-That last one is kind of interesting.
+The first three things in that list are similar to a real-life high-five.
+That last one, though – that would be pretty tricky to pull off without the magic of technology.
 Making this a Gort plugin means that anyone can send anyone a "thanks!" with a monetary gift attached, in a very public way.
-You can imagine there are some limits imposed here, but surprisingly few; the visibility of this action lends it a certain *gravitas*, and nobody seems to want to mess with that.
+
+You're probably thinking this must be limited in some way, and you'd be right, but there are surprisingly few; the visibility of this action lends it a certain *gravitas*, and nobody seems to want to mess with that.
 
 ## What Happened Next
 
 (TODO)
 
-## How It Works
+This has already yielded some interesting results, and we're only in our first month with it.
+We're looking forward to seeing how it plays out over a longer period of time, and whether other teams think it's useful enough to steal.
 
-The Hubot plugin is [completely open-source](highfive).
-The code you'll find there has a few jobs:
+## Epilogue: How It Works
 
-* Parse the command to tell if there's a monetary part of the reward.
-* Send messages to the chat service.
-* Order gift cards using the [Tango Card API](tango).
-* Log gift card orders to a Google spreadsheet.
+We've released the `hubot-tangocard-highfive` plugin into the wild, and it's [completely open-source](highfive).
+Basically it just ties together a few APIs (a few Slack tricks, the [Tango Card API](tango) for the gift cards, and a Google spreadsheet for logging transactions) behind a pretty simplistic UI.
 
 Much of this is made pretty easy by the thriving ecosystem around [Node](node) and [Hubot](hubot), so it's only fitting that we make this available for anyone to use.
 If you end up using it at your company, [let me know](https://twitter.com/benstraub)!
