@@ -6,18 +6,17 @@ comments: true
 
 A couple of weeks ago, my company began an experiment with HR and robots.
 
-## ChatOps
+## Robots
 
-Let me take a step back.
-There's some background that will help you understand the point I'm about to make.
+First, some background.
 
-[Gridium](gridium) is a distributed company.
-There is no central office, and even our founders live in two different cities.
+I work for [Gridium](gridium), and we're a distributed company.
+There is no central office, and even our founders live in different cities.
 We do gather everybody together four times a year, but apart from that there isn't much face-to-face.
 So we spend most of our time in [Slack](slack), and we are students in the art of [ChatOps](chatops).
 
-Mostly what that means is that we have a [Hubot](https://hubot.github.com/) (named Gort) whose most important task is to paste links to pug images into our chat room.
-But we've also connected it to [Trello](trello), so we get notifications when something interesting happens:
+Mostly what that means is that we have a [Hubot](https://hubot.github.com/) (named Gort) whose most commonly-used function is to paste links to pug images into our chat rooms.
+But we've also taught him to connect with [Trello](trello), so he tells us when something interesting happens:
 
 ![](/images/chatops/!trello.png)
 
@@ -27,53 +26,59 @@ But we've also connected it to [Trello](trello), so we get notifications when so
 
 …and to a goodly number of other services, too.
 We've turned our chat room from a water-cooler and announcement channel into the place everybody goes to do their work.
-And not just engineers, either; the sales team use Slack to track the provisioning of new customers, too.
+And not just engineers, either; the Trello example above was the sales team using Slack to track the provisioning of a new customer.
 
-The purest essence of ChatOps is the automation of repetitive social activity.
-You can probably tell by how abstract that sentence is that I've thought about this a lot, so let's look at an example: here's what the chat room looked like during a deployment before Gort:
+## ChatOps
+
+All of that is *ChatOps*.
+That term is a little fuzzy, but what it boils down to is the automation of repetitive technical and social activity.
+You can probably tell by how abstract that sentence is that I've thought about this a lot, but stay with me.
+
+In the chat room, before Gort came along, you'd periodically see patterns like this when deployments were happening:
 
 ```
 A: I'm doing a deployment, hang on to your butts.
 B: Okay
 C: Got it.
 ...(5 minutes pass)...
-A: Okay, it's done. Is the website broken?
+A: Okay, I'm done. Is the website broken?
 C: Nope, looks okay to me.
+B: Looks fine.
 A: Great. Carry on, everybody.
 ```
 
 There's an implied contract here.
-As the one doing the deployment, you've agreed to tell your teammates what you're doing and when it's done, and not to do something that gets in the way or destroys sensitive data.
-The rest of the team has implicitly agreed not to interfere with a deployment they know is happening, and that they'll help out if something goes wrong.
+As the one doing the deployment, you've agreed to tell your teammates what you're doing and when it's done, get done in a timely manner, and not to do something that gets in their way or destroys sensitive data.
+The rest of the team has implicitly agreed not to interfere with a deployment they know is happening, and to help out if something goes wrong.
 This arrangement has been pretty effective for most of the history of Internet services.
 
 But ChatOps shows us that this can be improved in a lot of ways.
-Firstly, we've made it easier to deploy from the chat room than manually, but more importantly, *you'll never forget to tell the team when you're deploying.*
+Most immediately, we've made it easier to deploy from the chat room than manually.
+But more importantly, *you'll never forget to tell the team when you're deploying.*
 Or when you're done.
 Or if something goes wrong.
 And if something does go wrong, you don't have to stop fixing it to let the rest of your team know.
 
 ## An Experiment
 
-Automating a thing sends several signals.
+Automating a thing has side effects.
 Firstly, the fact that you've automated it says that you were doing it often enough that it was worth some effort to streamline and error-proof the process.
-Almost as importantly, you're saying that *this is a thing we don't want to spend time or thought on.*
-That last one is important to keep in mind when you're not automating a technical process, but a human one.
+Almost as importantly, you're sending a signal that *this is a thing we don't want to spend time or thought on.*
+That last one is important to keep in mind when you're automating a human process, rather than a technical one.
 
 Facebook's birthday reminders are a perfect example of this.
 Getting a handmade card in the *actual mail* is really touching and human – a real human being cared enough about you to think about what you like, make a token of their esteem, and spend real money to send it to you.
-In contrast, an "HBD" posted to your Facebook profile is nearly meaningless; you pretty much only pay attention to how many of them you get.
+In contrast, an "HBD" posted to your Facebook profile is nearly meaningless; you pretty much only see them in aggregate.
 
 So automating social things is tricky, but we didn't think it was impossible.
-Should ChatOps be limited to engineering work, like deploying and running tests?
-Is there something on the softer side of the business that this could be effective with?
-What's something we want to do more, but don't want to spend a ton of thought and time doing, and that wouldn't be reduced to meaninglessness through the act of automating it?
+Is there something on the softer side of the business that Gort could effectively improve?
+What's something we want to do more, but don't want to spend a ton of thought and time doing, and that wouldn't be reduced to meaninglessness by the fact of being automated?
 
-What about **a high-five?**
+What about a high-five?
 
 ## High Five
 
-So we wrote a Hubot plugin that automates the high-five:
+So we wrote a Hubot plugin that automates high-fiving:
 
 ![](/images/chatops/!highfive.gif)
 
@@ -88,22 +93,39 @@ The first three things in that list are similar to a real-life high-five.
 That last one, though – that would be pretty tricky to pull off without the magic of technology.
 Anyone can send anyone a "thanks!" with a monetary gift attached, in a very public way, and with zero friction.
 
-You're probably thinking this must be limited in some way, and you'd be right, but there are surprisingly few; the visibility of this action lends it a certain *gravitas*, and nobody seems to want to mess with that.
+## Peer Recognition
+
+If you have experience with HR practices, you'll recognize this as a peer-recognition program.
+This kind of practice hooks into the deeply-wired human preference towards recognition; people want other people to think they're awesome, even more than they want money.
+"But" you'll say, "this involves money, too!"
+Oddly, the recipients of said money won't actually see it that way – the gift card is more of a signal that this is serious recognition rather than just a pat on the back.
+Of course, the receiver will like the money, but when they spend it on something, that thing will then remind them of the original high-five, which feeds back into the peer-recognition drive.
+See?
+That money isn't really money.
+
+Now this is obviously subject to some limits.
+You can't high-five yourself, for instance, and there's a daily cap on how much money a single person can give away, but we haven't actually run into any of these yet.
+Part of this is the group of people I work with, who are among the least selfish and most generous people I've ever worked with.
+But some of it is that the gifts are public; you don't toast someone at a dinner party without a good reason (or at least a good speech), and this is no different.
 
 ## What Happened Next
 
-(TODO)
+We introduced this at an all-hands retreat in California, and the immediate uptake was pretty good: there were more than a dozen high-fives the first day alone, and a similar number in the following week.
+Once the novelty wore off, the general usage has been fairly steady, but it's hard to draw any kind of conclusions from a month of usage by 13 core staffers.
 
-This has already yielded some interesting results, and we're only in our first month with it.
+We're already seeing some interesting emergent behavior, though.
+One idea was to use this to send performance awards to contract employees, which turns this program into a top-down recognition program, more like a bonus.
+We've also seen some "creative" conversational uses, like trying to high-five an entire website.
+
+## What Happens Now
+
+So this has already yielded some interesting results, and we're only in our first month with it.
 We're looking forward to seeing how it plays out over a longer period of time, and whether other teams think it's useful enough to steal.
-
-## Appendix: How It Works
 
 We've released the `hubot-tangocard-highfive` plugin into the wild, and it's [completely open-source](highfive).
 Basically it just ties together a few APIs behind a pretty simplistic UI: [Slack](https://api.slack.com/), [Tango Card](tango) for the gift cards, and a [Google spreadsheet](https://github.com/jpillora/node-edit-google-spreadsheet) for logging transactions.
-
-Much of this is made pretty easy by the thriving ecosystem around [Node](node) and [Hubot](hubot), so it's only fitting that we make this available for anyone to use.
-If you end up using it at your company (or need help getting started), [I'd love to hear about it](https://twitter.com/benstraub)!
+This whole thing was rendered pretty easy by the thriving ecosystem around [Node](node) and [Hubot](hubot), so it's only fitting that we make this available for anyone to use.
+If you end up using it at your company (or need help getting started), [I'd love to hear from you](https://twitter.com/benstraub).
 
 [gridium]: http://www.gridium.com/
 [chatops]: http://venturebeat.com/2014/12/16/everything-you-wanted-to-know-about-chatops-but-were-afraid-to-ask/
