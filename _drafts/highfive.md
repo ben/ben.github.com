@@ -10,17 +10,17 @@ A couple of weeks ago, my company began an experiment with HR and robots.
 
 First, some background.
 
-I work for [Gridium](gridium), and we're a distributed company.
+I work for [Gridium][gridium], and we're a distributed company.
 There is no central office, and even our founders live in different cities.
 We do gather everybody together four times a year, but apart from that there isn't much face-to-face.
-So we spend most of our time in [Slack](slack), and we are students in the art of [ChatOps](chatops).
+So we spend most of our time in [Slack][slack], and we are students in the art of [ChatOps][chatops].
 
-Mostly what that means is that we have a [Hubot](https://hubot.github.com/) (named Gort) whose most commonly-used function is to paste links to pug images into our chat rooms.
-But we've also taught him to connect with [Trello](trello), so he tells us when something interesting happens:
+Mostly what that means is that we have a [Hubot][hubot] (named Gort) whose most commonly-used function is to paste links to pug images into our chat rooms.
+But we've also taught him to connect with [Trello][trello], so he tells us when something interesting happens:
 
 ![](/images/chatops/!trello.png)
 
-…and to [Semaphore](semaphore), so we can trigger deployments:
+…and to [Semaphore][semaphore], so we can trigger deployments:
 
 ![](/images/chatops/!deploy.png)
 
@@ -122,10 +122,10 @@ We've also seen some "creative" conversational uses, like trying to high-five an
 So this has already yielded some interesting results, and we're only in our first month with it.
 We're looking forward to seeing how it plays out over a longer period of time, and whether other teams think it's useful enough to steal.
 
-We've released the `hubot-tangocard-highfive` plugin into the wild, and it's [completely open-source](highfive).
-Basically it just ties together a few APIs behind a pretty simplistic UI: [Slack](https://api.slack.com/), [Tango Card](tango) for the gift cards, and a [Google spreadsheet](https://github.com/jpillora/node-edit-google-spreadsheet) for logging transactions.
-This whole thing was rendered pretty easy by the thriving ecosystem around [Node](node) and [Hubot](hubot), so it's only fitting that we make this available for anyone to use.
-If you end up using it at your company (or need help getting started), [I'd love to hear from you](https://twitter.com/benstraub).
+We've released the `hubot-tangocard-highfive` plugin into the wild, and it's [completely open-source][highfive].
+Basically it just ties together a few APIs behind a pretty simplistic UI: [Slack][slack], [Tango Card][tango] for the gift cards, and a [Google spreadsheet](https://github.com/jpillora/node-edit-google-spreadsheet) for logging transactions.
+This whole thing was rendered pretty easy by the thriving ecosystem around [Node][node] and [Hubot][hubot], so it's only fitting that we make this available for anyone to use.
+If you end up using it at your company (or need help getting started), [I'd love to hear from you][https://twitter.com/benstraub].
 
 [gridium]: http://www.gridium.com/
 [chatops]: http://venturebeat.com/2014/12/16/everything-you-wanted-to-know-about-chatops-but-were-afraid-to-ask/
@@ -134,3 +134,5 @@ If you end up using it at your company (or need help getting started), [I'd love
 [tango]: https://www.tangocard.com/giftcardapi
 [node]: http://nodejs.org/
 [hubot]: https://hubot.github.com/
+[trello]: https://trello.com
+[slack]: https://api.slack.com/
