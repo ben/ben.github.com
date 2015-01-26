@@ -53,7 +53,7 @@ The rest of the team has implicitly agreed not to interfere with a deployment th
 This arrangement has been pretty effective for most of the history of Internet services.
 
 But ChatOps shows us that this can be improved in a lot of ways.
-Most immediately, we've made it easier to deploy from the chat room than manually.
+Most immediately, we've made it easier to deploy from the chat room than doing it manually.
 But more importantly, *you'll never forget to tell the team when you're deploying.*
 Or when you're done.
 Or if something goes wrong.
@@ -91,7 +91,7 @@ If you've never used things like Slack or Hubot before, here's what's happening:
 
 The first three things in that list are similar to a real-life high-five.
 That last one, though – that would be pretty tricky to pull off without the magic of technology.
-Anyone can send anyone a "thanks!" with a monetary gift attached, in a very public way, and with zero friction.
+With this, anyone can send anyone a "thanks!" with a monetary gift attached, in a very public way, and with zero friction.
 
 ## Peer Recognition
 
