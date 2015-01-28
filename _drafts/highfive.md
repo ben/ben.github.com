@@ -15,23 +15,23 @@ There is no central office, and even our founders live in different cities.
 We do gather everybody together four times a year, but apart from that there isn't much face-to-face.
 So we spend most of our time in [Slack][slack], and we are students in the art of [ChatOps][chatops].
 
-Mostly what that means is that we have a [Hubot][hubot] (named Gort) whose most commonly-used function is to paste links to pug images into our chat rooms.
+Mostly what that means is that we have a [Hubot][hubot] (named Gort) whose most commonly-used function is to paste links to kitten photos into our chat rooms.
 But we've also taught him to connect with [Trello][trello], so he tells us when something interesting happens:
 
-![](/images/chatops/!trello.png)
+![Gort showing a Trello notification](/images/chatops/!trello.png)
 
-…and to [Semaphore][semaphore], so we can trigger deployments:
+…and to [Semaphore][semaphore], so we can do CI and deployment:
 
-![](/images/chatops/!deploy.png)
+![Gort running a deployment for Kimberly](/images/chatops/!deploy.png)
 
 …and to a goodly number of other services, too.
-We've turned our chat room from a water-cooler and announcement channel into the place everybody goes to do their work.
-And not just engineers, either; the Trello example above was the sales team using Slack to track the provisioning of a new customer.
+We've turned our chat room from a water-cooler and announcement channel into the central control room.
+And not just us engineers, either; the Trello example above was the sales team using Slack to track the provisioning of a new customer.
 
 ## ChatOps
 
 All of that is *ChatOps*.
-That term is a little fuzzy, but what it boils down to is the automation of repetitive technical and social activity.
+That term is a little fuzzy, but it boils down to automation of repetitive technical and social activity.
 You can probably tell by how abstract that sentence is that I've thought about this a lot, but stay with me.
 
 In the chat room, before Gort came along, you'd periodically see patterns like this when deployments were happening:
@@ -48,12 +48,12 @@ A: Great. Carry on, everybody.
 ```
 
 There's an implied contract here.
-As the one doing the deployment, you've agreed to tell your teammates what you're doing and when it's done, get done in a timely manner, and not to do something that gets in their way or destroys sensitive data.
+As the one doing the deployment, you've agreed to tell your teammates what you're doing and when it's done, wrap it up in a timely manner, and not to do something that gets in their way or destroys sensitive data.
 The rest of the team has implicitly agreed not to interfere with a deployment they know is happening, and to help out if something goes wrong.
 This arrangement has been pretty effective for most of the history of Internet services.
 
-But ChatOps shows us that this can be improved in a lot of ways.
-Most immediately, we've made it easier to deploy from the chat room than doing it manually.
+But ChatOps shows us that this can be improved, and not just a little.
+Most immediately, we've made it easier to deploy from the chat room than to do it manually.
 But more importantly, *you'll never forget to tell the team when you're deploying.*
 Or when you're done.
 Or if something goes wrong.
@@ -66,9 +66,9 @@ Firstly, the fact that you've automated it says that you were doing it often eno
 Almost as importantly, you're sending a signal that *this is a thing we don't want to spend time or thought on.*
 That last one is important to keep in mind when you're automating a human process, rather than a technical one.
 
-Facebook's birthday reminders are a perfect example of this.
-Getting a handmade card in the *actual mail* is really touching and human – a real human being cared enough about you to think about what you like, make a token of their esteem, and spend real money to send it to you.
-In contrast, an "HBD" posted to your Facebook profile is nearly meaningless; you pretty much only see them in aggregate.
+Facebook's birthday reminders are a perfect example of how this can backfire.
+Getting a handmade card in the *actual mail* is really touching and personal – a real human being cared enough to think about what you like, make a token of their esteem, and spend real money to send it to you.
+In contrast, an "HBD" posted to your Facebook profile is nearly meaningless; you pretty much only think about them in aggregate.
 
 So automating social things is tricky, but we didn't think it was impossible.
 Is there something on the softer side of the business that Gort could effectively improve?
@@ -96,10 +96,10 @@ With this, anyone can send anyone a "thanks!" with a monetary gift attached, in 
 ## Peer Recognition
 
 If you have experience with HR practices, you'll recognize this as a peer-recognition program.
-This kind of practice hooks into the deeply-wired human preference towards recognition; people want other people to think they're awesome, even more than they want money.
-"But" you'll say, "this involves money, too!"
-Oddly, the recipients of said money won't actually see it that way – the gift card is more of a signal that this is serious recognition rather than just a pat on the back.
-Of course, the receiver will like the money, but when they spend it on something, that thing will then remind them of the original high-five, which feeds back into the peer-recognition drive.
+It hooks into the deeply-wired human preference towards recognition; people want other people to think they're awesome, even more than they want money.
+"But" I hear you saying, "this involves money, too!"
+Oddly, the recipients of a high-five won't actually see it that way – the gift card is more of a signal that this is serious recognition, rather than just a pat on the back.
+Of course, the receiver will like the money, but when they spend it on something, that thing will then remind them of the original high-five, which leads us back to the peer-recognition drive.
 See?
 That money isn't really money.
 
