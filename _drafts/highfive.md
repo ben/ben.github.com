@@ -4,11 +4,11 @@ title: "High Five"
 comments: true
 ---
 
-A couple of weeks ago, my company began an experiment with HR and robots.
+A few weeks ago, my company began an experiment with HR and robots.
+It's pretty interesting (or at least we think so), but before I tell you about it, there's some exposition that needs to happen.
+I'll do my best to make it worth it.
 
 ## Robots
-
-First, some background.
 
 I work for [Gridium][gridium], and we're a distributed company.
 There is no central office, and even our founders live in different cities.
@@ -62,8 +62,8 @@ And if something does go wrong, you don't have to stop fixing it to let the rest
 ## An Experiment
 
 Automating a thing has side effects.
-Firstly, the fact that you've automated it says that you were doing it often enough that it was worth some effort to streamline and error-proof the process.
-Almost as importantly, you're sending a signal that *this is a thing we don't want to spend time or thought on.*
+Firstly, the fact that you've automated it at all says that it was worth some effort to streamline and error-proof it.
+Almost as importantly, you're sending a signal that *this should be effortless,* that this isn't a thing that's made more valuable with extra sweat.
 That last one is important to keep in mind when you're automating a human process, rather than a technical one.
 
 Facebook's birthday reminders are a perfect example of how this can backfire.
