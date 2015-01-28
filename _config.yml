@@ -38,7 +38,7 @@ future:      true
 markdown:    redcarpet
 
 redcarpet:
-   extensions: [smart]
+   extensions: [smart,with_toc_data]
 
 kramdown:
   auto_ids: true
