@@ -1,44 +1,8 @@
-# Notes
-
-* Guest posts are usually a recipe
-    * http://paleoparents.com/author/guest/page/3/
-    * http://paleoparents.com/2014/guest-post-journey-healthy-happy-balance/
-    * http://paleoparents.com/2014/guest-post-kids-need-dirt/
-    * http://paleoparents.com/2014/guest-post-northwest-paleo-paleo-pfeffernusse/
-* Plug Portland, local businesses
-  * Intrepid
-  * Cultured Caveman
-  * hood river organic
-  * abby farms
-  * sweet home meats
-* Cookbooks
-* Trackers Earth
-* State Park Challenge
-
-### Outline: Adventure as a Family Tradition
-
-* we're raising adventurers
-    * at all scales
-    * food
-    * learning and trying new things
-    * health
-    * travel
-* Adventuring isn't always traveling
-    * To a kid, everything is a new country
-* Adventures are often uncomfortable
-    * rainy camping trip
-    * food you may not like
-* Don't adventure alone
-    * everest, sherpas
-    * (plug businesses)
-
-### Hooks and closers
-
-(h) If there's one thing we've learned from being parents, it's that adventures come in all sizes.
-
-(c) Our children only get one life, and it's our job as parents to teach them how to live it to the fullest.
-
-(c) *something about happy families having traditions*
+---
+layout: post-no-feature
+title: "Adventure as a Lifestyle"
+comments: false
+---
 
 # Adventure as a Family Tradition
 
@@ -46,33 +10,35 @@ One of the most common traits of happy families is having traditions.
 Some families recite poetry over dinner; some cook together; some read aloud at bedtime every night, even to their teenagers.
 Our family goes on adventures.
 
-> **(image)**
+![](/images/adventure/whale.jpg)
 
 If there's one thing we've learned from being parents, it's that adventures come in all sizes.
 On one end of the continuum are life's grand adventures.
-Driving an RV halfway across the country for Thanksgiving.
-Disneyland.
-Hawaii.
+Driving an RV [halfway across the country](https://bandofcharacters.wordpress.com/2013/01/09/straubsgiving-part-1/) for Thanksgiving.
+[Disneyland](https://bandofcharacters.wordpress.com/2013/09/21/disneyland/).
+[Hawaii](https://bandofcharacters.wordpress.com/2013/09/21/hawaii/).
 These memorable experiences are the kind of thing you keep with you for a lifetime, and there's nothing that can really substitute for them.
 
 On the other end of the spectrum are tiny adventures.
 Finding the other shoe.
-Running out of gas.
-Opening a new board game.
+Catching an escaped dog.
+Playing a new board game for the first time.
 Going to the grocery store.
-This kind of adventure isn't as memorable, at least not on its own, but in sum total these little moments, and the way you attack them, add up to a large fraction of your life.
+This kind of adventure isn't as memorable, at least not on its own, but in sum total these little moments — and the way you attack them — add up to a large fraction of your life.
 
 ## We're Raising Adventurers
 
 It all comes back to food, perhaps the smallest adventure of all.
 If you're not willing to try that weird thing on your plate, how will you tackle life's bigger challenges?
 
+![](/images/adventure/race.jpg)
+
 Our family adopted a Paleo/Primal diet four years ago, when Will and Lucy were 2 and 4.
 Most of our friends and family thought we were crazy, and those who were parents insisted that their kids would *never* go for it.
-Here's the secret: **ours didn't either.**
+Here's our dirty secret: **ours didn't either.**
 But we had some help from the a-word.
 
-We told them that this was an adventure for their mouth.
+We told them this was an adventure for their mouth.
 That their taste buds were going into uncharted territory, that they'd be blazing a trail through vines (sprouts) and trees (broccoli), and defending themselves against ravenous wild boar (andouille sausage).
 And, when all of that stopped working, we told them that this is what our family was having for dinner, and if they didn't like it, they didn't have to eat it.
 Oh, and if you finish, there's a dessert course.
@@ -89,6 +55,9 @@ Lucy doesn't like squash.
 She never has, and she knows it.
 But when it shows up in the ragu, she makes sure to take little bites of it with the bacon and sausage, so she doesn't end up with six hateful bites before she gets dessert.
 
+![](/images/adventure/beach.jpg)
+![](/images/adventure/beach2.jpg)
+
 Will doesn't like getting wet.
 He'll ask me to open his car door on rainy days so his hands stay dry.
 But when he packs for outdoor school in the dead of winter, he just grits his teeth and packs his rain gear.
@@ -103,6 +72,8 @@ You may not recognize them until years later, but they'll be there, because disc
 Nobody ever made it to the top of Mt. Everest alone, and our adventures are no different.
 There are businesses and organizations in your community that can help you, and we want to give a shout out to the ones that have helped us.
 
+![](/images/adventure/gym.jpg)
+
 In the category of adventure-preparedness training, we can't be happier with  [Intrepid Fitness][intrepid], the gym right around the corner from our house.
 We grownups run our metcons there, but we also send the kids for young adventurer preparedness training.
 Also in this category is [Trackers Earth][trackers], an outdoor school which the kids *adore.*
@@ -110,7 +81,7 @@ Every Thursday we send them out to the woods at 9am, and every Thursday they com
 
 Fuel is an important consideration for adventurers.
 The Paleo lifestyle has been good to us, and we never feel like we're just too hungry to go out and live life, but it's important to pay attention to the quality of your food.
-We're lucky; our area is one of the richest when it comes to Paleo- and Primal-style farming and ranching.
+We're lucky; the Portland area is one of the richest when it comes to Paleo- and Primal-style farming and ranching.
 Businesses like [Hood River Organics][hro] and [Sweet Home Meats][shm] provide us with a weekly box of goodies, and we have [The Cultured Caveman][cave] (a fully Paleo restaurant and food cart!) for the occasional treat.
 We've also been lucky enough to secure a supply of raw dairy (which doesn't trigger the kids' immune response like pasteurized dairy does); if you can find something like [Abby Farms][abby] near where you live, don't pass up the opportunity.
 
@@ -119,7 +90,7 @@ We've also been lucky enough to secure a supply of raw dairy (which doesn't trig
 We've made a commitment, all four of us, to doing what it takes to make this life worthwhile.
 And so not only do we relish the adventures we plan, meticulously,  [100](http://100.straub.cc/) or [200](https://bandofcharacters.wordpress.com/2014/01/13/oregon-state-park-challenge/) at a time, but we also keep a careful eye out for journeys we didn't know we were on until we had taken the first step.
 
-> **(image)**
+![](/images/adventure/bricks.jpg)
 
 
 [trackers]: http://trackerspdx.com/
