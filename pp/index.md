@@ -44,7 +44,7 @@ But when he packs for outdoor school in the dead of winter, he just grits his te
 And eight hours later, he's sodden and exhilarated, not caring that he got wet.
 
 Because we've taught them that **fun and misery aren't opposites.**
-In fact, some of the most fun moments are the ones you'd think are the worst possible.
+In fact, some of the best moments are the ones you'd think are the worst possible.
 You may not recognize them until years later, but they'll be there, because discomfort is memorable.
 
 ## Capability
@@ -55,7 +55,7 @@ But it's important to practice being active and having fitness goals, so they wo
 
 [![](images/gym.jpg)](images/gym.jpg)
 
-We couldn't be happier with [Intrepid Fitness][intrepid], the gym right around the corner from our house.
+We couldn't be happier with [Intrepid Athletics][intrepid], the gym right around the corner from our house.
 We grownups run our metcons there, but we also send the kids for young adventurer preparedness training.
 Also in this category is [Trackers Earth][trackers], an outdoor school which the kids *adore.*
 Every Thursday we send them out to the woods at 9am, and every Thursday at 5pm they come back filthy, exhausted, and proud of what they've done – making fires and shelters, using a knife, and tracking coyotes through the woods.
@@ -99,6 +99,10 @@ We've also been lucky enough to secure a supply of raw dairy (which doesn't trig
 
 We've made a commitment, all four of us, to doing what it takes to make this life worthwhile.
 And so not only do we relish the adventures we plan, meticulously,  [100][100] or [200][parks] at a time, but we also keep a careful eye out for journeys we didn't know we were on until we had taken the first step.
+
+Our advice to anyone who asks (or who will listen) is this: start thinking of parts of your own life as adventures.
+Remember: adventures come in all sizes, from making the perfect egg to traveling around the world.
+We think you'll find that your life seems more cinematic and compelling when you look at it through the lens of the explorer.
 
 [![](images/bricks.jpg)](images/bricks.jpg)
 
