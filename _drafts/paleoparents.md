@@ -46,6 +46,8 @@ One of the most common traits of happy families is having traditions.
 Some families recite poetry over dinner; some cook together; some read aloud at bedtime every night, even to their teenagers.
 Our family goes on adventures.
 
+> **(image)**
+
 If there's one thing we've learned from being parents, it's that adventures come in all sizes.
 On one end of the continuum are life's grand adventures.
 Driving an RV halfway across the country for Thanksgiving.
@@ -98,12 +100,31 @@ You may not recognize them until years later, but they'll be there, because disc
 
 ## Don't Adventure Alone
 
-Nobody ever made it to the top of Mt. Everest on their own, and our adventures are no different.
+Nobody ever made it to the top of Mt. Everest alone, and our adventures are no different.
 There are businesses and organizations in your community that can help you, and we want to give a shout out to the ones that have helped us.
+
+In the category of adventure-preparedness training, we can't be happier with  [Intrepid Fitness][intrepid], the gym right around the corner from our house.
+We grownups run our metcons there, but we also send the kids for young adventurer preparedness training.
+Also in this category is [Trackers Earth][trackers], an outdoor school which the kids *adore.*
+Every Thursday we send them out to the woods at 9am, and every Thursday they come back filthy, exhausted, and proud of what they've done.
+
+Fuel is an important consideration for adventurers.
+The Paleo lifestyle has been good to us, and we never feel like we're just too hungry to go out and live life, but it's important to pay attention to the quality of your food.
+We're lucky; our area is one of the richest when it comes to Paleo- and Primal-style farming and ranching.
+Businesses like [Hood River Organics][hro] and [Sweet Home Meats][shm] provide us with a weekly box of goodies, and we have [The Cultured Caveman][cave] (a fully Paleo restaurant and food cart!) for the occasional treat.
+We've also been lucky enough to secure a supply of raw dairy (which doesn't trigger the kids' immune response like pasteurized dairy does); if you can find something like [Abby Farms][abby] near where you live, don't pass up the opportunity.
 
 ## Our Family Tradition
 
 We've made a commitment, all four of us, to doing what it takes to make this life worthwhile.
-And so not only do we relish the adventures we plan, meticulously, [a year in advance](http://100.straub.cc/), but we also keep a careful eye out for journeys we didn't know we were on until we had taken the first step.
+And so not only do we relish the adventures we plan, meticulously,  [100](http://100.straub.cc/) or [200](https://bandofcharacters.wordpress.com/2014/01/13/oregon-state-park-challenge/) at a time, but we also keep a careful eye out for journeys we didn't know we were on until we had taken the first step.
+
+> **(image)**
+
 
 [trackers]: http://trackerspdx.com/
+[intrepid]: http://www.intrepidpdx.com/
+[hro]: http://hoodriverorganic.csaware.com/
+[shm]: http://www.sweethomefarms.com/
+[cave]: http://culturedcavemanpdx.com/
+[abby]: https://www.facebook.com/abbeyfarmstead
