@@ -7,10 +7,10 @@ comments: false
 # Adventure as a Family Tradition
 
 One of the most common traits of happy families is having traditions.
-Some families recite poetry over dinner; some cook together; some read aloud at bedtime every night, even to their teenagers.
+Some families recite poetry over dinner; some garden; some collect things.
 Our family goes on adventures.
 
-![](/images/adventure/whale.jpg)
+[![](images/whale.jpg)](images/whale.jpg)
 
 If there's one thing we've learned from being parents, it's that adventures come in all sizes.
 On one end of the continuum are life's grand adventures.
@@ -26,71 +26,81 @@ Playing a new board game for the first time.
 Going to the grocery store.
 This kind of adventure isn't as memorable, at least not on its own, but in sum total these little moments — and the way you attack them — add up to a large fraction of your life.
 
-## We're Raising Adventurers
-
-It all comes back to food, perhaps the smallest adventure of all.
-If you're not willing to try that weird thing on your plate, how will you tackle life's bigger challenges?
-
-![](/images/adventure/race.jpg)
-
-Our family adopted a Paleo/Primal diet four years ago, when Will and Lucy were 2 and 4.
-Most of our friends and family thought we were crazy, and those who were parents insisted that their kids would *never* go for it.
-Here's our dirty secret: **ours didn't either.**
-But we had some help from the a-word.
-
-We told them this was an adventure for their mouth.
-That their taste buds were going into uncharted territory, that they'd be blazing a trail through vines (sprouts) and trees (broccoli), and defending themselves against ravenous wild boar (andouille sausage).
-And, when all of that stopped working, we told them that this is what our family was having for dinner, and if they didn't like it, they didn't have to eat it.
-Oh, and if you finish, there's a dessert course.
-
-It worked, and it's still working for us.
-We're the family that goes to a potluck, and our kids ask for more of the roasted vegetables and Brussels sprouts.
-(Usually we're the ones who brought them, and we make sure they're delicious, but still.)
-They've learned you'll discover *lots* of things you didn't even know you liked.
-
 ## Adventures Aren't Always Comfortable
 
-They've also learned to deal with hardship.
-Lucy doesn't like squash.
-She never has, and she knows it.
-But when it shows up in the ragu, she makes sure to take little bites of it with the bacon and sausage, so she doesn't end up with six hateful bites before she gets dessert.
+Our job as parents is to train our children in the fine art of adventuring, and that means dealing with hardship.
 
-![](/images/adventure/beach.jpg)
-![](/images/adventure/beach2.jpg)
+Lucy doesn't like squash.
+She never has, but she knows how good it is for her.
+We feed our family *real food*, and that means regional and seasonal produce.
+Talking about nutrition and seasonality with the kids is second nature now, so she knows she's going to see it on the table a lot during the winter.
+When it shows up on her plate, she makes sure to take little bites of it all throughout dinner, so she doesn't end up with six giant, hateful bites of it at the end.
+
+[![](images/beach.jpg)](images/beach.jpg)
 
 Will doesn't like getting wet.
-He'll ask me to open his car door on rainy days so his hands stay dry.
+He'll ask someone else to open his car door on rainy days so his hands stay dry.
 But when he packs for outdoor school in the dead of winter, he just grits his teeth and packs his rain gear.
+And eight hours later, he's sodden and exhilarated, not caring that he got wet.
 
 Because we've taught them that **fun and misery aren't opposites.**
 In fact, some of the most fun moments are the ones you'd think are the worst possible.
 You may not recognize them until years later, but they'll be there, because discomfort is memorable.
 
+## Capability
 
-## Don't Adventure Alone
+It's harder go on adventures (or even want to) with a couch-potato body.
+Right now, the kids have zero problems with this; they love to run, jump, and physically exert themselves.
+But it's important to practice being active and having fitness goals, so they won't lose that if they get office jobs as grownups.
 
-Nobody ever made it to the top of Mt. Everest alone, and our adventures are no different.
-There are businesses and organizations in your community that can help you, and we want to give a shout out to the ones that have helped us.
+[![](images/gym.jpg)](images/gym.jpg)
 
-![](/images/adventure/gym.jpg)
-
-In the category of adventure-preparedness training, we can't be happier with  [Intrepid Fitness][intrepid], the gym right around the corner from our house.
+We couldn't be happier with [Intrepid Fitness][intrepid], the gym right around the corner from our house.
 We grownups run our metcons there, but we also send the kids for young adventurer preparedness training.
 Also in this category is [Trackers Earth][trackers], an outdoor school which the kids *adore.*
-Every Thursday we send them out to the woods at 9am, and every Thursday they come back filthy, exhausted, and proud of what they've done.
+Every Thursday we send them out to the woods at 9am, and every Thursday at 5pm they come back filthy, exhausted, and proud of what they've done – making fires and shelters, using a knife, and tracking coyotes through the woods.
 
-Fuel is an important consideration for adventurers.
+## Questing
+
+Some of our adventures stand alone, while others are part of a *Quest*.
+A Quest is an adventure made of other adventures; it's a commitment to do a bunch of interesting things.
+We figure it's one thing to show the kids that we like adventures, it's another to show them how to plan them intentionally.
+
+[![](images/trail.jpg)](images/trail.jpg)
+
+To that end, we have two Quests going at any given time.
+The first one happens yearly, and we call it the [Hundred Things][100].
+It's a list of (you guessed it) a hundred goals we have for the year.
+Most of these are little things, some are things we had planned anyway, but quite a few are things we never would have done otherwise.
+
+Our long-term Quest is to visit [every Oregon state park][parks] before Will moves out at age 18.
+We've given ourselves 10 years to visit 193 parks, waysides, campgrounds, and scenic highways.
+This isn't climbing a mountain with our bare hands, but it's great practice so we'll be ready to if (when) we decide to.
+
+## Adventure Fuel
+
+It all comes back to food, perhaps the smallest adventure of all.
+If you're not willing to try that weird thing on your plate, how will you tackle life's bigger challenges?
+
+[![](images/kitchen.jpg)](images/kitchen.jpg)
+
+Will and Lucy are as engaged in culinary adventures as they are in all the other kinds.
+They love helping choose ingredients, perusing our cookbook shelf for the perfect meal, and tying on an apron to help put it together.
+(We feel we should mention that one of their favorites when we first started this was [Eat Like a Dinosaur][elad].)
+Lucy has been known to trade some of her precious screen time minutes for more time helping in the kitchen.
+One of our [Hundred Things][100] this year is to work our way through an [entire cookbook][zb], and we're all enjoying this challenge.
+
 The Paleo lifestyle has been good to us, and we never feel like we're just too hungry to go out and live life, but it's important to pay attention to the quality of your food.
 We're lucky; the Portland area is one of the richest when it comes to Paleo- and Primal-style farming and ranching.
-Businesses like [Hood River Organics][hro] and [Sweet Home Meats][shm] provide us with a weekly box of goodies, and we have [The Cultured Caveman][cave] (a fully Paleo restaurant and food cart!) for the occasional treat.
+Businesses like [Hood River Organics][hro] and [Sweet Home Meats][shm] provide us regularly with boxes of goodies, and we have [The Cultured Caveman][cave] (a fully Paleo restaurant and food carts!) for the occasional treat.
 We've also been lucky enough to secure a supply of raw dairy (which doesn't trigger the kids' immune response like pasteurized dairy does); if you can find something like [Abby Farms][abby] near where you live, don't pass up the opportunity.
 
 ## Our Family Tradition
 
 We've made a commitment, all four of us, to doing what it takes to make this life worthwhile.
-And so not only do we relish the adventures we plan, meticulously,  [100](http://100.straub.cc/) or [200](https://bandofcharacters.wordpress.com/2014/01/13/oregon-state-park-challenge/) at a time, but we also keep a careful eye out for journeys we didn't know we were on until we had taken the first step.
+And so not only do we relish the adventures we plan, meticulously,  [100][100] or [200][parks] at a time, but we also keep a careful eye out for journeys we didn't know we were on until we had taken the first step.
 
-![](/images/adventure/bricks.jpg)
+[![](images/bricks.jpg)](images/bricks.jpg)
 
 
 [trackers]: http://trackerspdx.com/
@@ -99,3 +109,7 @@ And so not only do we relish the adventures we plan, meticulously,  [100](http:/
 [shm]: http://www.sweethomefarms.com/
 [cave]: http://culturedcavemanpdx.com/
 [abby]: https://www.facebook.com/abbeyfarmstead
+[100]: http://100.straub.cc/
+[parks]: https://bandofcharacters.wordpress.com/2014/01/13/oregon-state-park-challenge/
+[zb]: http://zenbellycatering.com/zenbelly-cookbook/
+[elad]: http://paleoparents.com/eat-like-a-dinosaur/
