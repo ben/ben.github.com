@@ -107,7 +107,14 @@ We think you'll find that your life seems more cinematic and compelling when you
 
 [![](images/bricks.jpg)](images/bricks.jpg)
 
-*(bio snippet here)*
+### The Authors
+
+[![](images/bio.jpg)]()
+
+Becky and Ben Straub are lifelong adventurers who live in Portland, Oregon with their two children and two pugs.
+They adopted a Paleo diet as a family several years ago, and immediately saw improvements in daily energy levels and cognitive ability.
+As a family, they enjoy exploring, being physical, great stories, and real food.
+Follow along with their adventures (big and small) at their blog, [Band of Characters](https://bandofcharacters.wordpress.com).
 
 
 [trackers]: http://trackerspdx.com/
