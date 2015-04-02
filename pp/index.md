@@ -112,6 +112,7 @@ We think you'll find that your life seems more cinematic and compelling when you
 [![](images/bio.jpg)]()
 
 Becky and Ben Straub are lifelong adventurers who live in Portland, Oregon with their two children and two pugs.
+Ben is a software engineer, and Becky is a photographer, and they enjoy walking across small countries together.
 They adopted a Paleo diet as a family several years ago, and immediately saw improvements in daily energy levels and cognitive ability.
 As a family, they enjoy exploring, being physical, great stories, and real food.
 Follow along with their adventures (big and small) at their blog, [Band of Characters](https://bandofcharacters.wordpress.com).
