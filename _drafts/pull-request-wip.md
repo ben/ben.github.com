@@ -1,6 +1,6 @@
 ---
 layout: post-no-feature
-title: 'The "WIP" Pattern'
+title: "The WIP Pull Request"
 comments: true
 ---
 
@@ -12,7 +12,7 @@ But.
 
 What if your team is opening a _lot_ of PRs?
 Well, then you're getting a _lot_ of email, perhaps a dozen new threads in your inbox each day.
-Now, if you're using GMail, this is a bit more tractable because of the mute feature – if you see a PR that doesn't concern you, you can type `m` and it goes away.
+If you're using GMail, this is somewhat tractable because of the mute feature – if you see a PR that doesn't concern you, you can type `m` and it goes away.
 
 But.
 
@@ -28,7 +28,7 @@ I call it the **WIP Pattern**, and here's how it works.
 ### Open a PR ###
 
 You do a tiny bit of work, and open a PR so (a) everyone knows what you're doing all day, and (b) people who care about this a lot can tell you what you're doing wrong.
-This follows the usual early-PR pattern, except for one detail: every new PR has "[WIP]" in the title.
+This follows the usual early-PR pattern, except for one detail: you add "[WIP]" to the title.
 Here, I'll make this more concrete for you: you've just opened a PR called **"[WIP] Froob the nobbits"**.
 Everyone on your team gets an email, because a new PR was created, but they don't all care to the same degree.
 
