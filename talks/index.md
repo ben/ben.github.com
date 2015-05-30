@@ -4,7 +4,7 @@ title: "I Talk Sometimes"
 sharing: false
 ---
 
-## [Hacking Culture with Chat Robots](/talks/robots.html)
+## [Hacking Culture with Chat Robots](/talks/robots)
 <p class="meta">2015</p>
 Robots are for automation, and what you choose to automate has a
 feedback effect on the people who use it.
