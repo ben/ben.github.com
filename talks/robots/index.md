@@ -9,6 +9,10 @@ date: 2015-05-29
 Robots didn't turn out how we thought they would, but that doesn't mean they can't be fun and useful.
 Plus, adding one to your team can make your company a better place to work.
 
+### Video
+
+<iframe width="680" height="385" src="https://www.youtube.com/embed/0wJxgYfqwHo?list=PLLiioAbFTbKNpjG_yNpNfhAmQ9KsxFzX7" frameborder="0" allowfullscreen></iframe>
+
 ### Slides
 
 <p>
