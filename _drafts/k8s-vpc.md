@@ -1,112 +1,123 @@
 ---
 layout: post
-title: "Adventures with Kubernetes on AWS"
+title: "Kubernetes and AWS VPC Peering"
 image:
-  feature: "308357541_222d1b2e2a_b.jpg"
+  feature: network.jpg
 comments: true
 ---
 
-*Header image [©Pascal Charest](https://flic.kr/p/tfpXk).*
-
 **tl;dr:** Kubernetes + EC2 + VPC peering = trouble.
-Scroll to the bottom for my findings if you've had problems with this.
+Scroll to [the bottom](#the-solution-band-aid) for my findings if you've had problems with this.
 
-We at [Gridium](http://www.gridium.com/) are making a bet.
-We're in the process of migrating some of our monolithic services into microservices, and hosting them in [Docker][docker], using [Kubernetes][k8s].
-These technologies are young, and there are minefields awaiting those who try anything but the happiest of paths.
-Here I'll document a huge problem we ran into, in hopes that I can help someone else that might run into it.
-
-## Rainbows and Unicorns
-
-Since the rest of our infrastructure is already in Amazon AWS, it seems natural to spin up our new cluster there.
+We're making a bet with our next generation of services at [Gridium](http://www.gridium.com/).
+Our bet is that microservices will serve us better than monolithic services, and we're in the process of moving our existing services to this kind of architecture too.
+Our chosen backing technologies are [Docker][docker], hosted in AWS, using [Kubernetes][k8s].
 
 [docker]: https://www.docker.com/
 [k8s]: http://kubernetes.io/
 
-So I did, and I hit a few snags.
-The first one was a small surprise: the Kubernetes cluster runs inside its own VPC.
-This is essentially an entirely separate network from the rest of our machines, which are all contained in their own VPC.
-But that's okay, and maybe it's even a good thing.
-Kubernetes and Docker can do whatever crazy networking voodoo they want to, and it won't mess with our already-running-and-with-customers services.
+These technologies are still pretty young, and there are minefields awaiting those who try anything but the happiest of paths.
+Here I'll document a huge problem we ran into, in hopes that I can help someone else that runs into it.
+
+## Rainbows and Unicorns
+
+Let me start by saying that Kubernetes is pretty cool.
+There are a lot of reasons why we chose it for hosting our Docker services.
+One of the best parts for us was the [rolling update](https://github.com/kubernetes/kubernetes/blob/master/docs/design/simple-rolling-update.md) functionality that comes in the box, enabled by how services and replication controllers use the metadata system.
+Basically, you get something kind of like [blue-green deployments](http://martinfowler.com/bliki/BlueGreenDeployment.html) for free, and none of your services ever have to have any downtime because you deployed a change.
+
+Another nice part is the `kube-up` script, which with just a few small configuration knobs, can spin up a Kubernetes cluster in a variety of environments in about 10 minutes.
+Since the rest of our infrastructure is already in Amazon AWS, it seems natural to spin up our new cluster there.
+
+So I did, and at first everything was rosy.
+The first little surprise: the Kubernetes script created a new VPC for the cluster to run in.
+A VPC is essentially an entirely separate, self-contained network, where all the machines inside can route to each other, and to the open Internet, but not to any other VPC.
+That sounds like a good thing, and it generally is – Kubernetes and Docker can do whatever crazy networking voodoo they want to, and it won't mess with our already-running-and-with-customers services (which are in a pre-existing VPC).
 
 But there's a problem.
-We're using RDS to host our data, because who runs their own database server in 2015?
-Alright, but our RDS instance belongs to the original VPC, so it won't be visible from the new Kubernetes VPC.
+We're using [RDS](https://aws.amazon.com/rds/) to host our data, because who runs their own database server in 2015?
+The problem is that our RDS instance belongs to our main VPC, so it won't be visible from the new Kubernetes VPC.
 
 Time for some [peering](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-peering.html).
-Here's where this post gets pretty technical.
-It's going to get a lot worse before it gets better.
-In fact, it pretty much doesn't get any better.
+Peering lets you set up routing so that a certain range of IP addresses will route into another VPC.
+This sounds like exactly what we want. 
+Our Kubernetes VPC's IP address range is 172.20.\*.\*, and the original VPC's address range is 10.0.\*.\*.
+So I set up the peering connection, and altered the route tables on either side, so that if a machine in VPC1 is looking for a machine in VPC2, it will route through the peering connection.
+I also made sure to change the RDS instance's [security group](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) to allow connections from 172.20.\*.\*.
 
-Our Kubernetes VPC's IP address range is 172.20.\*.\*.
-The production VPC's IP address range is 10.0.\*.\*.
-These don't conflict, so we can peer them just fine.
-So we set up the peering connection, and altered the route tables on either side; if you're looking for an IP in the range of the other VPC, try the peering connection.
-Also make sure you've altered the [security group](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) to allow connections from 172.20.\*.\*.
-
-Great, done.
 Now I can SSH into one of my Kubernetes minions, and `psql -h <RDS host>` asks me for a password.
-Ship it!
+Perfect, so our network configuration is done, and we can start shipping containerized applications, right?
 
-Not so fast.
-If you try that same command from inside a container, you'll get a timeout.
-Wait, you can connect to machine from a host, but try it from within a Docker container on that same host, it fails?
+**Not so fast.**
+If I try that same command from inside a container, I get a timeout.
+Wait, I can connect to machine from a host, but try it from within a Docker container on that same host, it fails?
 
 ## Stumped
 
-Here's where I got stumped for two weeks.
-I tried everything.
-I knew that Kubernetes gives each running container its own IP address, so I added those to the security group, and bust the security group wide open.
-No dice.
+Here's where I got roadblocked for two weeks.
 
+I knew that Kubernetes gives each running container its own IP address, so I added those ranges to the security group, and even configured the security group to allow connections from **any** IP address.
 I checked, double-checked, and triple-checked all the routing tables.
 I tried everything I could think of, which admittedly isn't much – I'm pretty green when it comes to networking.
-I asked friends and people I knew with expertise in Docker and Kubernetes.
+No dice.
+Nothing worked.
 
-Including [Jeff Nickoloff](https://twitter.com/allingeek).
-We puzzled over this with some [coffee](https://workfrom.co/albina-press), and he was stumped too.
-He suggested I get in contact with [Kelsey Hightower](https://twitter.com/kelseyhightower), since he's involved with a lot of the internals of the systems I'm working with, and he lives in Portland.
-So I did, and Kelsey was a real mensch, and spent 90 minutes on a hangout with me in the middle of the Tokyo night to figure out the problem.
+Then I started asking friends and family, and people I didn't even know who had expertise in Docker and Kubernetes.
+[Jeff Nickoloff](https://twitter.com/allingeek) and I puzzled over this with some [coffee](https://workfrom.co/albina-press), and he was stumped too.
+He suggested I get in touch with [Kelsey Hightower](https://twitter.com/kelseyhightower), since he's involved with a lot of the internals of the systems I'm working with, and he lives in Portland.
+
+So I did, and Kelsey was a real mensch.
+Even though he was in Japan at the time, and it was the middle of the night there, he spent 90 minutes on a hangout with me to figure out the problem.
+
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/benstraub">@benstraub</a> I&#39;m happy to jump on a quick hangout to help you troubleshoot. I&#39;ll have some free moments in about 20 mins. Does that work?</p>&mdash; Kelsey Hightower (@kelseyhightower) <a href="https://twitter.com/kelseyhightower/status/633679300147855361">August 18, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## The Problem
 
 The problem here is a difference in expectations as to what IP addresses are owned by whom.
 Kelsey was explaining to me how Docker containers should be using masqueraded IP addresses for traffic outside the Docker daemon, when we ran this on one of the minions:
 
-```bash
+```
 $ iptables -v -L -n -t nat
-# […]
+[...]
 Chain POSTROUTING (policy ACCEPT 78 packets, 4680 bytes)
  pkts bytes target     prot opt in     out     source         destination
 87316 5451K MASQUERADE  all  --  *      eth0    0.0.0.0/0     !10.0.0.0/8
+[...]
 ```
 
-What this means is that there's an entry in the routing tables that says "if the destination address isn't a 10.\*.\*.\* address, send it as though it were coming from the EC2 instance's IP address, instead of the container's internal-only IP address."
-Recall from earlier that our pre-existing VPC's IP addresses are in the 10.0.\*.\* range, and that includes the RDS instance we were trying to connect to.
+What that `MASQUERADE` line means is "if the destination address _isn't_ a 10.\*.\*.\* address (which Kubernetes reserves for itself), send it as though it were coming from the EC2 instance's IP address."
+That's a great rule, and it allows containers to talk to the outside world, and the return traffic finds its way back to the EC2 instance, and then back to the container that initiated the connection.
 
-So the kernel wasn't properly masquerading traffic from containers to actual external machines in the 10.0.\*.\* address space.
-It's likely this won't be a problem for you, unless you're using a peering connection to a VPC that uses those addresses, in which case it's going to be a *serious* problem for you.
+**However.**
+Recall from earlier that our pre-existing VPC's IP addresses are in the 10.0.\*.\* range, including the RDS instance we were trying to connect to.
+This iptables rule is _turning off_ masquerading to those IP addresses, so the RDS instance was seeing packets that look like they come from a 10.something address.
+Trying to respond to such a packet just doesn't work; the other VPC thinks 10.something addresses are _inside its own VPC_, but there's no machine at that address.
 
 As a quick test, we punched a very small hole through this rule:
 
-```bash
-$ sudo iptables -t nat -I POSTROUTING -d REDACTED/32 -o eth0 -j MASQUERADE
+```
+$ sudo iptables -t nat -I POSTROUTING -d 10.0.18.52/32 -o eth0 -j MASQUERADE
 $ iptables -v -L -n -t nat
-# […]
+[...]
 Chain POSTROUTING (policy ACCEPT 32 packets, 1920 bytes)
  pkts bytes target     prot opt in     out     source           destination
-    2   120 MASQUERADE  all  --  *      eth0    0.0.0.0/0        REDACTED
+    2   120 MASQUERADE  all  --  *      eth0    0.0.0.0/0        10.0.18.52
 87355 5454K MASQUERADE  all  --  *      eth0    0.0.0.0/0       !10.0.0.0/8
+[...]
 ```
 
-At the top of the table, we added a rule that says "for this specific IP address, make sure you masquerade as the host machine."
+We inserted a rule at the top that says "if the destination is the RDS instance, make sure you masquerade as the host machine."
 And it worked!
-Now the Docker containers can connect to the RDS instance.
+Now the Docker containers can connect to the database.
+And I owe Kelsey a nice lunch.
 
 ## The <strike>Solution</strike> Band-Aid
 
+It's possible this won't be a problem for you, unless you're using a peering connection to a VPC that uses those addresses, in which case it's going to be a *serious* problem for you.
+
 Unfortunately there isn't a full-on fix right now.
-If you're going to peer to a VPC whose IP addresses start with 10, you're going to have to much with your nodes manually, because that `10.0.0.0/8` rule is [hard coded](https://github.com/kubernetes/kubernetes/blob/7c9bbef96ed7f2a192a1318aa312919b861aee00/pkg/kubelet/container_bridge.go#L124).
+If you're going to peer to a VPC whose IP addresses start with 10, you're going to have to muck with your nodes manually, because that `10.0.0.0/8` rule is [hard coded](https://github.com/kubernetes/kubernetes/blob/7c9bbef96ed7f2a192a1318aa312919b861aee00/pkg/kubelet/container_bridge.go#L124).
 
 So as of right now, the answer is to SSH into every one of your minions and do this:
 
@@ -114,4 +125,4 @@ So as of right now, the answer is to SSH into every one of your minions and do t
 $ sudo iptables -t nat -I POSTROUTING -d <RDS-IP-ADDRESS>/32 -o eth0 -j MASQUERADE
 ```
 
-Good luck, and I hope you found this if you're having this problem.
+Good luck, and I hope you found this post if this problem affects you.
