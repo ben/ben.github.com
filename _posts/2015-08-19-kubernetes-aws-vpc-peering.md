@@ -126,3 +126,24 @@ $ sudo iptables -t nat -I POSTROUTING -d <RDS-IP-ADDRESS>/32 -o eth0 -j MASQUERA
 ```
 
 Good luck, and I hope you found this post if this problem affects you.
+
+### UPDATE: A Note About DNS
+
+Once we got this up and running, we noticed glitchy DNS response.
+When one container was trying to find a separate service, it would only sometimes work.
+I did a little digging, and here's what I found in the `/etc/resolv.conf` on both of my minions:
+
+```
+nameserver 10.0.0.10
+nameserver 172.20.0.2
+search default.svc.cluster.local svc.cluster.local cluster.local us-west-1.compute.internal
+options ndots:5
+```
+
+That first line is key.
+Since the foreign VPC was in the 10.0.0.\* space, I had set up AWS routing to send traffic to those IPs through the peering connection.
+Kubernetes is expecting the SkyDNS service to respond at that address, but traffic was getting routed elsewhere.
+When I corrected this issue, DNS started working as expected.
+
+The bottom line here is that Kubernetes _really_ wants to have ownership of all IP addresses starting with 10.
+If you try to put other machines into that range, you're going to have problems.
