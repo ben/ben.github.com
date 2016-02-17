@@ -35,7 +35,6 @@ links:
 # timezone:    America/New_York
 future:      true
 # pygments:    true
-markdown:    redcarpet
 
 redcarpet:
    extensions: [smart,with_toc_data]
