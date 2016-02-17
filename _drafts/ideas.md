@@ -1,4 +1,3 @@
-* PRs: `[WIP]` and GMail
 * Lessons learned from writing hubot plugins
     * Use the logger
     * Use the debugger
