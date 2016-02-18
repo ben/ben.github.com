@@ -2,16 +2,19 @@
 layout: post
 title: "Lessons Learned From Writing Hubot Plugins"
 image:
-  feature: skatepark.jpg
+  feature: robot.jpg
 comments: true
 ---
 
 Now that I've written a few Hubot plugins, I feel like it's time for me to pontificate on the best way to do things.
 I have literally *weeks* of experience doing this, which pretty much qualifies me to teach others at a university level.
 
+Seriously, though, Hubot plugins aren't exactly hard things to write, but there are some things you have to learn the hard way unless someone tells you.
+I've discovered a few techniques that seem to fit in the category of "best practices," and I wanted to write them down somewhere.
+
 ### Prototype in `scripts`
 
-The hands-down easiest way to try out a new idea is to drop a file in your Hubot's `/scripts` directory.
+The hands-down easiest way to try out a new idea is to drop a Coffeescript file in your Hubot's `/scripts` directory.
 Start with this:
 
 ~~~ coffee
@@ -19,7 +22,19 @@ module.exports = (robot) ->
     robot.respond /foo bar (.*)/, (msg) ->
 ~~~
 
+Or, if you prefer Javascript, use this:
+
+~~~ js
+module.exports = (robot) => {
+    robot.respond(/foo bar (.*)/, (msg) => {
+    });
+}
+~~~
+
+Yup, Hubot runs under newer Nodes, so you can use fat arrows.
+
 And then add all the stuff you want to do.
+Run `./bin/hubot -l !`, and you have a pretend chat room right in your shell, where you can try out your new command by typing `!foo bar baz`.
 
 ### Use the Logger
 
@@ -30,6 +45,8 @@ Make sure you set `HUBOT_LOG_LEVEL=debug` when you run, then do this when you wa
 ~~~ coffee
 robot.logger.debug "My #{message}"
 ~~~
+
+You can use other levels too, like `error` and `info`, and anything else that [the log package supports](https://www.npmjs.com/package/log#log-levels).
 
 ### Use the Debugger
 
@@ -68,6 +85,8 @@ Here's what you do:
 * Use the [Hubot mock adapter](https://github.com/blalor/hubot-mock-adapter) to make your plugin think it's being called into by hubot.
   This is actually fairly complicated; Hubot wasn't really designed for this.
   Read the docs, they'll help you.
+
+If all else fails, [cargo-cult a plugin with tests](https://github.com/ben/hubot-tangocard-highfive/blob/master/test/command_spec.coffee).
 
 ### Write More Plugins
 
