@@ -13,8 +13,8 @@ $(function () {
 
     const url = $('#url').val()
 
-    const apiUrl = 'https://public-api.wordpress.com/rest/v1.1/sites/bandofcharacters.wordpress.com/posts?pretty=1&fields=ID,title,slug,URL,content'
-    $.getJSON(apiUrl)
+    const postUrl = 'https://public-api.wordpress.com/rest/v1.1/sites/bandofcharacters.wordpress.com/posts?pretty=1&fields=ID,title,slug,URL,content'
+    $.getJSON(postUrl)
       .then(function (data) {
         data.posts.forEach(function (post) {
           if (url.indexOf(post.slug) === -1) return;
@@ -24,7 +24,8 @@ $(function () {
           const title = decodeEntities(post.title.replace('#', 'Thing '))
 
           // Parse body to extract first image tag
-          const imageUrl = $(post.content).find('img').attr('src').replace(/\?.+/, '')
+          let imageUrl = $(post.content).find('img').attr('src') || ''
+          imageUrl = imageUrl.replace(/\?.+/, '')
 
           // Facebook
           const fbText = `\n#hundredthings\n${url}`
@@ -45,6 +46,13 @@ $(function () {
     $('#facebook,#instagram,#twitter').focus(function () { $(this).select() })
 
   })
+
+  const allPostsUrl = 'https://public-api.wordpress.com/rest/v1.1/sites/bandofcharacters.wordpress.com/posts?number=1&fields=URL'
+  $.getJSON(allPostsUrl)
+    .then(function (data) {
+      $('#url').val(data.posts[0].URL)
+      $('#go').click()
+    })
 
   // Temporary for development
   // $('#url').val('https://bandofcharacters.blog/2016/12/31/16-explore-a-new-part-of-the-usa-new-mexico/')
