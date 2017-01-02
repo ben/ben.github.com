@@ -1,9 +1,9 @@
 var $
 
 function decodeEntities (encodedString) {
-    var textArea = document.createElement('textarea')
-    textArea.innerHTML = encodedString
-    return textArea.value
+  var textArea = document.createElement('textarea')
+  textArea.innerHTML = encodedString
+  return textArea.value
 }
 
 $(function () {
@@ -12,9 +12,8 @@ $(function () {
     e.preventDefault()
 
     const url = $('#url').val()
-    const blurb = $('#blurb').val()
 
-    const apiUrl = 'https://public-api.wordpress.com/rest/v1.1/sites/bandofcharacters.wordpress.com/posts?pretty=1&fields=ID,title,slug,URL,attachments'
+    const apiUrl = 'https://public-api.wordpress.com/rest/v1.1/sites/bandofcharacters.wordpress.com/posts?pretty=1&fields=ID,title,slug,URL,content'
     $.getJSON(apiUrl)
       .then(function (data) {
         data.posts.forEach(function (post) {
@@ -23,33 +22,31 @@ $(function () {
 
           // Extract title to avoid accidental hashtags
           const title = decodeEntities(post.title.replace('#', 'Thing '))
-          const firstImage = post.attachments[Object.keys(post.attachments)[0]] || {}
-          const imageUrl = firstImage.URL || ''
+
+          // Parse body to extract first image tag
+          const imageUrl = $(post.content).find('img').attr('src').replace(/\?.+/, '')
 
           // Facebook
-          const fbText = `${blurb}\n#hundredthings\n${url}`
+          const fbText = `\n#hundredthings\n${url}`
 
           // Twitter
           const twText = `${title} #hundredthings\n${post.URL} ${imageUrl}`
 
           // Instagram
-          const igText = `${title}\n\n${blurb}\n\n#hundredthings (Follow along by gong to the link in my bio!)`
+          const igText = `${title}\n\n#hundredthings (Follow along using the link in my bio!)`
 
           $('#facebook').val(fbText)
           $('#twitter').val(twText)
+          $('#instagram-image-link').attr('href', imageUrl)
           $('#instagram').val(igText)
         })
     })
 
-    $('#facebook').focus(function () {
-      $('#facebook').select()
-    })
+    $('#facebook,#instagram,#twitter').focus(function () { $(this).select() })
 
-    console.log(url, blurb)
   })
 
   // Temporary for development
-  $('#url').val('https://bandofcharacters.blog/2016/12/31/36-make-a-photo-every-day-book/')
-  $('#blurb').val('this is a blurb')
-  $('#go').click()
+  // $('#url').val('https://bandofcharacters.blog/2016/12/31/16-explore-a-new-part-of-the-usa-new-mexico/')
+  // $('#go').click()
 })

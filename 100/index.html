@@ -7,16 +7,14 @@
   <body>
     <h1>100 Things Tool</h1>
 
-    <hr>
-    <label>Post URL:</label>
-    <br>
-    <input type="text" id="url">
-    <br>
-    <label>Blurb:</label>
-    <br>
-    <textarea rows="8" cols="80" id="blurb"></textarea>
-    <br>
-    <button type="button" id="go">Generate</button>
+    <form>
+      <hr>
+      <label>Post URL:</label>
+      <br>
+      <input type="text" id="url">
+      <br>
+      <input type="submit" id="go" value="Generate">
+    </form>
 
     <hr>
     <label>Facebook:</label>
@@ -28,6 +26,8 @@
     <textarea id="twitter" rows="8" cols="80"></textarea>
     <br>
     <label>Instagram:</label>
+    <br>
+    <a id="instagram-image-link" target="_blank">Instagram image</a>
     <br>
     <textarea id="instagram" rows="8" cols="80"></textarea>
   </body>
