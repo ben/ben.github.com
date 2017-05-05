@@ -23,7 +23,8 @@ I used WTL, GDI+, and a handy, little-known Windows feature to get it done, and
 I'm going to share my secrets with you, dear reader.
 
 ## Dependencies
-#### WTL
+
+### WTL
 
 Windowing frameworks are thick on the ground, and I've been mostly dissatisfied
 with the abilities of the Win32-wrapping category. However, they make something
@@ -36,7 +37,7 @@ directory, so I don't get the Windows SDK versions instead.
 
 I've found this to be the best way to include the WTL headers:
 
-```c++
+{% highlight cpp %}
 #define _SECURE_ATL 1
 #define _WTL_NO_AUTOMATIC_NAMESPACE
 #define _ATL_NO_AUTOMATIC_NAMESPACE
@@ -48,28 +49,28 @@ I've found this to be the best way to include the WTL headers:
 
 #include "wtl/atlgdi.h"   // For WTL::CDC
 #include "wtl/atlframe.h" // For WTL::CFrameWindowImpl
-```
+{% endhighlight %}
 
 Those defines specify that the ATL and WTL classes should stay safely ensconced
 in their own namespaces. This means you have to reference them as
 `WTL::CFrameWndImpl`, but it keeps the global namespace clean, which is a major
 failing of `windows.h`.
 
-#### GDI+
+### GDI+
 
 GDI+ is an immediate-mode drawing API that has shipped with Windows since XP,
 so I can use it without needing to ship yet another redistributable installer.
 Here's all you need to do:
 
-```c++
+{% highlight cpp %}
 #pragma comment(lib, "gdiplus.lib")
 #include &lt;gdiplus.h>
-```
+{% endhighlight %}
 
 While GDI+ is written in c++ and uses classes, it's initialization isn't
 RAII-friendly, so I wrote a little wrapper class:
 
-```c++
+{% highlight cpp %}
 class ScopedGdiplusInitializer
 {
 public:
@@ -85,19 +86,19 @@ public:
 private:
   ULONG_PTR mGdipToken;
 };
-```
+{% endhighlight %}
 
 Now I can write my main function like this:
 
-```c++
+{% highlight cpp %}
 int main()
 {
   ScopedGdiplusInitializer gdiplusinit;
   // ...
 }
-```
+{% endhighlight %}
 
-#### Boost
+### Boost
 
 The production code for this feature uses boost (specifically `shared_ptr`),
 but in the interest of simplicity I've left it out. If you use boost, or your
@@ -109,7 +110,7 @@ recommend you use that instead of raw pointers whenever possible.
 Here's where it all comes together. Meet me after the code, and I'll explain
 more fully.
 
-```c++
+{% highlight cpp %}
 class AlphaWindow
   : public WTL::CFrameWindowImpl<
       AlphaWindow, ATL::CWindow,
@@ -162,7 +163,7 @@ public:
     memDC.SelectBitmap(oldBmp);
   }
 };
-```
+{% endhighlight %}
 
 ### Layered Windows
 
@@ -195,7 +196,7 @@ That `UpdatedLayeredWindow` call is wrapped in a method that takes a GDI+
 bitmap, so now all we need to do is provide it with one. GDI+ makes this pretty
 easy, especially when compared to GDI code:
 
-```c++
+{% highlight cpp %}
 using namespace Gdiplus;
 // Create a bitmap buffer
 Bitmap bmp(400,400);
@@ -203,12 +204,12 @@ Bitmap bmp(400,400);
 Graphics g(&bmp);
 g.Clear(Color::Black);
 // ...
-```
+{% endhighlight %}
 
 ## All together now
 Here's the `main` function of my little test program.
 
-```c++
+{% highlight cpp %}
 int main()
 {
   ScopedGdiplusInitializer init;
@@ -248,7 +249,7 @@ int main()
     getchar();
   }
 }
-```
+{% endhighlight %}
 
 I know, programmer demos of this are always ugly. Maybe one day I'll write
 about how to store a PNG as a resource, and load it in for use with this. For

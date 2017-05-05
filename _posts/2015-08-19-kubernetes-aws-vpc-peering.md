@@ -40,7 +40,7 @@ The problem is that our RDS instance belongs to our main VPC, so it won't be vis
 
 Time for some [peering](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-peering.html).
 Peering lets you set up routing so that a certain range of IP addresses will route into another VPC.
-This sounds like exactly what we want. 
+This sounds like exactly what we want.
 Our Kubernetes VPC's IP address range is 172.20.\*.\*, and the original VPC's address range is 10.0.\*.\*.
 So I set up the peering connection, and altered the route tables on either side, so that if a machine in VPC1 is looking for a machine in VPC2, it will route through the peering connection.
 I also made sure to change the RDS instance's [security group](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) to allow connections from 172.20.\*.\*.
@@ -77,14 +77,15 @@ Even though he was in Japan at the time, and it was the middle of the night ther
 The problem here is a difference in expectations as to what IP addresses are owned by whom.
 Kelsey was explaining to me how Docker containers should be using masqueraded IP addresses for traffic outside the Docker daemon, when we ran this on one of the minions:
 
-```
+{% highlight text %}
 $ iptables -v -L -n -t nat
 [...]
 Chain POSTROUTING (policy ACCEPT 78 packets, 4680 bytes)
  pkts bytes target     prot opt in     out     source         destination
 87316 5451K MASQUERADE  all  --  *      eth0    0.0.0.0/0     !10.0.0.0/8
 [...]
-```
+{% endhighlight %}
+
 
 What that `MASQUERADE` line means is "if the destination address _isn't_ a 10.\*.\*.\* address (which Kubernetes reserves for itself), send it as though it were coming from the EC2 instance's IP address."
 That's a great rule, and it allows containers to talk to the outside world, and the return traffic finds its way back to the EC2 instance, and then back to the container that initiated the connection.
@@ -96,7 +97,7 @@ Trying to respond to such a packet just doesn't work; the other VPC thinks 10.so
 
 As a quick test, we punched a very small hole through this rule:
 
-```
+{% highlight text %}
 $ sudo iptables -t nat -I POSTROUTING -d 10.0.18.52/32 -o eth0 -j MASQUERADE
 $ iptables -v -L -n -t nat
 [...]
@@ -105,7 +106,7 @@ Chain POSTROUTING (policy ACCEPT 32 packets, 1920 bytes)
     2   120 MASQUERADE  all  --  *      eth0    0.0.0.0/0        10.0.18.52
 87355 5454K MASQUERADE  all  --  *      eth0    0.0.0.0/0       !10.0.0.0/8
 [...]
-```
+{% endhighlight %}
 
 We inserted a rule at the top that says "if the destination is the RDS instance, make sure you masquerade as the host machine."
 And it worked!
@@ -121,9 +122,9 @@ If you're going to peer to a VPC whose IP addresses start with 10, you're going 
 
 So as of right now, the answer is to SSH into every one of your minions and do this:
 
-```bash
+{% highlight text %}
 $ sudo iptables -t nat -I POSTROUTING -d <RDS-IP-ADDRESS>/32 -o eth0 -j MASQUERADE
-```
+{% endhighlight %}
 
 Good luck, and I hope you found this post if this problem affects you.
 
@@ -133,12 +134,12 @@ Once we got this up and running, we noticed glitchy DNS response.
 When one container was trying to find a separate service, it would only sometimes work.
 I did a little digging, and here's what I found in the `/etc/resolv.conf` on both of my minions:
 
-```
+{% highlight text %}
 nameserver 10.0.0.10
 nameserver 172.20.0.2
 search default.svc.cluster.local svc.cluster.local cluster.local us-west-1.compute.internal
 options ndots:5
-```
+{% endhighlight %}
 
 That first line is key.
 Since the foreign VPC was in the 10.0.0.\* space, I had set up AWS routing to send traffic to those IPs through the peering connection.

@@ -36,7 +36,7 @@ You can probably tell by how abstract that sentence is that I've thought about t
 
 In the chat room, before Gort came along, you'd periodically see patterns like this when deployments were happening:
 
-```
+{% highlight text %}
 A: I'm doing a deployment, hang on to your butts.
 B: Okay
 C: Got it.
@@ -45,7 +45,7 @@ A: Okay, I'm done. Is the website broken?
 C: Nope, looks okay to me.
 B: Looks fine.
 A: Great. Carry on, everybody.
-```
+{% endhighlight %}
 
 There's an implied contract here.
 As the one doing the deployment, you've agreed to tell your teammates what you're doing and when it's done, wrap it up in a timely manner, and not to do something that gets in their way or destroys sensitive data.
