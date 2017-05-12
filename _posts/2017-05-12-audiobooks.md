@@ -9,7 +9,7 @@ comments: true
 We're a read-aloud family.
 Every night before bed, each of our kids gets some read-aloud time with a parent.
 I have one book I'm reading with my son, and another one I read with my daughter, and Becky does the same.
-This has a whole host of benefits — I get to read some of the classics I missed as a kid, the kids gett access to stories they're not ready to read themselves yet, and we all enjoy some really quality fiction without the need for it to be coming from a screen.
+This has a whole host of benefits — I get to read some of the classics I missed as a kid, the kids get access to stories they're not ready to read themselves yet, and we all enjoy some really quality fiction without the need for it to be coming from a screen.
 The kids are both such big fans of this kind of storytelling that they have iPods full of audiobooks, which they get to pull out on long car rides, or when they're hanging out in their rooms.
 
 A while ago, my [son went to live in another state][sandhill], and our contact with him started being very tightly controlled.
@@ -20,7 +20,15 @@ So we decided to record ourselves reading books to his sister, and providing the
 
 The end result is magical.
 He _loves_ it.
-He listens to us reading books out loud over and over, and it gives him that taste of being at home, right down to the sound me doing the dishes in the background while Becky reads _Listening for Lions_ in the living room.
+He listens to us reading books out loud over and over, and it gives him that taste of being at home, right down to the background noise — the sound of me doing the dishes, the dogs walking around the room, his sister asking questions.
+Moments like this:
+
+<p>
+  <audio controls style="width: 100%;">
+    <source src="/images/audiobooks/pettigrew.mp3" type="audio/mpeg">
+    <a href="/images/audiobooks/pettigrew.mp3">(Play audio)</a>
+  </audio>
+</p>
 
 It took me a bit of research to figure out how to do this, so I thought I'd write it down so others could have an easier time than I did.
 
@@ -35,7 +43,7 @@ If you want the real deal, read on.
 ## Step 1
 
 Record yourself reading the book aloud.
-I'm using a Mac, so the software I use for this is GarageBand, which isn't **perfectly** suited to this task, but it's free and does an okay job.
+I'm using GarageBand on a Mac, which isn't **perfectly** suited to this task, but it's free and does an okay job.
 Here's what it looks like about ¾ of the way through _Where the Red Fern Grows_:
 
 ![](/images/audiobooks/redfern1.jpg)
@@ -120,15 +128,14 @@ All that's left to do is get this audiobook onto the device where you want it.
 In my case, I'm going to sync it over to my son's iPod, where it'll show up in the **iBooks** app.
 
 This is as simple as checking a couple of boxes.
-Plug in the target device, select it in iTunes, go to the "Audiobooks" tab, and check the box that says **Sync all audiobooks**.
+Plug in the target device, select it in iTunes, go to the "Audiobooks" tab, and configure it to sync all audiobooks.
 Sync the device, and you're done.
 
-TODO: screenshot / iTunes sync settings
+![](/images/audiobooks/itunes-sync.png)
 
 You should be able to open up iBooks on the device, and find your audiobook waiting!
 
-TODO: Screenshot of iPod in iBooks
-
+![](/images/audiobooks/ibooks.png)
 
 ## Notes on gear
 
