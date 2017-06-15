@@ -10,7 +10,7 @@ Most every remote-enabled team uses real-time-communication software of one sort
 
 ### Video
 
-_Coming soon._
+<iframe width="680" height="385" src="https://www.youtube.com/embed/NRS1fALdAOU" frameborder="0" allowfullscreen></iframe>
 
 ### Slides
 
@@ -24,4 +24,4 @@ data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js">
 
 ### Design Notes
 
-Software: [Deckset](http://www.decksetapp.com/). *Letters from Sweden* theme, dark blue.
+Software: [Deckset](http://www.decksetapp.com/). Theme: *Letters from Sweden*, dark blue.
