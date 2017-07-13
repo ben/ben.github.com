@@ -28,10 +28,10 @@ $(function () {
           imageUrl = imageUrl.replace(/\?.+/, '')
 
           // Facebook
-          const fbText = `\n#hundredthings\n${url}`
+          const fbText = ` #hundredthings\n\n${url}`
 
           // Twitter
-          const twText = `${title} #hundredthings\n${post.URL} ${imageUrl}`
+          const twText = `${title} #hundredthings\n\n${post.URL}`
 
           // Instagram
           const igText = `${title}\n\n#hundredthings (Follow along using the link in my bio!)`
@@ -42,8 +42,7 @@ $(function () {
           $('#instagram').val(igText)
         })
     })
-
-    $('#facebook,#instagram,#twitter').focus(function () { $(this).select() })
+    $('#facebook,#twitter').focus(function () { $(this).select() })
 
   })
 
