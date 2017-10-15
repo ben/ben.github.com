@@ -17,16 +17,16 @@ some of the boilerplate out of the way:
 
 int main(int argc, char **argv)
 {
-	const char *url, *path;
+  const char *url, *path;
 
-	if (argc < 3) {
-		printf("USAGE: clone <url> <path>\n");
-		return -1;
-	}
+  if (argc < 3) {
+    printf("USAGE: clone <url> <path>\n");
+    return -1;
+  }
 
-	url = argv[1];
-	path = argv[2];
-	return do_clone(url, path);
+  url = argv[1];
+  path = argv[2];
+  return do_clone(url, path);
 }
 ```
 
@@ -36,10 +36,10 @@ What does the do_clone method look like?  Let's start simple:
 ```c
 static int do_clone(const char *url, const char *path)
 {
-	git_repository *repo = NULL;
-	int ret = git_clone(&repo, url, path, NULL);
-	git_repository_free(repo);
-	return ret;
+  git_repository *repo = NULL;
+  int ret = git_clone(&repo, url, path, NULL);
+  git_repository_free(repo);
+  return ret;
 }
 ```
 
@@ -65,23 +65,23 @@ this:
 
 ```c
 static void fetch_progress(
-		const git_transfer_progress *stats,
-		void *payload)
+    const git_transfer_progress *stats,
+    void *payload)
 {
-	int fetch_percent =
-		(100 * stats->received_objects) /
-		stats->total_objects;
-	int index_percent =
-		(100 * stats->indexed_objects) /
-		stats->total_objects;
-	int kbytes = stats->received_bytes / 1024;
+  int fetch_percent =
+    (100 * stats->received_objects) /
+    stats->total_objects;
+  int index_percent =
+    (100 * stats->indexed_objects) /
+    stats->total_objects;
+  int kbytes = stats->received_bytes / 1024;
 
-	printf("network %3d%% (%4d kb, %5d/%5d)  /"
-			"  index %3d%% (%5d/%5d)\n",
-			fetch_percent, kbytes,
-			stats->received_objects, stats->total_objects,
-			index_percent,
-			stats->indexed_objects, stats->total_objects);
+  printf("network %3d%% (%4d kb, %5d/%5d)  /"
+      "  index %3d%% (%5d/%5d)\n",
+      fetch_percent, kbytes,
+      stats->received_objects, stats->total_objects,
+      index_percent,
+      stats->indexed_objects, stats->total_objects);
 }
 ```
 
@@ -98,14 +98,14 @@ So let's rewrite our `do_clone` function to plug that in:
 ```c
 static int do_clone(const char *url, const char *path)
 {
-	git_repository *repo = NULL;
-	git_clone_options opts = GIT_CLONE_OPTIONS_INIT;
-	int ret;
+  git_repository *repo = NULL;
+  git_clone_options opts = GIT_CLONE_OPTIONS_INIT;
+  int ret;
 
-	opts.fetch_progress_cb = fetch_progress;
-	ret = git_clone(&repo, url, path, &opts);
-	git_repository_free(repo);
-	return ret;
+  opts.fetch_progress_cb = fetch_progress;
+  ret = git_clone(&repo, url, path, &opts);
+  git_repository_free(repo);
+  return ret;
 }
 ```
 
