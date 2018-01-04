@@ -2,4 +2,4 @@ backend:
   name: git-gateway
   branch: master
 publish_mode: editorial_workflow
-media_foler: images
+media_folder: images
