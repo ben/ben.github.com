@@ -12,7 +12,6 @@ $(document).ready(function() {
     }
   });
 
-
   $('article.post iframe').wrap('<div class="video-container" />');
 
 });
@@ -23,7 +22,6 @@ $(document).ready(function() {
     $('.overlay').css("height", vH);
     $('.featured-image').css("height", vH);
 });
-
 
 $(function(){
   $('<img>').attr('src',function(){
@@ -46,7 +44,6 @@ $(function(){
     });
 });
 
-
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-35858797-1']);
 _gaq.push(['_trackPageview']);
@@ -56,3 +53,13 @@ _gaq.push(['_trackPageview']);
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
+
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.netlifyIdentity.on("login", () => {
+        document.location.href = "/admin/";
+      });
+    }
+  });
+}
