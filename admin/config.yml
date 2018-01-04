@@ -3,3 +3,13 @@ backend:
   branch: master
 publish_mode: editorial_workflow
 media_folder: images
+collections:
+- name: posts
+  label: Post
+  folder: _posts
+  create: true
+  slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  fields:
+    - {label: Layout, name: layout, default: post, widget: string}
+    - {label: "Featured Image", name: "image.feature", widget: image}
+    - {label: Body, name: body, widget: markdown}
