@@ -10,6 +10,7 @@ collections:
   create: true
   slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
   fields:
+    - {label: "Title", name: title, widget: "string"}
     - {label: Layout, name: layout, default: post, widget: string}
     - {label: "Featured Image", name: "image.feature", widget: image}
     - {label: Body, name: body, widget: markdown}
