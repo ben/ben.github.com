@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Kubernetes and AWS VPC Peering"
-image:
-  feature: network.jpg
+feature_image: network.jpg
 comments: true
 ---
 

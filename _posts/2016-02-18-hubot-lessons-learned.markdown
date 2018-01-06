@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Lessons Learned From Writing Hubot Plugins"
-image:
-  feature: robot.jpg
+feature_image: robot.jpg
 comments: true
 ---
 

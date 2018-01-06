@@ -1,11 +1,11 @@
-{% if page.image.feature %}
+{% if page.feature_image %}
 
 {% include head.html %}
 
 <section class="article">
 
   <div class="overlay"></div>
-  <div class="featured-image" style="background-image: url({{ site.url }}/images/{{ page.image.feature }})"></div>
+  <div class="featured-image" style="background-image: url({{ site.url }}/images/{{ page.feature_image }})"></div>
 {% else %}
 
 {% include head-dark.html %}

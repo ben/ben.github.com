@@ -1,7 +1,6 @@
 ---
 layout: post
-image:
-  feature: jgc.jpg
+feature_image: jgc.jpg
 title: "Bad Car, No Donut"
 comments: true
 ---

@@ -4,15 +4,15 @@
 <meta name="twitter:author" content="@benstraub">
 <meta name="twitter:title"  content="{{page.title}}">
 <meta name="twitter:description" content="{% if page.description %}{{ page.description  | strip_html | truncate: 120 }}{% else %}{{ page.content | strip_html | truncate: 120 }}{% endif %}">
-{% if page.image.feature %}
-<meta name="twitter:image" content="{{site.url}}/images/{{page.image.feature}}">
+{% if page.feature_image %}
+<meta name="twitter:image" content="{{site.url}}/images/{{page.feature_image}}">
 {% endif %}
 
 <section class="article">
 
-{% if page.image.feature %}
+{% if page.feature_image %}
   <div class="overlay"></div>
-  <div class="featured-image" style="background-image: url(/images/{{ page.image.feature }})"></div>
+  <div class="featured-image" style="background-image: url(/images/{{ page.feature_image }})"></div>
 {% else %}
   <div class="overlay"></div>
   <div class="featured-image" style="background-image: url(/images/typewriter.jpg)"></div>

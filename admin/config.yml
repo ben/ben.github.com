@@ -10,7 +10,18 @@ collections:
   create: true
   slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
   fields:
-    - {label: "Title", name: title, widget: "string"}
-    - {label: Layout, name: layout, default: post, widget: string}
-    - {label: "Featured Image", name: "image.feature", widget: image}
-    - {label: Body, name: body, widget: markdown}
+    - label: Title
+      name: title
+      widget: string
+    - label: Layout
+      name: layout
+      default: post
+      widget: select
+      options: [post, post-no-feature]
+    - label: Featured Image
+      name: feature_image
+      widget: image
+      required: false
+    - label: Body
+      name: body
+      widget: markdown

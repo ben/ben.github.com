@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Culture Engineering"
-image:
-  feature: skatepark.jpg
+feature_image: skatepark.jpg
 comments: true
 ---
 

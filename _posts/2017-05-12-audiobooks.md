@@ -1,7 +1,6 @@
 ---
 layout: post
-image:
-  feature: audiobooks/book.jpg
+feature_image: audiobooks/book.jpg
 title: "Making Audiobooks"
 comments: true
 ---

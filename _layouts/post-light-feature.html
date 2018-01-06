@@ -1,12 +1,12 @@
-{% if page.image.feature %}
+{% if page.feature_image %}
 
 {% include head-dark.html %}
-<meta name="twitter:image" content="{{site.url}}/images/{{page.image.feature}}">
+<meta name="twitter:image" content="{{site.url}}/images/{{page.feature_image}}">
 
 <section class="article">
 
   <div class="overlay overlay-lighter"></div>
-  <div class="featured-image" style="background-image: url(/images/{{ page.image.feature }})"></div>
+  <div class="featured-image" style="background-image: url(/images/{{ page.feature_image }})"></div>
 {% else %}
 
 {% include head-dark.html %}
