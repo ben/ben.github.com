@@ -20,10 +20,10 @@ I have plenty of ideas for content on this blog, I can submit magazine articles,
 
 [lg2]: http://libgit2.github.com
 
-The trick, I think, is to *not even consider other possibilities* during those times.
+The trick, I think, is to _not even consider other possibilities_ during those times.
 If the only thing you allow yourself to do is write, you'll get writing done.
 
-So that's what I'll do: confine my focus to writing during those times, and direct those energies towards the writing projects I *do* have.
+So that's what I'll do: confine my focus to writing during those times, and direct those energies towards the writing projects I _do_ have.
 
 ## Household Mornings
 

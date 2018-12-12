@@ -142,10 +142,10 @@ I'm writing this from how I know to do it, which is on a Mac and an iPod, using 
 If you've done it using other stuff that works better, or found out how to make it work on Windows, [let me know](mailto:ben@straub.cc) so I can update this article.
 
 So about sound quality: you don't really need anything besides a computer and a phone to make this work, but built-in microphones will seriously limit you if you do more than one recording.
-The next step up is a $30 headset you'd use for making Skype calls.
+The next step up is a \$30 headset you'd use for making Skype calls.
 It'll be better, but not much; you'll still sound like you're on the phone.
 
-At  the $60-75 level, you really start sounding good.
-I use the [Samson Meteor](https://www.amazon.com/dp/B004MF39YS/) which is $70ish.
+At the $60-75 level, you really start sounding good.
+I use the [Samson Meteor](https://www.amazon.com/dp/B004MF39YS/) which is \$70-ish.
 It's a condenser mic, though, which means it'll pick up lots of background noise; in my case, that's exactly what I wanted, but your desires might be different.
 Also check the [Wirecutter](http://thewirecutter.com/reviews/the-best-usb-microphone/) for advice on how to choose a microphone.

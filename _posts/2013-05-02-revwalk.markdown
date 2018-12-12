@@ -54,10 +54,10 @@ There's an API for that.
 
 The revwalk API works similarly to what we just wrote above, with a few exceptions:
 
-* It has a configurable sort order for the output.
-* It's not built on recursion, so even very large repos can be walked efficiently.
-* You get to choose your start and end points.
-* It offers some history simplification.
+- It has a configurable sort order for the output.
+- It's not built on recursion, so even very large repos can be walked efficiently.
+- You get to choose your start and end points.
+- It offers some history simplification.
 
 Let's walk through this one step at a time.
 First, you have to create a walker object:
@@ -87,12 +87,12 @@ Next, let's configure the walk:
 We're doing several things here:
 
 1. We set the sort order to "topological + time".
-  This sounds a bit arcane, but it's just what you'd want for a log viewer: parents after children, sorted by commit time.
+   This sounds a bit arcane, but it's just what you'd want for a log viewer: parents after children, sorted by commit time.
 1. We "push" the HEAD commit onto the walk.
-  This tells the walk that the HEAD and its ancestors should be visited when we start iterating.
-  You can even do more than one "push" (i.e. all of the known refs, for behavior like `git log --all`).
+   This tells the walk that the HEAD and its ancestors should be visited when we start iterating.
+   You can even do more than one "push" (i.e. all of the known refs, for behavior like `git log --all`).
 1. We "hide" from the walk all commits that are included in a tag.
-  The pattern will match all the refs under "refs/tags", dereference them to commits, and exclude those commits and their ancestors from the walk.
+   The pattern will match all the refs under "refs/tags", dereference them to commits, and exclude those commits and their ancestors from the walk.
 1. We also hide all commits that precede the 10th ancestor of HEAD.
 
 Obviously, these particular choices won't be right for every application, but there are more than enough options to (hopefully) fit your use case.
@@ -115,7 +115,7 @@ Now we're ready to run the walk, and print out some facts about each commit:
   }
 ```
 
-*[Implementing `--graph` is left as an exercise for the reader.]*
+_[Implementing `--graph` is left as an exercise for the reader.]_
 
 That wasn't so bad, was it?
 Traveling through time was never so easy.

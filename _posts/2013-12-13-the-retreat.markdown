@@ -33,9 +33,9 @@ And one of the most important relationships a human has – the relationship wit
 About a year ago, Becky came up with an idea for this.
 Here are the rules:
 
-1. Every six months, you get three nights *off*, in a place that isn't home.
+1. Every six months, you get three nights _off_, in a place that isn't home.
 1. The rest of the family leaves you alone, and you have no responsibilities to them.
-  You make your own schedule, and do as you please.
+   You make your own schedule, and do as you please.
 1. You are not allowed to feel guilty about this.
 
 Those of you who are single will think "that sounds like every day to me," and you'd be right.
@@ -56,7 +56,7 @@ It turns out the kids need this too, just not in such large doses.
 At school, they're part of a group (in a software-development setting, where the optimal team size is [between 5 and 9](http://stackoverflow.com/questions/872103/what-is-the-optimal-size-of-a-software-development-team) this would be considered a large team), and at home we usually do things as a group of four.
 The only time they're truly alone is when they're asleep.
 So we've started sending them to their rooms, alone, for an hour or two every weekend.
-This isn't a punishment; it's *time with your best friend.*
+This isn't a punishment; it's _time with your best friend._
 They liken it to the retreats their parents take, and joyfully build with LEGO, read books, or put on fancy shoes and dance.
 Our hope is that they will learn how to be comfortable with themselves, something many adults have trouble with (ourselves included).
 

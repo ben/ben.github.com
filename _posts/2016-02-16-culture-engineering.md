@@ -5,7 +5,7 @@ feature_image: skatepark.jpg
 comments: true
 ---
 
-One of the biggest points I make in my [talk about chat bots](talks/robots/) is that *culture is hackable* — you can change your team or company culture by writing code.
+One of the biggest points I make in my [talk about chat bots](talks/robots/) is that _culture is hackable_ — you can change your team or company culture by writing code.
 
 This isn't a Great Insight™.
 Architecture is on some level the study of how buildings and spaces affect human behavior.
@@ -18,7 +18,7 @@ The internal tools we made and used were often explicitly designed to affect cul
 We're also thinking about this at [my current job](http://gridium.com), as we build a communication tool for property managers, and we've hacked on our own culture, using tools like [Slack](https://slack.com) and [Hubot](https://hubot.github.com) and [high-fives](https://github.com/ben/hubot-tangocard-highfive).
 
 The word "hacking" has been misused for many purposes over the years, but I usually take it to mean "getting the quickest possible result from a system, without much regard to long-term or side effects."
-This is in contrast to *engineering*, which actually has a formal definition, but which I think of as "creating a system in a planned and controlled way, with thought given to long-term sustainability and side effects."
+This is in contrast to _engineering_, which actually has a formal definition, but which I think of as "creating a system in a planned and controlled way, with thought given to long-term sustainability and side effects."
 Neither of these approaches is right or wrong, they're just appropriate for different projects.
 You wouldn't hack together a passenger jet with trial and error, and you wouldn't run risk analyses before you made a paper airplane.
 

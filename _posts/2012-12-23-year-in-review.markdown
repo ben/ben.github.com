@@ -5,7 +5,7 @@ date: 2013-01-11 06:28:00
 comments: true
 ---
 
-My 2012, through the GitHub lens.  Inspired by [Tim Clem](https://github.com/blog/1360-introducing-contributions).
+My 2012, through the GitHub lens. Inspired by [Tim Clem](https://github.com/blog/1360-introducing-contributions).
 
 [![Annotated GitHub Contributions Chart](/images/contributions-2012.png)](/images/contributions-2012.png)
 

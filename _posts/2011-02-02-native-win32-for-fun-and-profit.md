@@ -4,16 +4,15 @@ title: "Native Win32 for fun and profit"
 comments: true
 ---
 
-*\[Note: this is ported from my [old
+_\[Note: this is ported from my [old
 blog](http://ben.straubnet.net/post/3074077580/native-win32-for-fun-and-profit),
-and there's more discussion there.\]*
+and there's more discussion there.\]_
 
 All the cool kids these days are playing with awesome dynamic languages, or on
-cool frameworks.  I'm stuck with c++ at work, but every now and then I get to
+cool frameworks. I'm stuck with c++ at work, but every now and then I get to
 do something cool with it.
 
 ![radial menu](/images/nativewin32/1.png)
-
 
 That's the [Wacom radial
 menu](http://graphicssoft.about.com/od/hardware/ig/Wacom-Intuos4/Intuos4-Radial-Menu.htm),
@@ -38,16 +37,16 @@ directory, so I don't get the Windows SDK versions instead.
 I've found this to be the best way to include the WTL headers:
 
 {% highlight cpp %}
-#define _SECURE_ATL 1
-#define _WTL_NO_AUTOMATIC_NAMESPACE
-#define _ATL_NO_AUTOMATIC_NAMESPACE
+#define \_SECURE_ATL 1
+#define \_WTL_NO_AUTOMATIC_NAMESPACE
+#define \_ATL_NO_AUTOMATIC_NAMESPACE
 
 // These are required to be included first
 #include "atlbase.h"
 #include "atlwin.h"
 #include "wtl/atlapp.h"
 
-#include "wtl/atlgdi.h"   // For WTL::CDC
+#include "wtl/atlgdi.h" // For WTL::CDC
 #include "wtl/atlframe.h" // For WTL::CFrameWindowImpl
 {% endhighlight %}
 
@@ -74,17 +73,17 @@ RAII-friendly, so I wrote a little wrapper class:
 class ScopedGdiplusInitializer
 {
 public:
-  ScopedGdiplusInitializer()
-  {
-    Gdiplus::GdiplusStartupInput gdisi;
-    Gdiplus::GdiplusStartup(&mGdipToken, &gdisi, NULL);
-  }
-  ~ScopedGdiplusInitializer()
-  {
-    Gdiplus::GdiplusShutdown(mGdipToken);
-  }
+ScopedGdiplusInitializer()
+{
+Gdiplus::GdiplusStartupInput gdisi;
+Gdiplus::GdiplusStartup(&mGdipToken, &gdisi, NULL);
+}
+~ScopedGdiplusInitializer()
+{
+Gdiplus::GdiplusShutdown(mGdipToken);
+}
 private:
-  ULONG_PTR mGdipToken;
+ULONG_PTR mGdipToken;
 };
 {% endhighlight %}
 
@@ -93,8 +92,8 @@ Now I can write my main function like this:
 {% highlight cpp %}
 int main()
 {
-  ScopedGdiplusInitializer gdiplusinit;
-  // ...
+ScopedGdiplusInitializer gdiplusinit;
+// ...
 }
 {% endhighlight %}
 
@@ -112,29 +111,29 @@ more fully.
 
 {% highlight cpp %}
 class AlphaWindow
-  : public WTL::CFrameWindowImpl<
-      AlphaWindow, ATL::CWindow,
-      ATL::CWinTraits< WS_POPUP, WS_EX_LAYERED > >
+: public WTL::CFrameWindowImpl<
+AlphaWindow, ATL::CWindow,
+ATL::CWinTraits< WS_POPUP, WS_EX_LAYERED > >
 {
 public:
-  DECLARE_FRAME_WND_CLASS(_T("WTLAlphaWindow"), 0);
+DECLARE_FRAME_WND_CLASS(\_T("WTLAlphaWindow"), 0);
 
-  virtual ~AlphaWindow()
-  {
-    if (IsWindow())
-    {
-      SendMessage(WM_CLOSE);
-    }
-  }
+virtual ~AlphaWindow()
+{
+if (IsWindow())
+{
+SendMessage(WM_CLOSE);
+}
+}
 
-  void UpdateWithBitmap(Gdiplus::Bitmap *bmp_I,
-                        POINT *windowLocation_I = NULL)
-  {
-    // Create a memory DC
-    HDC screenDC = ::GetDC(NULL);
-    WTL::CDC memDC;
-    memDC.CreateCompatibleDC(screenDC);
-    ::ReleaseDC(NULL, screenDC);
+void UpdateWithBitmap(Gdiplus::Bitmap *bmp_I,
+POINT *windowLocation_I = NULL)
+{
+// Create a memory DC
+HDC screenDC = ::GetDC(NULL);
+WTL::CDC memDC;
+memDC.CreateCompatibleDC(screenDC);
+::ReleaseDC(NULL, screenDC);
 
     // Copy the input bitmap and select it into the
     // memory DC
@@ -161,7 +160,8 @@ public:
 
     // Cleanup
     memDC.SelectBitmap(oldBmp);
-  }
+
+}
 };
 {% endhighlight %}
 
@@ -173,9 +173,9 @@ The magic ingredients for this class are the `WS_EX_*` styles and the
 First, the styles. These are specified on line 3, as part of the base class.
 That's just how you declare your window's styles in WTL. There are two:
 
-* `WS_POPUP` means this is a square window with no decorations around the
+- `WS_POPUP` means this is a square window with no decorations around the
   outside. No title bar, no close button, nothing.
-* `WS_EX_LAYERED` tells Windows that [this window is
+- `WS_EX_LAYERED` tells Windows that [this window is
   different](http://msdn.microsoft.com/en-us/library/ms997507.aspx), and that
   it can do per-pixel alpha blending with other windows. This was available in
   Windows 2000, but starting with Vista the window's face could be cached and
@@ -207,19 +207,20 @@ g.Clear(Color::Black);
 {% endhighlight %}
 
 ## All together now
+
 Here's the `main` function of my little test program.
 
 {% highlight cpp %}
 int main()
 {
-  ScopedGdiplusInitializer init;
+ScopedGdiplusInitializer init;
 
-  {
-    // Create the display window
-    AlphaWindow wnd;
-    wnd.Create();
-    wnd.SetWindowPos(NULL, 200,200, 0,0,
-                     SWP_NOSIZE | SWP_NOREPOSITION);
+{
+// Create the display window
+AlphaWindow wnd;
+wnd.Create();
+wnd.SetWindowPos(NULL, 200,200, 0,0,
+SWP_NOSIZE | SWP_NOREPOSITION);
 
     // Create a backbuffer
     Gdiplus::Bitmap bmp(400,400);
@@ -247,7 +248,8 @@ int main()
 
     // Wait to exit
     getchar();
-  }
+
+}
 }
 {% endhighlight %}
 

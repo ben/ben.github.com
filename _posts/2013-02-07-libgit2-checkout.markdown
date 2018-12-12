@@ -18,9 +18,9 @@ In libgit2, checkout is all about modifying the index and/or working directory, 
 
 Libgit2's checkout API has (as of this writing) three modes:
 
-* `git_checkout_head` updates the index and working tree to match the content of the tree pointed to by `HEAD`.
-* `git_checkout_index` updates the working directory to match the content of the index.
-* `git_checkout_tree` updates the working directory to the content of a specified tree.
+- `git_checkout_head` updates the index and working tree to match the content of the tree pointed to by `HEAD`.
+- `git_checkout_index` updates the working directory to match the content of the index.
+- `git_checkout_tree` updates the working directory to the content of a specified tree.
 
 None of those deal with actually moving `HEAD` around, which is most of what I use `git checkout` for, but hey.
 If you want to move refs around, try the refs API.
@@ -45,16 +45,16 @@ The default mode of operation is to
 By design, you have to be very explicit when you're writing stuff to the working directory.
 To specify what strategy you want the checkout to use, you modify `opts.checkout_strategy`, usually to one of these values:
 
-* `GIT_CHECKOUT_SAFE` will update files that match what's in the index (files that haven't been changed), but won't create missing files.
-* `GIT_CHECKOUT_SAFE_CREATE` does the above plus creating missing files. This is what [`git_clone`](/2013/02/01/stupid-libgit2-tricks-cloning) uses by default.
-* `GIT_CHECKOUT_FORCE` does the above, plus overwriting uncommitted changes.
+- `GIT_CHECKOUT_SAFE` will update files that match what's in the index (files that haven't been changed), but won't create missing files.
+- `GIT_CHECKOUT_SAFE_CREATE` does the above plus creating missing files. This is what [`git_clone`](/2013/02/01/stupid-libgit2-tricks-cloning) uses by default.
+- `GIT_CHECKOUT_FORCE` does the above, plus overwriting uncommitted changes.
   This is the most like `git checkout -f`.
 
 There are some other behavior flags you can include in this field as well:
 
-* `GIT_CHECKOUT_ALLOW_CONFLICTS` allows the checkout to proceed even if there are unresolved merge conflicts (the default is to return an error if any are present).
-* `GIT_CHECKOUT_REMOVE_UNTRACKED` removes files that aren't being tracked by git (but doesn't touch ignored files).
-* `GIT_CHECKOUT_REMOVE_IGNORED` removes ignored files that aren't in the index (but doesn't touch non-ignored files that are untracked).
+- `GIT_CHECKOUT_ALLOW_CONFLICTS` allows the checkout to proceed even if there are unresolved merge conflicts (the default is to return an error if any are present).
+- `GIT_CHECKOUT_REMOVE_UNTRACKED` removes files that aren't being tracked by git (but doesn't touch ignored files).
+- `GIT_CHECKOUT_REMOVE_IGNORED` removes ignored files that aren't in the index (but doesn't touch non-ignored files that are untracked).
 
 That's just a sampling; the [header comments](https://github.com/libgit2/libgit2/blob/HEAD/include/git2/checkout.h#files), are pretty helpful for using the rest.
 
@@ -102,6 +102,7 @@ checkout: 100% - master.txt
 ```
 
 ### "Notifications"
+
 The other callback you can specify is more specific about what's going on with the files in the working directory.
 Checkout actually uses diff to do its work, so it doesn't always overwrite every file in the working directory.
 If the contents match, no work is done at all.
@@ -163,7 +164,7 @@ path 'foo' - ignored
 checkout:   0% - (null)
 ```
 
-I've left the progress callback as-is, so you can see how these two features interact -- notifications happen as checkout is *determining what to do*, and progress callbacks happen as checkout is *doing the things*.
+I've left the progress callback as-is, so you can see how these two features interact -- notifications happen as checkout is _determining what to do_, and progress callbacks happen as checkout is _doing the things_.
 
 That's when the checkout strategy is set to `GIT_CHECKOUT_SAFE_CREATE`.
 Watch what happens when I change it to this:
@@ -198,7 +199,7 @@ checkout: 100% - foo
 
 ... it removes the `foo` file as well.
 
-One other capability that the notification callback gives you is *the ability to cancel the checkout* before any changes have been written to disk.
+One other capability that the notification callback gives you is _the ability to cancel the checkout_ before any changes have been written to disk.
 Just return something other than `0`, and the process will simply be aborted.
 
 ## One file at a time
@@ -261,8 +262,8 @@ git_commit_free(commit);
 ```
 
 ## That's about it
+
 **NOTE: You should do error checking.**
 You should also check out the documentations comments in the [`git2/checkout.h`](https://github.com/libgit2/libgit2/blob/HEAD/include/git2/checkout.h#files) header -- they're really well-written, and they cover more than what I've got here.
-
 
 {% include libgit2_footer.md %}

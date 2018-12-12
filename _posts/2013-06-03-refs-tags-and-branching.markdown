@@ -9,7 +9,6 @@ categories: libgit2
 Refs are a powerful way of annotating a git repository's history.
 Libgit2, of course, provides several ways of working with them.
 
-
 ## Refs
 
 There are several ways to get a handle on a ref in libgit2.
@@ -29,7 +28,7 @@ git_reference_dwim(&ref, repo, "master");
 
 That one applies the [standard git precedence rules](http://git-scm.com/docs/git-rev-parse.html#_specifying_revisions) to figure out which ref you mean.
 
-There's also a way of getting to *all* of the refs in a repository:
+There's also a way of getting to _all_ of the refs in a repository:
 
 ```c
 int each_ref(git_reference *ref, void *payload)

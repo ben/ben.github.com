@@ -30,7 +30,7 @@ And not just us engineers, either; the Trello example above was the sales team u
 
 ## ChatOps
 
-All of that is *ChatOps*.
+All of that is _ChatOps_.
 That term is a little fuzzy, but it boils down to automation of repetitive technical and social activity.
 You can probably tell by how abstract that sentence is that I've thought about this a lot, but stay with me.
 
@@ -54,7 +54,7 @@ This arrangement has been pretty effective for most of the history of Internet s
 
 But ChatOps shows us that this can be improved, and not just a little.
 Most immediately, we've made it easier to deploy from the chat room than to do it manually.
-But more importantly, *you'll never forget to tell the team when you're deploying.*
+But more importantly, _you'll never forget to tell the team when you're deploying._
 Or when you're done.
 Or if something goes wrong.
 And if something does go wrong, you don't have to stop fixing it to let the rest of your team know.
@@ -63,11 +63,11 @@ And if something does go wrong, you don't have to stop fixing it to let the rest
 
 Automating a thing has side effects.
 Firstly, the fact that you've automated it at all says that it was worth some effort to streamline and error-proof it.
-Almost as importantly, you're sending a signal that *this should be effortless,* that this isn't a thing that's made more valuable with extra sweat.
+Almost as importantly, you're sending a signal that _this should be effortless,_ that this isn't a thing that's made more valuable with extra sweat.
 That last one is important to keep in mind when you're automating a human process, rather than a technical one.
 
 Facebook's birthday reminders are a perfect example of how this can backfire.
-Getting a handmade card in the *actual mail* is really touching and personal – a real human being cared enough to think about what you like, make a token of their esteem, and spend real money to send it to you.
+Getting a handmade card in the _actual mail_ is really touching and personal – a real human being cared enough to think about what you like, make a token of their esteem, and spend real money to send it to you.
 In contrast, an "HBD" posted to your Facebook profile is nearly meaningless; you pretty much only think about them in aggregate.
 
 So automating social things is tricky, but we didn't think it was impossible.
@@ -87,7 +87,7 @@ If you've never used things like Slack or Hubot before, here's what's happening:
 1. We've configured Gort to interpret things that start with "`!`" as a command, so David can trigger a high-five pretty easily.
 1. Gort pastes in the URL of a GIF, which Slack loads and plays for everyone. This draws your attention visually.
 1. Gort includes `@channel` in the text of the post, which sends a notification to everyone in the room. Their computers and phones make a noise, drawing everyone's attention audibly right now, and with a trailing notification if they missed it.
-1. **A $25 Amazon gift card is sent to Kimberly at the company's expense.**
+1. **A \$25 Amazon gift card is sent to Kimberly at the company's expense.**
 
 The first three things in that list are similar to a real-life high-five.
 That last one, though – that would be pretty tricky to pull off without the magic of technology.

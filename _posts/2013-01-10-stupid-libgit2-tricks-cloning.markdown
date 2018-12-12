@@ -7,8 +7,8 @@ categories: libgit2
 ---
 
 [Libgit2](http://libgit2.github.com) aims to make it easy to do interesting things
-with git.  What's the first thing you always do when learning git?  That's
-right, you clone something from GitHub.  Let's get started, shall we? Let's get
+with git. What's the first thing you always do when learning git? That's
+right, you clone something from GitHub. Let's get started, shall we? Let's get
 some of the boilerplate out of the way:
 
 ```c
@@ -30,8 +30,7 @@ int main(int argc, char **argv)
 }
 ```
 
-
-What does the do_clone method look like?  Let's start simple:
+What does the do_clone method look like? Let's start simple:
 
 ```c
 static int do_clone(const char *url, const char *path)
@@ -44,12 +43,12 @@ static int do_clone(const char *url, const char *path)
 ```
 
 `git_clone` takes some information, and fills in a pointer for us with
-a `git_repository` object we can use to do *all manner of unholy things*.  For
+a `git_repository` object we can use to do _all manner of unholy things_. For
 now, let's ignore the repository itself, except to be good citizens and release
 the memory associated with it.
 
-That `NULL` parameter?  That's for a `git_clone_options` structure, which
-defaults to some sensible stuff.  The way our code is written right now, these
+That `NULL` parameter? That's for a `git_clone_options` structure, which
+defaults to some sensible stuff. The way our code is written right now, these
 two commands will have the same results:
 
 ```sh
@@ -57,10 +56,10 @@ two commands will have the same results:
 git clone http://github.com/libgit2/libgit2
 ```
 
-... except that `git` tells you what it's doing.  Let's fix that.
+... except that `git` tells you what it's doing. Let's fix that.
 
 One of the things you can do with `git_clone_options` is have libgit2 call
-a function when there is progress to report.  A typical callback looks like
+a function when there is progress to report. A typical callback looks like
 this:
 
 ```c
@@ -87,13 +86,12 @@ static void fetch_progress(
 
 That `stats` object gives you lots of useful stuff:
 
-* The number of objects transferred over the network
-* The number of objects that the indexer has processed
-* The total number of objects expected
-* The number of bytes transferred
+- The number of objects transferred over the network
+- The number of objects that the indexer has processed
+- The total number of objects expected
+- The number of bytes transferred
 
 So let's rewrite our `do_clone` function to plug that in:
-
 
 ```c
 static int do_clone(const char *url, const char *path)
@@ -109,9 +107,9 @@ static int do_clone(const char *url, const char *path)
 }
 ```
 
-If you run this now, the program will tell you what it's doing!  You can watch
+If you run this now, the program will tell you what it's doing! You can watch
 the network transfer happening, and notice that the indexer is doing its job
-*at the same time*.
+_at the same time_.
 
 ```text
 [...]
@@ -123,14 +121,14 @@ network  78% (   7 kb,    54/   69)  /  index  75% (   52/   69)
 ```
 
 If you try this with a large repository, you'll notice a significant pause at
-the end.  All the data has been moved, what's going on?  It turns out that
-doing a checkout can take a non-trivial amount of time.  It also turns out that
+the end. All the data has been moved, what's going on? It turns out that
+doing a checkout can take a non-trivial amount of time. It also turns out that
 libgit2 will let you report that progress as well!
 
-But that's part of checkout, which warrants its own blog post.  In the
+But that's part of checkout, which warrants its own blog post. In the
 meantime, check out the [clone
 header](https://github.com/libgit2/libgit2/blob/development/include/git2/clone.h)
-to see what `git_clone` can do.  If you want to, you could even use the [code
+to see what `git_clone` can do. If you want to, you could even use the [code
 from this post](https://gist.github.com/4693571) as a starting point for your
 own experiments.
 
