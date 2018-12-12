@@ -7,7 +7,7 @@ categories: libgit2
 ---
 
 So you've got this [git repository](/2013/03/05/libgit2-the-repository), and it's got a bunch of stuff in it – refs, trees, blobs, commits – and you want to work with that stuff.
-One way to think about that stuff is by thinking about how it's organized into [three trees](http://git-scm.com/2011/07/11/reset.html), and moving stuff between those trees.
+One way to think about that stuff is by thinking about how it's organized into [three trees](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified), and moving stuff between those trees.
 In libgit2, the way you get stuff from a commit into the index and the working tree is by using the checkout API.
 
 ## This isn't "`git checkout`"
