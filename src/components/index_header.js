@@ -5,6 +5,7 @@ import { rhythm, scale } from "../utils/typography"
 const TitleCharacter = ({c}) => (
   <li
     style={{
+      flexShrink: 1,
       marginBottom: 0,
       textTransform: 'uppercase'
   }}>
@@ -56,7 +57,7 @@ export  const IndexHeader = ({title}) => {
         <ul
           style={{
             display: `flex`,
-            flexWrap: `wrap`,
+            flexBasis: 'auto',
             justifyContent: `space-between`,
             listStyle: `none`,
             padding: 0,

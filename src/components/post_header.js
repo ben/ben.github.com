@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 export  const PostHeader = ({title}) => (
   <h3
     style={{
-      fontFamily: `Montserrat, sans-serif`,
       marginTop: 0,
     }}
   >
