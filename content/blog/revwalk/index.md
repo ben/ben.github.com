@@ -1,0 +1,123 @@
+---
+title: "libgit2: Walking History"
+date: "2013-10-02T12:00:00.000Z"
+category: libgit2
+---
+
+Making new commits and dealing with the working directory is only half of what git is for.
+Most of the data in a git repository is historical; old commits, old versions of files.
+Let's take a look at how you can use libgit2 to handle that information.
+
+## Commits
+
+It's pretty easy to just load up a commit and start poking around with the data inside it.
+It seems pretty logical to do this when you want to walk the commit history of the project, right?
+Let's take a look at how that turns out:
+
+```c
+  void visit(git_commit *c)
+  {
+    size_t i, num_parents = git_commit_parentcount(c);
+
+    /* Print some stuff about this commit */
+    char oidstr[10] = {0};
+    git_oid_tostr(oidstr, 9, git_commit_id(c));
+    printf("%s\n%s\n\n", oidstr,
+           commit_message(c));
+
+    for (i=0; i<num_parents; i++) {
+      /* Do the same for the parents */
+      git_commit *p;
+      if (!git_commit_parent(&p, c, i))
+        visit(p);
+      git_commit_free(p);
+    }
+  }
+
+  git_commit *commit;
+  /* elided: dereference HEAD to a commit */
+  visit(commit);
+```
+
+But what if you want something other than a depth-first traversal?
+Maybe you want to sort the results by commit time?
+That's a pretty tricky bit of code to write.
+What if your repo has a non-trivial amount of history?
+You'll run out of stack frames pretty quickly.
+
+There's an API for that.
+
+## Revwalk
+
+The revwalk API works similarly to what we just wrote above, with a few exceptions:
+
+- It has a configurable sort order for the output.
+- It's not built on recursion, so even very large repos can be walked efficiently.
+- You get to choose your start and end points.
+- It offers some history simplification.
+
+Let's walk through this one step at a time.
+First, you have to create a walker object:
+
+```c
+  git_revwalk *walk;
+  if (git_revwalk_new(&walk, repo) < 0)
+  { /* ERROR */ }
+```
+
+Pretty straightforward, not much to explain here.
+Next, let's configure the walk:
+
+```c
+  git_revwalk_sorting(walk,
+    GIT_SORT_TOPOLOGICAL |
+    GIT_SORT_TIME)
+  git_revwalk_push_head(walk);
+  git_revwalk_hide_glob(walk, "tags/*");
+
+  git_object *obj;
+  git_revparse_single(&obj, repo, "HEAD~10");
+  git_revwalk_hide(walk, git_object_id(obj));
+  git_object_free(obj);
+```
+
+We're doing several things here:
+
+1. We set the sort order to "topological + time".
+   This sounds a bit arcane, but it's just what you'd want for a log viewer: parents after children, sorted by commit time.
+2. We "push" the HEAD commit onto the walk.
+   This tells the walk that the HEAD and its ancestors should be visited when we start iterating.
+   You can even do more than one "push" (i.e. all of the known refs, for behavior like `git log --all`).
+3. We "hide" from the walk all commits that are included in a tag.
+   The pattern will match all the refs under "refs/tags", dereference them to commits, and exclude those commits and their ancestors from the walk.
+4. We also hide all commits that precede the 10th ancestor of HEAD.
+
+Obviously, these particular choices won't be right for every application, but there are more than enough options to (hopefully) fit your use case.
+And if not, you can always fall back to writing your own walk using the commit API.
+
+Now we're ready to run the walk, and print out some facts about each commit:
+
+```c
+  git_oid oid;
+  while (git_revwalk_next(&oid, walk) == 0) {
+    git_commit *c;
+    char oidstr[10] = {0};
+
+    git_commit_lookup(&c, repo, &oid);
+    git_oid_tostr(oidstr, 9, &oid);
+    printf("%s\n%s\n\n", oidstr,
+           git_commit_message(c));
+
+    git_commit_free(c);
+  }
+```
+
+_[Implementing `--graph` is left as an exercise for the reader.]_
+
+That wasn't so bad, was it?
+Traveling through time was never so easy.
+All that's left is to clean up the mess we've made.
+
+```c
+  git_repository_free(repo);
+```
