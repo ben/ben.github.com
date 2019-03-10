@@ -10,7 +10,7 @@ class BlogIndex extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     let posts = data.allMarkdownRemark.edges.filter(p => !p.node.frontmatter.noindex)
-    if (process.env.CONTEXT === `production`) {
+    if (process.env.CONTEXT) { // a Netlify build
       posts = posts.filter(p => !p.node.frontmatter.draft)
     }
 
