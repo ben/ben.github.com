@@ -15,7 +15,7 @@ I've discovered a few techniques that seem to fit in the category of "best pract
 The hands-down easiest way to try out a new idea is to drop a Coffeescript file in your Hubot's `/scripts` directory.
 Start with this:
 
-```coffee
+```coffeescript
 module.exports = (robot) ->
     robot.respond /foo bar (.*)/, (msg) ->
 ```
@@ -39,7 +39,7 @@ Your first attempts at debugging will probably involve sprinkling `console.log` 
 Eventually you'll want to graduate to using the logger, though; it's more flexible.
 Make sure you set `HUBOT_LOG_LEVEL=debug` when you run, then do this when you want some console output:
 
-```coffee
+```coffeescript
 robot.logger.debug "My #{message}"
 ```
 
@@ -50,15 +50,15 @@ You can use other levels too, like `error` and `info`, and anything else that [t
 Since Hubot runs on Node, you can use the rich set of V8 debugging tools.
 In one terminal window, run [Node Inspector](https://github.com/node-inspector/node-inspector):
 
-```shell
-npm install -g node-inspector
-node-inspector --no-preload --web-port 8123
+```bash
+$ npm install -g node-inspector
+$ node-inspector --no-preload --web-port 8123
 ```
 
 Now add a `debugger` statement in your code, and in a second terminal, run Hubot like this:
 
-```shell
-coffee --nodejs --debug node_modules/.bin/hubot
+```bash
+$ coffee --nodejs --debug node_modules/.bin/hubot
 ```
 
 Now if you visit http://127.0.0.1:8123/debug?port=5858 in a Chrome tab, you'll get the full Chrome Developer Tools debugger to use with your script.
