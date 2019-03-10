@@ -57,10 +57,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
+    const date = new Date(node.frontmatter.date)
+    const year = date.getFullYear()
+    const month = ('0' + (date.getMonth() + 1)).slice(-2)
+    const day = ('0' + date.getDate()).slice(-2)
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: `/${year}/${month}/${day}${value}`,
     })
   }
 }
