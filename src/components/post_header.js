@@ -13,6 +13,7 @@ export  const PostHeader = ({title}) => (
         boxShadow: `none`,
         textDecoration: `none`,
         color: `inherit`,
+        textTransform: 'uppercase',
       }}
       to={`/`}
     >
