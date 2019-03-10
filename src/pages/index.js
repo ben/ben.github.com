@@ -9,10 +9,7 @@ class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    let posts = data.allMarkdownRemark.edges.filter(p => !p.node.frontmatter.noindex)
-    if (process.env.CONTEXT) { // a Netlify build
-      posts = posts.filter(p => !p.node.frontmatter.draft)
-    }
+    let posts = data.allMarkdownRemark.edges.filter(p => !p.node.fields.noindex)
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -62,12 +59,12 @@ export const pageQuery = graphql`
           excerpt
           fields {
             slug
+            noindex
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
             draft
-            noindex
           }
         }
       }

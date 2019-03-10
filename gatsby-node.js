@@ -20,6 +20,8 @@ exports.createPages = async ({ graphql, actions }) => {
               frontmatter {
                 title
                 slug
+                draft
+                noindex
               }
             }
           }
@@ -56,6 +58,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
+    const {draft, noindex} = node.frontmatter
+    createNodeField({
+      name: 'noindex',
+      node,
+      value: noindex || (draft && !process.env.DRAFTS)
+    })
+
     let value = createFilePath({ node, getNode })
     if (node.frontmatter.slug) {
       value = node.frontmatter.slug
