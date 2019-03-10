@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import { rhythm } from "../utils/typography"
 import { IndexHeader } from "./index_header";
@@ -27,7 +28,7 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()} Ben Straub.
+          © {new Date().getFullYear()} <Link to='/about'>Ben Straub</Link>.
           {` `}
           Built with ♥ using <a href="https://www.gatsbyjs.org">Gatsby</a>.
         </footer>
