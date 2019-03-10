@@ -1,6 +1,5 @@
 ---
 title: "Making Audiobooks"
-description: "We’re a read-aloud family, but my son had to spend some time away, and I recorded my own audiobooks for him. Here's how."
 date: "2017-05-12T22:12:03.284Z"
 ---
 

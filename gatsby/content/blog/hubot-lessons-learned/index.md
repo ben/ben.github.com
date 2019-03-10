@@ -1,7 +1,6 @@
 ---
 title: "Lessons Learned From Writing Hubot Plugins"
-description: "Now that I've written a few Hubot plugins, I feel like it's time for me to pontificate on the best way to do things."
-date: "2016-02-18T22:12:03.284Z"
+date: "2016-02-18T12:00:00.000Z"
 ---
 
 Now that I've written a few Hubot plugins, I feel like it's time for me to pontificate on the best way to do things.

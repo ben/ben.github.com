@@ -5,6 +5,11 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import Libgit2Footer from "../components/libgit2_footer"
+
+const categoryFooters = {
+  libgit2: <Libgit2Footer />
+}
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -30,6 +35,7 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        {categoryFooters[post.frontmatter.category]}
         <hr
           style={{
             marginBottom: rhythm(1),
