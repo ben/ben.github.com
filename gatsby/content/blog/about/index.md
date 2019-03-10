@@ -1,6 +1,7 @@
 ---
 title: "Who are you again?"
 slug: "/about"
+noindex: true
 ---
 
 I feel like I've always been a programmer.

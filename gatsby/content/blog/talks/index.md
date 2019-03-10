@@ -1,6 +1,7 @@
 ---
 title: "I Talk Sometimes"
 slug: "/talks"
+noindex: true
 ---
 
 ## [Hacking Culture with Javascript](/talks/robots2)

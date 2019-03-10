@@ -2,6 +2,7 @@
 title: OpenBlend 2012
 date: 2012-09-20
 slug: /talks/openblend
+noindex: true
 ---
 
 ## How to make Git (and GitHub) work for you

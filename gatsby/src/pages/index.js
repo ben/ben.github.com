@@ -9,7 +9,7 @@ class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    let posts = data.allMarkdownRemark.edges
+    let posts = data.allMarkdownRemark.edges.filter(p => !p.node.frontmatter.noindex)
     if (process.env.CONTEXT === `production`) {
       posts = posts.filter(p => !p.node.frontmatter.draft)
     }
@@ -67,6 +67,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             draft
+            noindex
           }
         }
       }

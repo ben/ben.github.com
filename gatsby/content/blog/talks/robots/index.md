@@ -1,6 +1,8 @@
 ---
 title: Joy of Coding 2015
+date: 2015-05-29
 slug: /talks/robots
+noindex: true
 ---
 
 ## Hacking Culture with Chat Robots

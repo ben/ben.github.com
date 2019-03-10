@@ -1,6 +1,8 @@
 ---
 title: Codemotion Amsterdam 2017
+date: 2017-05-17
 slug: /talks/robots2
+noindex: true
 ---
 
 ## Hacking Culture with Javascript
