@@ -109,7 +109,7 @@ And it worked!
 Now the Docker containers can connect to the database.
 And I owe Kelsey a nice lunch.
 
-## The <strike>Solution</strike> Band-Aid
+## The ~~Solution~~ Band-Aid
 
 It's possible this won't be a problem for you, unless you're using a peering connection to a VPC that uses those addresses, in which case it's going to be a _serious_ problem for you.
 
