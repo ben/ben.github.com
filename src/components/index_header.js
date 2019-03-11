@@ -33,7 +33,7 @@ export  const IndexHeader = ({title}) => {
   const titleSpans = title
     .replace(' ', '  ')
     .split('')
-    .map(c => <TitleCharacter c={c} />)
+    .map((c,i) => <TitleCharacter key={i} c={c} />)
 
   return (
     <div
@@ -47,6 +47,7 @@ export  const IndexHeader = ({title}) => {
         marginBottom: 0,
       }}>
         <Link
+          key='link'
           style={{
             boxShadow: `none`,
             textDecoration: `none`,
@@ -68,7 +69,7 @@ export  const IndexHeader = ({title}) => {
           </ul>
         </Link>
       </h1>
-      <ul style={{
+      <ul key='ul' style={{
         display: `flex`,
         flexWrap: `wrap`,
         justifyContent: `space-between`,
@@ -76,10 +77,10 @@ export  const IndexHeader = ({title}) => {
         margin: '0 20px',
         padding: 0,
       }}>
-          <SubtitleLink to='/about'>Who?</SubtitleLink>
-          <SubtitleLink to='/talks'>Talks</SubtitleLink>
-          <SubtitleLink to='https://twitter.com/benstraub'>Twitter</SubtitleLink>
-          <SubtitleLink to='https://github.com/ben'>GitHub</SubtitleLink>
+          <SubtitleLink key='who' to='/about'>Who?</SubtitleLink>
+          <SubtitleLink key='talks' to='/talks'>Talks</SubtitleLink>
+          <SubtitleLink key='twitter' to='https://twitter.com/benstraub'>Twitter</SubtitleLink>
+          <SubtitleLink key='github' to='https://github.com/ben'>GitHub</SubtitleLink>
       </ul>
     </div>
   )
