@@ -1,5 +1,5 @@
 ---
-title: "I Talk Sometimes"
+title: "Conference Talks"
 slug: "/talks"
 noindex: true
 ---

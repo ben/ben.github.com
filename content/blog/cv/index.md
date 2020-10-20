@@ -4,7 +4,7 @@ slug: "/cv"
 noindex: true
 ---
 
-I like to make beautiful, useful things with code.
+I am proud to make beautiful, useful things with code.
 I'm looking to work on something that will make the world a better place.
 Or at least not a worse one.
 
@@ -18,7 +18,8 @@ Zendesk is by far the largest company I've worked for, and has only become large
 I am the technical lead for Side Conversations, a system that surfaces as conversational features in several Zendesk products, and integrates with Slack and email.
 Our team of seven built a sub-product that generates tens of millions of dollars in ARR.
 
-I've continued my habit of shaping the culture of the company around me by writing a chat bot, adding automation to development workflows and bringing GitHub and Slack closer together.
+I continue to improve company culture using the tools of an engineer.
+I introduced a chat bot, adding automation to development workflows, as well as nudging towards a more inclusive workplace on Slack.
 I've also had a hand in developing company strategy for providing developer tools and platforms.
 
 <p style="float: right;"><em>2014 — 2016</em></p>
@@ -73,7 +74,7 @@ The ability to help developers new and old become better at their craft is a poi
 ### Building Tools with GitHub
 
 I contributed two chapters to [Chris Dawson's book on GitHub's API](https://www.oreilly.com/library/view/building-tools-with/9781491933497/).
-This is like the missing manual for GitHub, and includes lots of examples of how to write code that works with source control, issues, and lots more.
+This acts as the missing manual for GitHub, and includes lots of examples of how to write code that works with source control, issues, and lots more.
 I wrote a chapter on the search API (in Python), and a chapter on the commit-status API (in C#).
 
 ### Training and Teaching
@@ -102,10 +103,9 @@ I've worked on production applications in C#, using both WPF for client-side app
 I've taught a course on converting from Python 2 to Python 3.
 I've built web applications using React, Ember, Angular, Knockout and Vanilla.js.
 
-But that's just application code.
-I've automated deployments using bare shell scripts, Perl, Ansible, CloudFormation, and Kubernetes.
+Beyond application code, I've automated deployments using bare shell scripts, Perl, Ansible, CloudFormation, and Kubernetes.
 I've tinkered with Objective C, Swift, Lisp, and Haskell.
-I came close to writing a parser for an installer DSL, but made an Emacs syntax highlighter instead.
+I wrote an Emacs syntax highlighter for an installer DSL.
 
 ### Platforms & Tools
 
@@ -113,24 +113,26 @@ I've written code for OS X, Linux, and Windows, and I've written code that runs 
 I've solved some of the same problems Docker solves.
 I've written device drivers, GUI applications, HTTP backends, and browser front ends, with and without frameworks.
 
-I know the weird stuff too.
 I have a favorite source control tool.
 I have opinions on defect tracking.
 I know the difference between UCS-2 and UTF-16.
-I know what how you say what you say says about what you're saying.
-And I'd love to debate agile versus Agile.
+I know that how you say what you say says something about what you're saying.
 
-### My Secret Weapon
+### My Greatest Asset
 
-I love to learn.
-Especially when it comes to technology.
+I cultivate a growth mindset, and I love to learn.
 
-Give me two weeks and a good book, and I'll help you find bugs in an iOS app, and I'll be happy doing it.
-Scala? Sounds like fun.
-COBOL? Well. We all have our limits.
+Put me in a room with smart people, and let's all make mistakes together.
+Major outage because of a small change somewhere?
+Let's get the site back up, and then learn why that all happened and make it never happen again.
 
-This is what I bring.
-I'm really good at staying up to date, bringing in fresh ideas, and trying new things.
+I excel at learning technical stacks.
+Drop me into an unfamiliar project, and a week later I'll be adding features.
+I stay up to date, bring in fresh ideas, and try new things.
+
+But I don't do it just for me.
+Nobody builds anything on their own.
+I leverage all of my knowhow and experience for the benefit of the team, and ideally create a culture where everyone benefits from the team's combined skills and knowledge.
 
 ---
 
