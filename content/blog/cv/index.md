@@ -15,7 +15,7 @@ Or at least not a worse one.
 ### Zendesk
 
 Zendesk is by far the largest company I've worked for, and has only become larger during my time there.
-I've acted as technical lead for Side Conversations, a system that surfaces as conversational features in several Zendesk products, and integrates with Slack and email.
+I am the technical lead for Side Conversations, a system that surfaces as conversational features in several Zendesk products, and integrates with Slack and email.
 Our team of seven built a sub-product that generates tens of millions of dollars in ARR.
 
 I've continued my habit of shaping the culture of the company around me by writing a chat bot, adding automation to development workflows and bringing GitHub and Slack closer together.
