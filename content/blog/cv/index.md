@@ -1,7 +1,7 @@
 ---
-title: "CV"
 slug: "/cv"
 noindex: true
+footerlinks: false
 ---
 
 I am proud to make beautiful, useful things with code.

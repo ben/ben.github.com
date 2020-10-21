@@ -29,8 +29,7 @@ class Layout extends React.Component {
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()} <Link to='/about'>Ben Straub</Link>.
-          {` `}
-          Built with ♥ using <a href="https://www.gatsbyjs.org">Gatsby</a>.
+          Built with ♥ using <a href='https://www.gatsbyjs.org'>Gatsby</a>.
         </footer>
       </div>
     )

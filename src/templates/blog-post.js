@@ -8,23 +8,20 @@ import { rhythm, scale } from "../utils/typography"
 import Libgit2Footer from "../components/libgit2_footer"
 
 const categoryFooters = {
-  libgit2: <Libgit2Footer />
+  libgit2: <Libgit2Footer />,
 }
 
 class BlogPostTemplate extends React.Component {
-  render() {
+  render () {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.excerpt}
-        />
+        <SEO title={post.frontmatter.title} description={post.excerpt} />
         <h1>{post.frontmatter.title}</h1>
-        {post.frontmatter.date &&
+        {post.frontmatter.date && (
           <p
             style={{
               ...scale(-1 / 5),
@@ -35,7 +32,7 @@ class BlogPostTemplate extends React.Component {
           >
             {post.frontmatter.date}
           </p>
-        }
+        )}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         {categoryFooters[post.frontmatter.category]}
         <hr
@@ -45,30 +42,32 @@ class BlogPostTemplate extends React.Component {
         />
         <Bio />
 
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
+        {post.frontmatter.footerlinks ?? true ? (
+          <ul
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              justifyContent: `space-between`,
+              listStyle: `none`,
+              padding: 0,
+            }}
+          >
+            <li>
+              {previous && (
+                <Link to={previous.fields.slug} rel='prev'>
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={next.fields.slug} rel='next'>
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
+        ) : null}
       </Layout>
     )
   }
@@ -92,6 +91,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         category
+        footerlinks
       }
     }
   }
