@@ -10,12 +10,12 @@ class Layout extends React.Component {
   render () {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
-    const cvPath = `${rootPath}cv/`
+    const cvPath = `${rootPath}cv`
 
     let header
     if (location.pathname === rootPath) {
       header = <IndexHeader title={title} />
-    } else if (location.pathname === cvPath) {
+    } else if ([cvPath, `${cvPath}/`].includes(location.pathname)) {
       header = <CvHeader title={title} />
     } else {
       header = <PostHeader title={title} />
