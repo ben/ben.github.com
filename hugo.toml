@@ -1,0 +1,4 @@
+baseURL = 'https://ben.straub.cc/'
+languageCode = 'en-us'
+title = 'Ben Straub'
+theme = 'github.com/nodejh/hugo-theme-mini'
