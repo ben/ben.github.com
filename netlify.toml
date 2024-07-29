@@ -1,0 +1,7 @@
+[build]
+  command = "hugo"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "v0.129.0"
+	GO_VERSION = "1.19"
