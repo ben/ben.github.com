@@ -108,10 +108,91 @@ On the GM tab, do the same thing, but use this text instead:
 }
 ```
 
-Do the exact same thing on the player tab.
+It should look like this:
+
+![](tooltip-alt-config.jpg)
+
 Now both you and your players can hover over a monster, you (and they) can see its current hit points, and you'll also see their max hp.
 
 ![](tooltip-alt-output.jpg)
+
+## Mook Mobs
+
+Foundry out of the box isn't really set up to run mobs of mooks the way you'd want to.
+In the rules, mooks are described pretty simply: they're in most respects normal creatures, except that a mob of them shares a hit-point pool.
+Well, it turns out that simple adjustment breaks a **lot** of Foundry's default assumptions for how creatures work.
+
+To my eyes, there are three main ways to run them, and then a secret fourth way that I use.
+
+### Linked Tokens (The Bad Way)
+
+This is the way PC tokens are configured, as "linked" to their game actors.
+
+Don't do it this way.
+It has all the downsides of the methods described below, plus the hassle of creating 12 full actors when you need a mob of 12 mooks.
+
+### Unlinked Tokens (The Foundry Default)
+
+Under this method, you just drag mooks onto the scene, and let Foundry track their hit points.
+This works okay, with a couple of exceptions.
+One is that your initiative tracker is going to get _very_ crowded, even with the group-initiative module described [below](#group-initiative).
+
+Another is the way damage is tracked.
+In this screenshot, Demeter and Thorina are attacking the same mob of mooks, which start with 7 hp.
+They both do 5 damage.
+What happens?
+
+![](mook-mobs-1.jpg)
+
+13th Age says "one of those mooks is dead, and the mob has 3 damage towards removing another one."
+But Foundry shows you having two damaged mooks with 2hp left.
+You still get an arithmetic problem every time you remove a mook, and Foundry isn't helping you at all.
+
+### Mob Tokens (The Swarm Method)
+
+With this method, you represent the entire mob of `N` mooks as one **big** token, making adjustments like this:
+
+- Multiply the max and current hit points by `N`
+- Every attack is modifed to have a number of attacks, using a formula like this, where `K` is the max hit points of a single mook:
+  ```
+	[[d20 + 5]] vs. AC ([[ceil(@hp.value/K)]] attacks)
+	```
+- Adjust the token to be one or two sizes larger
+
+You'll also want to adjust the 13th Age system settings to uncheck this box, so that your mob will roll all of its attacks even if it only has one target:
+
+![](mook-mobs-settings.jpg)
+
+This has a number of benefits.
+Firstly, no more arithmetic problems for you!
+The number of attacks will reduce as the mob takes damage.
+Second, those abilities that trigger on "an enemy has less than 5hp" usually also trigger on the last mook in a mob, so this integrates well with the [health-estimate-module method](#the-low-info-way) described above.
+Thirdly, the mob appears as a single initiative entry, and behaves properly when the mob is cleared.
+
+The major downsides here are that when you want to use a mob, you have to do some manual adjustments to it before you drop it on the map, and that takes time.
+This also prevents you from splitting a mob up – they're always going to move as a unit, and there's no way to apply a status effect to just one of them.
+Tracking ongoing damage is left as an exercise to the reader.
+
+### My Hybrid Method
+
+I wanted to keep the mooks as individual creatures, but still track their HP as a group.
+Well it turns out I still have paper on my desk.
+So my hybrid method looks like this:
+
+- Use unlinked tokens, just drag them onto the scene.
+- Add a hidden token to the scene, and only add that one to the combat tracker to keep the clutter down.
+- Color-code them using the token-appearance "tint" control, so the players (and I) can see which mob they belong to.
+- Whip out a sticky note on my desk for each mob, and count up damage. When it crosses the threshold, delete the appropriate number of tokens from the scene.
+
+![](mook-mobs-color.jpg)
+
+It's low-tech, but it works.
+It's really easy to adjust numbers by just dropping or deleting tokens.
+The players don't get full visibility of the mob's hit point status, but they *can* see the mooks disappearing, which is usually enough.
+The arithmetic is no harder than it was before, and I do less fiddling with Foundry.
+The mooks get to be their own creatures for things like confusion effects and ongoing damage, but still share their hit points.
+
+This is the best balace I've found for myself, but obviously you might prefer one of the other options.
 
 ## Group Initiative
 
