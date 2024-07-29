@@ -4,9 +4,15 @@ title = 'Ben Straub'
 theme = 'mini'
 
 [social]
-github = 'https://github.com/ben'
-twitter = "https://twitter.com/benstraub"
+	github = 'https://github.com/ben'
+	twitter = "https://twitter.com/benstraub"
 
 [markup]
-[markup.goldmark.renderer]
-unsafe = true
+	[markup.goldmark]
+		[markup.goldmark.renderer]
+			unsafe = true
+		[markup.goldmark.parser]
+			wrapStandAloneImageWithinParagraph = false
+			[markup.goldmark.parser.attribute]
+				block = true
+				title = true
