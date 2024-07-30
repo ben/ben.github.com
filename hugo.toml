@@ -1,18 +1,36 @@
 baseURL = 'https://ben.straub.cc/'
 languageCode = 'en-us'
 title = 'Ben Straub'
-theme = 'mini'
+theme = 'hugo-paper'
+author = 'Ben Straub'
+copyright = "Copyright © {{ .Now.Year }}, Ben Straub"
 
-[social]
-	github = 'https://github.com/ben'
-	twitter = "https://twitter.com/benstraub"
+[params]
+color = 'white'
+github = 'https://github.com/ben'
+twitter = "https://twitter.com/benstraub"
+favicon = "images/favicon.ico"
+appleTouchIcon = "images/avatar.png"
+monoDarkIcon = true
+
+[menu]
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 10
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
 
 [markup]
-	[markup.goldmark]
-		[markup.goldmark.renderer]
-			unsafe = true
-		[markup.goldmark.parser]
-			wrapStandAloneImageWithinParagraph = false
-			[markup.goldmark.parser.attribute]
-				block = true
-				title = true
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+[markup.goldmark.parser]
+wrapStandAloneImageWithinParagraph = false
+[markup.goldmark.parser.attribute]
+block = true
+title = true
