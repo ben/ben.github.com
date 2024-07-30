@@ -1,8 +1,6 @@
 ---
 title: OpenBlend 2012
 date: 2012-09-20
-slug: /talks/openblend
-noindex: true
 ---
 
 ## How to make Git (and GitHub) work for you
@@ -18,7 +16,7 @@ them.
 ### Slides
 
 <p>
-<script async class="speakerdeck-embed" data-id="506f26dd240f510002007956"
+<script class="speakerdeck-embed" data-id="506f26dd240f510002007956"
         data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js">
 </script>
 </p>

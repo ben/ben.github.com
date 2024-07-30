@@ -1,8 +1,6 @@
 ---
 title: Joy of Coding 2015
 date: 2015-05-29
-slug: /talks/robots
-noindex: true
 ---
 
 ## Hacking Culture with Chat Robots
@@ -17,7 +15,7 @@ Plus, adding one to your team can make your company a better place to work.
 ### Slides
 
 <p>
-<script async class="speakerdeck-embed" data-id="fabe4a0b2ad64a6cb778654eeb5aefeb"
+<script class="speakerdeck-embed" data-id="fabe4a0b2ad64a6cb778654eeb5aefeb"
 data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 </script>
 </p>

@@ -1,8 +1,6 @@
 ---
 title: Codemotion Amsterdam 2017
 date: 2017-05-17
-slug: /talks/robots2
-noindex: true
 ---
 
 ## Hacking Culture with Javascript
@@ -18,7 +16,7 @@ Most every remote-enabled team uses real-time-communication software of one sort
 Source code [on GitHub](https://github.com/ben/talks/blob/master/2017-robots-codemotion/index.md).
 
 <p>
-<script async class="speakerdeck-embed" data-id="89a6d41a7a7f4c63aafc4ee4f26152f7"
+<script class="speakerdeck-embed" data-id="89a6d41a7a7f4c63aafc4ee4f26152f7"
 data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js">
 </script>
 </p>

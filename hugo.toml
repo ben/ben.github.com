@@ -19,18 +19,20 @@ identifier = "about"
 name = "About"
 url = "/about/"
 weight = 10
+[[menu.main]]
+identifier = "talks"
+name = "Talks"
+url = "/talks/"
+weight = 10
 
 [taxonomies]
 category = "categories"
 tag = "tags"
 series = "series"
 
-[markup]
-[markup.goldmark]
 [markup.goldmark.renderer]
 unsafe = true
-[markup.goldmark.parser]
-wrapStandAloneImageWithinParagraph = false
+
 [markup.goldmark.parser.attribute]
 block = true
 title = true
