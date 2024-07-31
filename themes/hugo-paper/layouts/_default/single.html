@@ -19,6 +19,13 @@
     {{ end }}
   </header>
 
+  {{ if .Params.tableOfContents }}
+  <details>
+    <summary>Table of Contents</summary>
+    {{ .TableOfContents }}
+  </details>
+  {{ end }}
+
   <section>{{ .Content }}</section>
 
   <!-- Post Tags -->

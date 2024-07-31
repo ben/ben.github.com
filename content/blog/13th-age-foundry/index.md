@@ -2,9 +2,9 @@
 title: "13th Age Foundry"
 date: 2024-07-28T19:09:54-07:00
 tags: [ttrpg, 13th-age, foundry]
-categories:
-draft: false
+tableOfContents: true
 ---
+
 
 I've been running [13th Age](https://pelgranepress.com/13th-age/) on Foundry for a while now, and I think I've got a reasonable set of recommendations that are battle-tested.
 Here they are, so I don't have to keep typing them out.
