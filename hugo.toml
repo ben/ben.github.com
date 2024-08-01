@@ -4,6 +4,7 @@ title = 'Ben Straub'
 theme = 'hugo-paper'
 author = 'Ben Straub'
 copyright = "Copyright © {{ .Now.Year }}, Ben Straub"
+enableEmoji = true
 
 [params]
 color = 'white'
