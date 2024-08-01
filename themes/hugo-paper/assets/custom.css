@@ -4,3 +4,16 @@ details {
 	border-radius: 0.5rem;
 	padding: 0.5rem 1rem ;
 }
+
+.prose figcaption {
+	margin-top: 0.2rem;
+	text-align: center;
+	font-weight: normal;
+	font-style: italic;
+}
+.prose figure {
+	margin-bottom: 0;
+}
+.prose figure h4 {
+	margin: 0px;
+}

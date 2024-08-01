@@ -42,7 +42,7 @@ One takes more configuration but is very exact in the amount of information it p
 The other is configured once and never again, but hands out information that you might think of as being for GMs' eyes only.
 They're not exclusive, my table actually uses both of them.
 
-### The Low-Info Way
+### The Low-Information Way
 
 There's a module called [Health Estimate](https://foundryvtt.com/packages/dice-so-nice), which can add hover-only labels on monsters so the players can see their general condition without knowing their exact hit point total.
 It's actually pretty useful out of the box, but we'll be sacrificing that for automated announcements when they cross specific hit point thresholds.
