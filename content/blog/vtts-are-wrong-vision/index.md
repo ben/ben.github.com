@@ -1,7 +1,9 @@
 ---
 title: "VTTs Are Wrong: Part 1 (Vision)"
-date: 2024-08-01
+date: 2024-08-02T17:54:01.344Z
 type: Draft
+images: ["inthedark-player.jpg"]
+summary: "Vision systems in VTTs are wrong, here's why I think so."
 ---
 
 I think the current crop of VTTs are using the wrong nouns.
