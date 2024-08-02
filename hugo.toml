@@ -8,6 +8,9 @@ enableEmoji = true
 
 [params]
 color = 'white'
+avatar = 'ben@straub.cc'
+name = 'Ben Straub'
+bio = 'Maker of things'
 github = 'https://github.com/ben'
 twitter = "https://twitter.com/benstraub"
 favicon = "images/favicon.ico"
