@@ -1,7 +1,7 @@
 ---
 title: "VTTs Are Wrong: Part 1 (Vision)"
 date: 2024-08-01
-draft: true
+type: Draft
 ---
 
 I think the current crop of VTTs are using the wrong nouns.
