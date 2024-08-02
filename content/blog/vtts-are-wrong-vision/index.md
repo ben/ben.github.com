@@ -1,7 +1,6 @@
 ---
 title: "VTTs Are Wrong: Part 1 (Vision)"
 date: 2024-08-02T17:54:01.344Z
-type: Draft
 images: ["inthedark-player.jpg"]
 summary: "Vision systems in VTTs are wrong, here's why I think so."
 ---
@@ -21,9 +20,11 @@ It's not even that VTTs are designed badly, or that they don't get the job done 
 They're well-designed **for what they are.**
 But there are aspects of these tools that feel like they're always getting in the way, and we're constantly either avoiding them or fixing them.
 
+Let's talk about the one that bugs me the most.
+
 ## Vision Systems Are Wrong
 
-The biggest beef I have with VTTs is that **they treat "character perception" and "player knowledge" as if they were the same.**
+The biggest beef I have with VTTs is that **they treat "character perception" and "player knowledge" as if they should be the same.**
 A VTT with vision turned on won't let you see the orc you know is right around the corner.
 It can't show you a sketch of the rooms you know of but haven't seen yet without revealing everything about them.
 And a VTT with vision turned *off* can't help you with the vision-based rules of your game.
@@ -35,26 +36,35 @@ I'll take my human fighter (you probably know where this is going at this point)
 
 {{< figure src="./inthedark-player.jpg" title="What's even going on here?" >}}
 
-Leaving aside that this is a bad model of how light works, this gives the player nothing to work with at all.
-They can't even tell where they can walk, or where their friends are.
+Ugh.
 
 Before I come back to everything that's wrong here, let's take a look at what the GM has set up for our poor human fighter:
 
 {{< figure src="./inthedark-gm.jpg" title="A troll AND a dragon AND a giant?!?!" >}}
 
-Go back to the player view, and imagine that the GM is describing the stench of the troll that's right in front of you, its nasty fingernails dripping with slime and scraping your shield.
-The deep burning embers glowing in the throat of the dragon in the middle of the room (which should be blocking out the torch on the far side, but our model doesn't account for that), the deep rumble of its breathing resonating in your chest.
-The giant – whose hair *is* fire – singing *the song that will end the world* from around the corner.
+Go back to the player view, and imagine that the GM is describing this scene to you using their human mouth.
 
-But you can't use any of that.
-You can't target any of those creatures, so the VTT can't help you with all the cool automation it has.
-**You** can't know it because your **character** can't see it.
+> […]
+> the stench of the troll just in front of you, its fingernails dripping with slime and scraping your shield
+> […]
+> the deep burning embers glowing in the throat of the dragon in the center of the room, the deep rumble of its breathing resonating in your chest
+> […]
+> the giant – head wreathed in bright flame – singing the song that will end the world from around the corner
+> […]
 
-Your friends have darkvision and are leading you with a rope, but you're not allowed to see them either.
-If you want to move around this scene without lighting a torch, the GM is going to have to move you, because you'll be bumbling into the walls and baddies.
+Here are just a few things that you-the-player might want to do in this moment, but are actively prevented from doing because of this decision:
 
-Foundry in particular can do _a little_ better if we give up on item #3.
-Install the [Simple Fog](https://foundryvtt.com/packages/simplefog) module, give every token a "see all" sense, and manually control the fog so they can't see baddies in rooms they haven't been in.
+- Have your darkvision-having friends pull you around with a rope (they can't move your token)
+- Move your PC at half speed to simulate bumbling towards where your friends are (you can't see where they are, and you'll walk to a place _inside the troll_)
+- Target the troll for an attack at disadvantage (can't target the token)
+- Perceive the dragon because it's blocking the light from the torch across the room (light doesn't work that way in this game, and it's in the darkness)
+- See what's happening with your friends, unless one of them happens to step into the light
+
+Your ability to play the game has been artificially limited, and you need help to do the simplest of things.
+**You** can't know any of that, because your **character** can't see it.
+
+Foundry in particular can do _just a little_ better if we resign ourselves to combinations of scattered settings.
+Give every token a "see all" sense, but that reveals monsters in rooms they haven't visited yet, so install the [Simple Fog](https://foundryvtt.com/packages/simplefog) module and manually erase the fog as they explore.
 You're still missing so much information, and the GM is still going to be walking your token around for you.
 
 {{< figure src="./inthedark-seeall.jpg" title="About as good as it gets" >}}
@@ -71,7 +81,7 @@ Foundry's not the only VTT to do this.
 Roll20, Talespire, DMHub – every VTT that has a lighting and vision system does it this way.
 I think it's ugly and unusable.
 
-## What It Should Be Doing
+## What It Should Do
 
 Here's a list of the kinds of things I want from my VTT's vision system.
 I don't think any of these are unreasonable.
@@ -80,29 +90,31 @@ I don't think any of these are unreasonable.
 2. Provide information about character vision, according to the model the game provides.
 3. Do not require modules or complex configuration to accomplish this.
 
-When the scene is dark (and if you're playing a game with the word "dungeon" in the name, at some point it will be), #1 gets left behind.
-If you don't care about #3, you can use the method I mentioned above to get some (but not all) of #1, but it's not default or obvious, and it's going to slow down exploration while the GM manages player vision.
+With the current crop of VTTs, when the scene is dark (and if you're playing a game with the word "dungeon" in the name, at some point it will be), #1 just gets thrown out the window.
+If you don't care about #3, and you're using a VTT that allows it, you can combine complicated extensions and settings to get some (but not all) of #1, but it's not default or obvious, and it's going to slow down exploration while the GM manages player vision.
 And even after all of that, you still need the GM to walk your token around a darkened scene.
 
 So what happens if you just lose the lighting system?
 
-## The Owlbear Rodeo Method
+## What If… No Lighting?
 
-Owlbear Rodeo doesn't have lights or shadows, so we're going to lose item #2, but it does give us the other two, in a pretty nice way:
+Owlbear Rodeo doesn't have lights or shadows, so we're going to lose item #2, but it does give us the other two with its fog-of-war system:
 
 {{< figure src="./necropolis-owlbear.jpg" title="Owlbear Rodeo: pretty good actually" >}}
 
-You can get close to this in Foundry:
+Now Owlbear doesn't have character sheets or lighting effects like fancier VTTs, but this is elegant and simple and well-made and useful.
+
+You can get kinda-sorta close to this in Foundry:
 
 1. Disable vision
 2. Delete all the walls
 3. Use the [Simple Fog](https://foundryvtt.com/packages/simplefog) extension
 
-But it's not as good.
+…but it's not as good.
 In Owlbear you can define fog regions in advance, and to make a whole room visible you hit `F`, click a fog region, hit `H`, and finally hit `W` to get back to the mode you were in before.
 It's fast and smooth.
 
-In Foundry, you have to click on the sidebar once or twice, drag a slider (why?) *carefully* scribble over an area and hope you don't reveal too much (awkward), then click on the sidebar again to get back to the other mode.
+In Foundry, you have to click on the sidebar once or twice, drag a slider (why?) all the way to one side, *carefully* scribble over an area and hope you don't reveal too much (awkward), then click on the sidebar again to get back to the other mode.
 It takes ten times as long, and brings you and probably the whole table out of flow.
 
 And (depending on if you get annoyed by things like this the way I do) it might still be worth it.
@@ -119,7 +131,7 @@ Here's the choice I have to make every single time I set up a new scene:
 Most of the time I choose #2, and there's no way to set the defaults this way, so every time I import a Czepeku scene I have to delete all the walls and uncheck the vision boxes in the configuration.
 
 I honestly don't know what to do about this.
-I tried six different ways of doing this in Foundry (and wrote them down in a draft of this post and then deleted them so you don't have to slog through all that, *you're welcome*), and every single one has problems that make it compare unfavorably to just being at a physical table with whiteboard tiles and bottle caps.
+I tried six different ways of doing this in Foundry (and wrote them down in a draft of this post and then deleted them so you don't have to slog through all that, *you're welcome*), and every single one has problems that make it compare unfavorably to a physical table with whiteboard tiles and bottle caps.
 I'd love for the VTT experience to be _better_ than that, but right now it's just not.
 
 Alright, that's enough for now.
