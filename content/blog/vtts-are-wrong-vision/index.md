@@ -97,8 +97,8 @@ So there's a module called [Simple Fog](https://foundryvtt.com/packages/simplefo
 Maybe this can fix our issue?
 So let's toggle on manual fog, and erase some fog:
 
-{{< figure src="./necropolis-manualfog-gm.jpg" title="Erased a blob of fog" >}}
-{{< figure src="./necropolis-manualfog-player.jpg" title="Welp" >}}
+{{< figure src="./necropolis-manualfog-gm.jpg" title="GM view: a hole in the fog" >}}
+{{< figure src="./necropolis-manualfog-player.jpg" title="Player view: welp" >}}
 
 It gives the GM more control over disclosure, but this is just a smaller version of the global-illumination method, with the same problems.
 It's got some advantages though, we'll come back to those in a bit.
@@ -115,11 +115,15 @@ There's another mode called "see all" which does the same but constrained to sig
 
 ## The Triple Combo
 
-At this point we're narrowing in on maybe a solution, but it's complicated and still not perfect:
+Here's where I come back to the Manual Fog module: it draws a layer on top of all the other ones, so it can override the vision that tremorsense gives you.
+At this point we're narrowing in on maybe a solution.
+It's complicated, and still not perfect:
 
 - Use walls and lights, **(but this still prevents you from showing players what you want them to see)**
 - Give every token "sense all" to a certain distance **(but this will interfere with invisibility)**
 - Use manual fog to make sure they don't see anything in the rooms they haven't visited yet **(but this is clunky and slow in the moment)**
+
+{{< figure src="./necropolis-combo.jpg" title="About as good as it gets with vision turned on" >}}
 
 All of that effort to just be able to target things in the dark.
 And it's still ugly and imperfect, and you need at least one module to make it happen.
@@ -140,7 +144,7 @@ We still don't get the regions-of-dimness-and-darkness feature, and Owlbear does
 You can get close to this in Foundry, if you :one: disable vision, :two: delete all the walls, and :three: use the Manual Fog extension.
 Except it's worse, because in Owlbear you can define regions in advance, and making a whole room visible is as easy as hitting `F`, clicking a box, hitting `H`, and finally hitting `W` to get back to the mode you were in before.
 It's fast and smooth, where in Foundry, where you have to click on the sidebar once or twice, drag a slider (why?) carefully scribble over an area and hope you don't reveal too much, then click on the sidebar again.
-It takes ten times as long, and brings the whole table out of flow, but you get to keep your pretty lights.
+It takes ten times as long, and brings the whole table out of flow, but you get to use the pretty lights and character sheets.
 
 ## Vision Is Broken
 
