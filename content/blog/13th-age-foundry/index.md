@@ -3,6 +3,7 @@ title: "13th Age Foundry"
 date: 2024-07-28T19:09:54-07:00
 tags: [ttrpg, 13th-age, foundry]
 tableOfContents: true
+images: ["mook-mobs-color.jpg"]
 ---
 
 
