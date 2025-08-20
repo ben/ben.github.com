@@ -287,6 +287,7 @@ You can even drag actors onto the scene from here, really great for building enc
 
 - [Dice So Nice](https://foundryvtt.com/packages/dice-so-nice) gives you 3D math rocks. Just go get it, and all the dice modules you can find. This one should just come with Foundry.
 - [Dice Tray](https://foundryvtt.com/packages/dice-calculator) gives you a clickable dice roller in the chat tab.
+- [Carousel Combat Tracker](https://foundryvtt.com/packages/combat-tracker-dock) provides a really nice UI for displaying combat order, status effects, and hit points of everyone in the combat.
 - [13th Age Combat Loops](https://foundryvtt.com/packages/13th-age-combat-loops) can auto-advance a playlist based on the value of the escalation die. This is designed to work with the [official 13th Age soundtrack](https://pelgranepress.com/product/13th-age-soundtrack/), which has loops for ED 0-6.
 - [Background Scaler](https://foundryvtt.com/packages/background-scaler) gives you a quick way to get the scale of a map right without guessing at numbers. Useful whether or not you use Foundry's grid.
 - [Global Progress Clocks](https://foundryvtt.com/packages/global-progress-clocks) is great for things like the Stone Thief "submergence die", or any kind of danger or goal that you want to show to your players.
