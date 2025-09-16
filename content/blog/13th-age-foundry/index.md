@@ -136,7 +136,7 @@ It has all the downsides of the methods described below, plus the hassle of crea
 
 Under this method, you just drag mooks onto the scene, and let Foundry track their hit points.
 This works okay, with a couple of exceptions.
-One is that your initiative tracker is going to get _very_ crowded, even with the group-initiative module described [below](#group-initiative).
+One is that your initiative tracker is going to get _very_ crowded.
 
 Another is the way damage is tracked.
 In this screenshot, Demeter and Thorina are attacking the same mob of mooks, which start with 7 hp.
@@ -194,27 +194,6 @@ The arithmetic is no harder than it was before, and I do less fiddling with Foun
 The mooks get to be their own creatures for things like confusion effects and ongoing damage, but still share their hit points.
 
 This is the best balace I've found for myself, but obviously you might prefer one of the other options.
-
-## Group Initiative
-
-Running 13th Age combats often means running dozens of monsters at once.
-As a GM you have enough on your plate without needing to remember that 7 minutes ago on initiative 18 you proc'd an intercept so that now on initiative 6 you can move this other troop to engage the wizard.
-The book actually recommends that you do something different:
-
-> As a rule, you’ll want all monsters of the same exact type to share the same initiative roll.
-> In a battle against 5 gnoll warriors, it’s not worth rolling initiative for each separate warrior.
-> But in a fight against three different types of gnolls that have different initiative bonuses, sure, roll initiative for each of the three types of monster.
-
-Foundry's defaults do **not** do this, but with the [Group Initiative](https://foundryvtt.com/packages/group-initiative) module, it can.
-This one's configured using the gear icon in the combat tracker, here's how I've got mine set:
-
-![](group-init.jpg)
-
-Note that I have "skip grouped combatants" unchecked.
-**This is important.**
-We found that with it checked, and when 6-7 people are connected to Foundry, this can result in an infinite loop when you try to advance turns through the group.
-Now we just do it manually, which seems fine.
-And now all my mooks move and attack at once, which is much scarier for the players.
 
 ## Random Choices
 
@@ -303,12 +282,10 @@ If you just want to find and install these without having to parse through my ex
 - [Party Overview](https://foundryvtt.com/packages/party-overview)
 - [Health Estimate](https://foundryvtt.com/packages/dice-so-nice)
 - [Token Tooltip Alt](https://foundryvtt.com/packages/token-tooltip-alt)
-- [Group Initiative](https://foundryvtt.com/packages/group-initiative)
 - [Chat Portraits](https://foundryvtt.com/packages/chat-portrait)
 - [Damage Log](https://foundryvtt.com/packages/damage-log)
 - [Pointer and Pings](https://foundryvtt.com/packages/pointer)
 - [Quick Insert Search Widget](https://foundryvtt.com/packages/quick-insert)
-- [Dice So Nice](https://foundryvtt.com/packages/dice-so-nice)
 - [Dice Tray](https://foundryvtt.com/packages/dice-calculator)
 - [13th Age Combat Loops](https://foundryvtt.com/packages/13th-age-combat-loops)
 - [Background Scaler](https://foundryvtt.com/packages/background-scaler)
