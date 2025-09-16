@@ -31,3 +31,6 @@ details {
   content: "";
 }
 
+pre > code {
+	border: none !important;
+}
