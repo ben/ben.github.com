@@ -81,9 +81,9 @@ I know this isn't going to be for everyone, and I thought it might ruin some of 
 
 This involves a module called [Token Tooltip Alt](https://foundryvtt.com/packages/token-tooltip-alt).
 Open up its config, and open up the Tooltip Manager.
-you're going to be adjusting the "default" group.
+You're going to be adjusting the "default" group.
 
-On the Player tab, add a new row to the "Secret" group.
+On the Player tab, add a new row to the "Hostile" group.
 Check the "Exp" box, set the icon to `fa-heart`, and add this text to the text box:
 
 ```
